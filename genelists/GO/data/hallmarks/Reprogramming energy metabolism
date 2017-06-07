@@ -1,0 +1,225 @@
+DB	ID	Splice	Symbol	Taxon	Qualifier	GO ID	GO Name	Reference	Evidence	With	Aspect	Date	Source
+UniProtKB	A0A024R0Y5	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	A0A024R138	-	GPD1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:P13707|ensembl:ENSMUSP00000023760	Process	20170603	Ensembl
+UniProtKB	A0A024R562	-	BAD	9606	-	GO:0006007	glucose catabolic process	GO_REF:0000107	IEA	UniProtKB:Q61337|ensembl:ENSMUSP00000025910	Process	20170603	Ensembl
+UniProtKB	A0A024R5C5	-	PC	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR005930	Process	20170603	InterPro
+UniProtKB	A0A024R9Q9	-	PPARGC1A	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QYK2|ensembl:ENSRNOP00000006071	Process	20170603	Ensembl
+UniProtKB	A0A0A0MS74	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	A0A0A0MTS2	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672|InterPro:IPR018189	Process	20170603	InterPro
+UniProtKB	A0A0A0MTS2	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	A0A0J9YX90	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	A0A0J9YXP8	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	A0A0J9YXP8	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	A0A0J9YYH3	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	A0A0J9YYH3	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	A0A0S2Z430	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	A0A0S2Z451	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	A0A0S2Z4A1	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	A0A0S2Z4A8	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	A0A0S2Z4C0	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR013035|InterPro:IPR035077	Process	20170603	InterPro
+UniProtKB	A0A0S2Z4I1	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	A2I2P0	-	CRY1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:P97784|ensembl:ENSMUSP00000020227	Process	20170603	Ensembl
+UniProtKB	B1APP6	-	PFKP	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	B1APP8	-	PFKP	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	B3KNQ7	-	-	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	B4DE36	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672|InterPro:IPR018189	Process	20170603	InterPro
+UniProtKB	B4DE36	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	B4DUI5	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	B4DUI5	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	B4DVJ0	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672|InterPro:IPR018189	Process	20170603	InterPro
+UniProtKB	B4DVJ0	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	B4DW73	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	B4E108	-	-	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	B4E162	-	-	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	B4E1E8	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	F8VNX2	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VP00	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VSF7	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VSL1	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VTQ3	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VUB8	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VVE3	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VW30	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VX13	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VYK8	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VZI0	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8VZQ1	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	F8W1J8	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	H0Y3Y3	-	PFKP	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	H0Y757	-	PFKP	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	H0YIS9	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	H0YM31	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	H0YMA5	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	H0YML5	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	H0YMU6	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	H0YMY3	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR013035|InterPro:IPR035077	Process	20170603	InterPro
+UniProtKB	H0YNG4	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	K7EIL4	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	K7ELR7	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	K7ENA0	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	K7EP41	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	K7EPY4	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	K7EQ48	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672|InterPro:IPR018189	Process	20170603	InterPro
+UniProtKB	K7EQ48	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	K7ERC6	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	K7ERK8	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	K7ESF4	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	O00757	-	FBP2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000033	IBA	PANTHER:PTN000168022	Process	20160811	GO_Central
+UniProtKB	O00757	-	FBP2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	O00757	-	FBP2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	O00757	-	FBP2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q9Z1N1|ensembl:ENSRNOP00000023865	Process	20170603	Ensembl
+UniProtKB	O00757	-	FBP2	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	O14556	-	GAPDHS	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	O14556	-	GAPDHS	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170309	Reactome
+UniProtKB	O14943	-	PFK-P	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	PMID:10814514	IDA	-	Process	20150807	MGI
+UniProtKB	O15055	-	PER2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000024	ISS	UniProtKB:O54943	Process	20140507	UniProt
+UniProtKB	O60825	-	PFKFB2	9606	-	GO:0006007	glucose catabolic process	GO_REF:0000107	IEA	UniProtKB:Q9JJH5|ensembl:ENSRNOP00000005729	Process	20170603	Ensembl
+UniProtKB	O60825	-	PFKFB2	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	O75197	-	LRP5	9606	-	GO:0006007	glucose catabolic process	PMID:19673927	IMP	-	Process	20100914	BHF-UCL
+UniProtKB	O75746	-	SLC25A12	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P00505	-	GOT2	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P00558	-	PGK1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170309	Reactome
+UniProtKB	P00558	-	PGK1	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P02753	-	RBP4	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000024	ISS	UniProtKB:Q00724	Process	20081104	BHF-UCL
+UniProtKB	P02753	-	RBP4	9606	-	GO:0006094	gluconeogenesis	PMID:18466349	IMP	-	Process	20080730	BHF-UCL
+UniProtKB	P04075	-	ALDOA	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P04075	-	ALDOA	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P04406	-	GAPDH	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P04406	-	GAPDH	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170309	Reactome
+UniProtKB	P05062	-	ALDOB	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P05062	-	ALDOB	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P06733	-	ENO1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P06733	-	ENO1	9606	-	GO:0061621	canonical glycolysis	PMID:3529090	IMP	-	Process	20160718	CAFA
+UniProtKB	P06733	-	ENO1	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170309	Reactome
+UniProtKB	P06744	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672|InterPro:IPR018189	Process	20170603	InterPro
+UniProtKB	P06744	-	GPI	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	P06744	-	GPI	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P06744	-	GPI	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P07738	-	BPGM	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000033	IBA	PANTHER:PTN000231842	Process	20150506	GO_Central
+UniProtKB	P08237	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000107	IEA	UniProtKB:P47857|ensembl:ENSMUSP00000059801	Process	20170603	Ensembl
+UniProtKB	P08237	-	PFKM	9606	-	GO:0061621	canonical glycolysis	GO_REF:0000107	IEA	UniProtKB:P47857|ensembl:ENSMUSP00000059801	Process	20170603	Ensembl
+UniProtKB	P08237	-	PFKM	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P08237	-	PFKM	9606	-	GO:0093001	glycolysis from storage polysaccharide through glucose-1-phosphate	GO_REF:0000107	IEA	UniProtKB:P47857|ensembl:ENSMUSP00000059801	Process	20170603	Ensembl
+UniProtKB	P09104	-	ENO2	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P09104	-	ENO2	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170309	Reactome
+UniProtKB	P09467	-	FBP1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000024	ISS	UniProtKB:P19112	Process	20111003	UniProt
+UniProtKB	P09467	-	FBP1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	P09467	-	FBP1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	P09467	-	FBP1	9606	-	GO:0006094	gluconeogenesis	PMID:19259699	IMP	-	Process	20111004	UniProt
+UniProtKB	P09467	-	FBP1	9606	-	GO:0006094	gluconeogenesis	PMID:20096900	IMP	-	Process	20111004	UniProt
+UniProtKB	P09467	-	FBP1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P09972	-	ALDOC	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P09972	-	ALDOC	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P11498	-	PC	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR005930	Process	20170603	InterPro
+UniProtKB	P11498	-	PC	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	P11498	-	PC	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	P11498	-	PC	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P13929	-	ENO3	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P13929	-	ENO3	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170309	Reactome
+UniProtKB	P14618	-	PKM	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170309	Reactome
+UniProtKB	P14672	-	SLC2A4	9606	-	GO:0044381	glucose import in response to insulin stimulus	GO_REF:0000107	IEA	UniProtKB:P14142|ensembl:ENSMUSP00000018710	Process	20170603	Ensembl
+UniProtKB	P15259	-	PGAM2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000033	IBA	PANTHER:PTN000231842	Process	20150506	GO_Central
+UniProtKB	P15259	-	PGAM2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:P16290|ensembl:ENSRNOP00000018227	Process	20170603	Ensembl
+UniProtKB	P15259	-	PGAM2	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170309	Reactome
+UniProtKB	P15259	-	PGAM2	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P16118	-	PFKFB1	9606	-	GO:0006094	gluconeogenesis	PMID:12379646	TAS	-	Process	20060223	UniProt
+UniProtKB	P16118	-	PFKFB1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P16118	-	PFKFB1	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P17174	-	GOT1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170309	Reactome
+UniProtKB	P17858	-	PFKL	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000107	IEA	UniProtKB:P12382|ensembl:ENSMUSP00000020522	Process	20170603	Ensembl
+UniProtKB	P17858	-	PFKL	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P18669	-	PGAM1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000033	IBA	PANTHER:PTN000231842	Process	20150506	GO_Central
+UniProtKB	P18669	-	PGAM1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170309	Reactome
+UniProtKB	P18669	-	PGAM1	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P18847	-	ATF3	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q60765|ensembl:ENSMUSP00000027941	Process	20170603	Ensembl
+UniProtKB	P18848	-	ATF4	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000024	ISS	UniProtKB:Q06507	Process	20050906	UniProt
+UniProtKB	P18848	-	ATF4	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q06507|ensembl:ENSMUSP00000105234	Process	20170603	Ensembl
+UniProtKB	P19367	-	HK1	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P20132	-	SDS	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	P20132	-	SDS	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	P21695	-	GPD1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:P13707|ensembl:ENSMUSP00000023760	Process	20170603	Ensembl
+UniProtKB	P30613	-	PKLR	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170309	Reactome
+UniProtKB	P35557	-	GCK	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P35558	-	PCK1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	P35558	-	PCK1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000024	ISS	UniProtKB:P07379	Process	20080424	BHF-UCL
+UniProtKB	P35558	-	PCK1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	P35558	-	PCK1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	P35558	-	PCK1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:P07379|ensembl:ENSRNOP00000030913	Process	20170603	Ensembl
+UniProtKB	P35558	-	PCK1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q9Z2V4|ensembl:ENSMUSP00000029017	Process	20170603	Ensembl
+UniProtKB	P35558	-	PCK1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P35575	-	G6PC	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	P35575	-	G6PC	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	P35575	-	G6PC	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:P43428|ensembl:ENSRNOP00000028033	Process	20170603	Ensembl
+UniProtKB	P35575	-	G6PC	9606	-	GO:0006094	gluconeogenesis	PMID:8211187	IMP	-	Process	20080728	UniProt
+UniProtKB	P36871	-	PGM1	9606	-	GO:0006094	gluconeogenesis	PMID:8257433	TAS	-	Process	20010830	UniProt
+UniProtKB	P40925	-	MDH1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170309	Reactome
+UniProtKB	P40926	-	MDH2	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P43304	-	GPD2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q64521|ensembl:ENSMUSP00000130992	Process	20170603	Ensembl
+UniProtKB	P51570	-	GALK1	9606	-	GO:0061623	glycolytic process from galactose	GO_REF:0000107	IEA	UniProtKB:Q9R0N0|ensembl:ENSMUSP00000021114	Process	20170603	Ensembl
+UniProtKB	P51854	-	TKTL1	9606	-	GO:0006007	glucose catabolic process	PMID:8838793	TAS	-	Process	20030904	PINC
+UniProtKB	P52789	-	HK2	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P52790	-	HK3	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P53007	-	SLC25A1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	P60174	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000033	IBA	PANTHER:PTN000474559	Process	20150819	GO_Central
+UniProtKB	P60174	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	P60174	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	P60174	-	TPI1	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170309	Reactome
+UniProtKB	P60174	-	TPI1	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	P78457	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q01813	-	PFKP	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	Q02978	-	SLC25A11	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	Q16184	-	phosphofructokinase-M: PFK-M	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q16526	-	CRY1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000024	ISS	UniProtKB:P97784	Process	20140507	UniProt
+UniProtKB	Q16526	-	CRY1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:P97784|ensembl:ENSMUSP00000020227	Process	20170603	Ensembl
+UniProtKB	Q16822	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	Q16822	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	Q16822	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	Q16822	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:F1LQJ7|ensembl:ENSRNOP00000025260	Process	20170603	Ensembl
+UniProtKB	Q16822	-	PCK2	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170309	Reactome
+UniProtKB	Q16875	-	PFKFB3	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	Q16877	-	PFKFB4	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	Q2QD09	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	Q2QD09	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	Q49A78	-	PFKP	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q53ET0	-	CRTC2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000024	ISS	UniProtKB:Q3U182	Process	20110902	UniProt
+UniProtKB	Q53ET0	-	CRTC2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q3U182|ensembl:ENSMUSP00000029545	Process	20170603	Ensembl
+UniProtKB	Q53HE2	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	Q53HE2	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	Q59F85	-	-	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR001672	Process	20170603	InterPro
+UniProtKB	Q59GI2	-	-	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q5VSR5	-	PFKP	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q6IB91	-	PCK2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000002	IEA	InterPro:IPR008209|InterPro:IPR008210|InterPro:IPR013035|InterPro:IPR035077|InterPro:IPR035078	Process	20170603	InterPro
+UniProtKB	Q6MZK4	-	DKFZp686L2097	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q6PCE3	-	PGM2L1	9606	-	GO:0061621	canonical glycolysis	Reactome:R-HSA-70171	TAS	-	Process	20170308	Reactome
+UniProtKB	Q7KYX9	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q7L2M7	-	PFKL	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q7Z3R9	-	DKFZp686G1648	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q8IXB3	-	TUSC5	9606	-	GO:0044381	glucose import in response to insulin stimulus	GO_REF:0000107	IEA	UniProtKB:Q8C838|ensembl:ENSMUSP00000061634	Process	20170603	Ensembl
+UniProtKB	Q8N0Y7	-	PGAM4	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000033	IBA	PANTHER:PTN000231842	Process	20150506	GO_Central
+UniProtKB	Q8WTZ9	-	-	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q92934	-	BAD	9606	-	GO:0006007	glucose catabolic process	GO_REF:0000107	IEA	UniProtKB:Q61337|ensembl:ENSMUSP00000025910	Process	20170603	Ensembl
+UniProtKB	Q96I60	-	PFKM	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q9BSP4	-	PFKL	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	Q9BUM1	-	G6PC3	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000033	IBA	PANTHER:PTN000287473	Process	20150211	GO_Central
+UniProtKB	Q9BUM1	-	G6PC3	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	Q9BUM1	-	G6PC3	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	Q9BUM1	-	G6PC3	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q6AZ83|ensembl:ENSRNOP00000028375	Process	20170603	Ensembl
+UniProtKB	Q9NQR9	-	G6PC2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000033	IBA	PANTHER:PTN000287473	Process	20150211	GO_Central
+UniProtKB	Q9NQR9	-	G6PC2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	Q9NQR9	-	G6PC2	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	Q9UBK2	-	PPARGC1A	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QYK2|ensembl:ENSRNOP00000006071	Process	20170603	Ensembl
+UniProtKB	Q9UBK2	-	PPARGC1A	9606	-	GO:0006094	gluconeogenesis	PMID:11854298	NAS	-	Process	20041206	UniProt
+UniProtKB	Q9UBX3	-	SLC25A10	9606	-	GO:0006094	gluconeogenesis	PMID:9733776	TAS	-	Process	20030904	PINC
+UniProtKB	Q9UBX3	-	SLC25A10	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	Q9UJS0	-	SLC25A13	9606	-	GO:0006094	gluconeogenesis	Reactome:R-HSA-70263	TAS	-	Process	20170308	Reactome
+UniProtKB	U3KPS5	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	U3KPS5	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	U3KPZ0	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	U3KPZ0	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	U3KQF3	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	U3KQF3	-	TPI1	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
+UniProtKB	V9GY25	-	PFKP	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	V9GYV7	-	PFKP	9606	-	GO:0061615	glycolytic process through fructose-6-phosphate	GO_REF:0000108	IEA	GO:0003872	Process	20170603	GOC
+UniProtKB	V9HWE7	-	HEL-S-19	9606	-	GO:0061623	glycolytic process from galactose	GO_REF:0000107	IEA	UniProtKB:Q9R0N0|ensembl:ENSMUSP00000021114	Process	20170603	Ensembl
+UniProtKB	V9HWK1	-	HEL-S-49	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000038	IEA	UniProtKB-KW:KW-0312	Process	20170603	UniProt
+UniProtKB	V9HWK1	-	HEL-S-49	9606	-	GO:0006094	gluconeogenesis	GO_REF:0000041	IEA	UniPathway:UPA00138	Process	20170603	UniProt
