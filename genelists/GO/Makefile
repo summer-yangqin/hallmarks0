@@ -4,3 +4,4 @@ run:
 	mkdir -p data/hallmarks
 	sh -v go.hallmarks
 	sh -v go.filter
+        sh coalesce.sh > GO_hallmark_genes.gmt
