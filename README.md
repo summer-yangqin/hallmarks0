@@ -19,3 +19,10 @@ stages of malignancy (normal tissue, hyperplasia, primary tumors, metastases) an
 
 CONCLUSIONS:
 Animal models are central to our basic and translational research mission to treat and cure cancer, but we should not expect these models to recapitulate all aspects of human cancer. With the first comprehensive catalog of gene expression in healthy tissue and cancer tissues from GTEX and TCGA, we now have a foundation to create metrics such as the Oncology Model Fidelity Score that will enable us to better understand the benefits and limitations of individual preclinical models. Ultimately, the OMF Score will help to advance patient care through efficient identification and validation of animal models for a variety of applications, from pre-clinical testing of novel therapeutics to the use of patient-specific animal models.
+
+
+Source Code:
+
+genelists folder contains the various ways we are experimenting to generate gene list
+
+
