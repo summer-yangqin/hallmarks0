@@ -22,23 +22,16 @@ do
         set o=$2
 
         echo Processing $h in tissue of origin $o in $t results are in $s
-        mkdir -p $s
-        mkdir -p $t
 
-
-
-        echo python bin/matrix_slice.py $i/$h "lists/TCGA.$o"  ReferenceData/TCGA.RSEM > "$t/$o.TCGA.$h.data"
-        exit 1
-
+        python bin/matrix_slice.py $i/$h "lists/TCGA.$o"  ReferenceData/TCGA.RSEM > "$t/$o.TCGA.$h.data"
         python bin/matrix_slice.py $i/$h "lists/GTEX.$o"  ReferenceData/GTEX.RSEM > "$t/$o.GTEX.$h.data"
         python bin/matrix_join_common.py "$t/$o.GTEX.$h.data" "$t/$o.TCGA.$h.data" > "$t/$o.GTEX.TCGA.$h.data"
         head -1 "$t/$o.GTEX.TCGA.$h.data" | tr '\t' '\n' | sed -e '1d;s/GTEX.*/0/;s/TCGA.*/1/' > "$t/$o.GTEX.TCGA.$h.phen"
         cut -f1 "$t/$o.GTEX.TCGA.$h.data" | sed -e '1d' > "$t/$o.GTEX.TCGA.$h.genes"
         python bin/adjacency.py  ReferenceData/NETWORK "$t/$o.GTEX.TCGA.$h.genes" | sed -e 's/ //g' > "$t/$o.GTEX.TCGA.$h.network"
 
-        Rscript bin/gelNet.R "$t/$o.GTEX.TCGA.$h.data" "$t/$o.GTEX.TCGA.$h.phen" "$t/$o.GTEX.TCGA.$h.network" "$s/$o.GTEX.TCGA.$h.signature" "$h" "$o" \
-            echo FAIL Rscript bin/gelNet.R "$t/$o.GTEX.TCGA.$h.data" "$t/$o.GTEX.TCGA.$h.phen" "$t/$o.GTEX.TCGA.$h.network" "$s/$o.GTEX.TCGA.$h.signature" "$h" "$o"
-        wc -l "$s/$o.GTEX.TCGA.$h.signature"
+        Rscript bin/gelNet.R "$t/$o.GTEX.TCGA.$h.data" "$t/$o.GTEX.TCGA.$h.phen" "$t/$o.GTEX.TCGA.$h.network" "$s/$o.GTEX.TCGA.$h.signature" "$h" "$o" 
+        # wc -l "$s/$o.GTEX.TCGA.$h.signature"
 
     done
 done
