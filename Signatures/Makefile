@@ -1,4 +1,4 @@
-step3 : step2
+signatures : step2
 	Rscript bin/processSigs.R Models/*.signature
 
 step2 : step1
