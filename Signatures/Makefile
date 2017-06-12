@@ -1,3 +1,6 @@
+step3 : step2
+	Rscript bin/processSigs.R Models/*.signature
+
 step2 : step1
 	bash  bin/buildSignatures.sh
 	touch step2
