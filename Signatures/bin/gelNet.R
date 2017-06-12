@@ -66,7 +66,11 @@ model$tissue = tissue;
 genes = labels(model$w);
 XX = X[,genes];
 samples=gsub("\\.", "-", row.names(X));
-raw= XX %*% model$w + model$b;
+if (length(model$w) == 1) {
+  raw= XX * model$w + model$b;
+} else {
+  raw= XX %*% model$w + model$b;
+}
 
 reference = data.frame( samples=samples, rawscore=raw,  labels= y);
 reference = with(reference, reference[order(rawscore),]);
