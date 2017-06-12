@@ -1,5 +1,5 @@
 #!/bin/bash
-s='Signatures'
+s='Models'
 t='tmp'
 
 i='../genelists/GO/data/hallmarks.genes'
@@ -11,7 +11,6 @@ for o in  \
     "glioblastoma_multiforme" \
     "lung_adenocarcinoma" 
 do
-    echo Processing $o
     for h in `ls $i/`
     do
         F="$s/$o.GTEX.TCGA.$h.signature"
