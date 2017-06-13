@@ -3,7 +3,7 @@
  "LRP5": 2.3625 
 },
 "b": 0.24585,
-"name": "Signatures/acute_myeloid_leukemia.GTEX.TCGA.Reprogramming_energy_metabolism.signature",
+"name": "Models/acute_myeloid_leukemia.GTEX.TCGA.Reprogramming_energy_metabolism.signature",
 "numberOfGenes": 1,
 "hallmark": "Reprogramming_energy_metabolism",
 "tissue": "acute_myeloid_leukemia",
