@@ -12,7 +12,7 @@ printf <- function(...) cat(sprintf(...))
 
 
 # load and unpack the signatures for this specific tissue (specified in args[1])
-signatures <- fromJSON("signatures");
+signatures <- fromJSON("../Signatures/signatures");
 tissue <- gsub(" ", ".", args[1]);
 index <- signatures$index[[tissue]];
 signatures <- signatures$signatures[index];
