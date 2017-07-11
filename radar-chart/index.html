@@ -176,10 +176,36 @@ table td { border: 1px solid #d0d0d0; }
         return b;
     }
 
+    function FormatForRadar(rect) {
+        var m = rect.length; // m rows
+        var n = rect[0].length; // n columns
+        var radar = [];
+
+        for (var i = 1; i < m; i++) { // foreach row
+            var obj = {
+                  className: rect[i][0],
+                  axes: []
+                };
+            radar.push(obj);
+            for (var j = 1; j < n; j++) { // foreach column
+                obj.axes.push( { axis: [rect[0][j]], value:rect[i][j] } );
+            }
+        }
+        return radar;
+    }
 
 
     // load dataset and create table
     function load_dataset(tsv) {
+      X_UserData = d3.tsv.parseRows(tsv)
+      create_table_from_array_of_arrays("#input_table", X_UserData);
+      X_Radar = FormatForRadar(X_UserData);
+
+      showRadar(X_Radar);
+    }
+
+    // load dataset and create table
+    function load_dataset0(tsv) {
       X_UserData = d3.tsv.parseRows(tsv)
       X_SampleNames = X_UserData[0];
       for (var i = 1; i < X_UserData.length; i++)
@@ -228,7 +254,7 @@ table td { border: 1px solid #d0d0d0; }
         .enter().append("th")
           .text(function(d) { return d; });
 
-      d3.select("#table")
+      d3.select(id)
         .selectAll("tr.row")
           .data(data)
         .enter().append("tr")
@@ -307,7 +333,7 @@ table td { border: 1px solid #d0d0d0; }
       uploader.addEventListener("change", handleFiles, false);  
 
       function handleFiles() {
-        d3.select("#table").text("loading...");
+        d3.select("#table_input").text("loading...");
         var file = this.files[0];
         reader.readAsText(file);
       };

@@ -6,7 +6,8 @@
 
 library(RJSONIO)
 
-args <- commandArgs(trailingOnly = TRUE)
+# args <- commandArgs(trailingOnly = TRUE)
+args = c("colon_adenocarcinoma", "tpm_matrix_colon_superOrtho_meta.tsv.log_norm", "/tmp/colon.txt")
 
 printf <- function(...) cat(sprintf(...))
 
@@ -27,6 +28,8 @@ rescale= function(a) {
   return(c);
 }
 
+reference = list();
+
 process = function() {
 
     # load the data
@@ -36,15 +39,27 @@ process = function() {
     row.names(X) <- possible
     X <- data.frame(X)
     scores = data.frame()
+    
+    reference = NULL;
 
     for (i in 1:length(signatures)) {
         signature    <- signatures[[i]];
         hallmark <- signature$hallmark;
-        cat(hallmark); cat("\n")
-        should  <- names(signature$w);
+        
+        ref = data.frame(signature$reference$samples,signature$reference$score);
+        colnames(ref) = c("samples", hallmark);
+        if (is.null(reference)) {
+          reference = ref
+        } else {
+          reference = merge(x = reference, y = ref, by="samples", all = TRUE)
+        }
+        
+        cat(hallmark)
+        cat("\n")
+        should  <- names(signature$w)
         genes    <- intersect(should, possible)
         printf("should=%d possible=%d actual=%d\n", length(should),length(possible),length(genes));
-        if (length(genes) == length(should)) {
+        if (TRUE  || length(genes) == length(should)) {
           score = data.frame();
           posScale <- signature$posScale;
           negScale <- signature$negScale;
