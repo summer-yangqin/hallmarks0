@@ -406,7 +406,7 @@ function showRadar(data) {
   RadarChart.defaultConfig.radius = 3;
   RadarChart.defaultConfig.w = w;
   RadarChart.defaultConfig.h = h;
-  RadarChart.draw("svg", data);
+  RadarChart.draw("#mychart", data);
 
   function animate(elem, time) {
       if (!elem) return;
