@@ -14,8 +14,7 @@ fluidPage(
   ),
   fluidRow(
     column(width=9,
-      lineChartOutput("mychart"),
-      radarChartOutput("radarchart")
+      lineChartOutput("mychart")
     ),
     column(width=3,
       sliderInput("sinePhase", "Sine phase", -180, 180, 0, step=10,

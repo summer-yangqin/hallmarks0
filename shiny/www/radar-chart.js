@@ -369,7 +369,7 @@ var RadarChart = {
     var chart = RadarChart.chart().config(options);
     var cfg = chart.config();
 
-    d3.select(id).select('svg').remove();
+    d3.select(id).select('.radarchart-container').remove();
     d3.select(id)
     .append("svg")
     .attr("width", cfg.w)
@@ -406,7 +406,7 @@ function showRadar(data) {
   RadarChart.defaultConfig.radius = 3;
   RadarChart.defaultConfig.w = w;
   RadarChart.defaultConfig.h = h;
-  RadarChart.draw("#radarchart", data);
+  RadarChart.draw("svg", data);
 
   function animate(elem, time) {
       if (!elem) return;
