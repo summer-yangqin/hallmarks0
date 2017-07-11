@@ -27,29 +27,10 @@ binding.renderValue = function(el, data) {
   // store these on $el as a data value called "state".
   if (!$el.data("state")) {
     showRadar(testdata);
-    var chart = nv.models.lineChart()
-      .margin({left: 100})
-      .useInteractiveGuideline(true)
-      .transitionDuration(350)
-      .showLegend(true)
-      .showYAxis(true)
-      .showXAxis(true);
-      
-    chart.xAxis     //Chart x-axis settings
-      .axisLabel('Time (ms)')
-      .tickFormat(d3.format(',r'));
- 
-    chart.yAxis     //Chart y-axis settings
-      .axisLabel('Voltage (v)')
-      .tickFormat(d3.format('.02f'));
-
-    nv.utils.windowResize(chart.update);
-    
     var selection = d3.select(el).select("svg");
     
     // Store the chart object on el so we can get it next time
     $el.data("state", {
-      chart: chart,
       selection: selection
     });
   }
@@ -59,15 +40,6 @@ binding.renderValue = function(el, data) {
   // Retrieve the chart and selection we created earlier
   var state = $el.data("state");
   
-  // Schedule some work with nvd3
-  nv.addGraph(function() {
-    // Update the chart
-    state.selection
-      .datum(data)
-      .transition(500)
-      .call(state.chart);
-    return state.chart;
-  });
 };
 
 // Tell Shiny about our new output binding

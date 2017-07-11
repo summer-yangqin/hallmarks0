@@ -11,13 +11,11 @@ lineChartOutput <- function(inputId, width="100%", height="400px") {
     # only include these chunks once.
     singleton(tags$head(
       tags$script(src="d3/d3.v3.min.js"),
-      tags$script(src="nvd3/nv.d3.min.js"),
-      tags$link(rel="stylesheet", type="text/css", href="nvd3/nv.d3.min.css"),
       tags$script(src="linechart-binding.js"),
       tags$script(src="radar-chart.js")
     )),
-    div(id=inputId, class="nvd3-linechart", style=style, tag("svg", list())),
-    div(id=inputId, class="radarchart-container", style=style, tag("svg", list()))
+    div(id=inputId, class="nvd3-linechart", style=style, tag("svg", list()))
+
   )
 }
 # To be called from server.R

@@ -369,7 +369,7 @@ var RadarChart = {
     var chart = RadarChart.chart().config(options);
     var cfg = chart.config();
 
-    d3.select(id).select('.radarchart-container').remove();
+    d3.select(id).select('.nvd3-linechart').remove();
     d3.select(id)
     .append("svg")
     .attr("width", cfg.w)
@@ -423,8 +423,8 @@ function showRadar(data) {
       window.scrollTo(0, (from + 1));
   }
 
-  var divVal = document.getElementById('radarchart-container');
-  animate(divVal, 600);
+  // var divVal = document.getElementById('nvd3-linechart');
+  // animate(divVal, 600);
 }
 
 function transpose(a) {
