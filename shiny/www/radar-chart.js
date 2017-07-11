@@ -378,3 +378,118 @@ var RadarChart = {
     .call(chart);
   }
 };
+
+testdata = [
+          { className: "Sample1", axes: [
+                  { "axis" :[ "Evading_growth_suppressors"], value:650 },
+                  { "axis" :[ "Evading_immune_destruction"], value:780 },
+                  { "axis" :[ "Genome_instability"],value: 670},
+                  { "axis" :[ "Replicative_immortality"], value: 722},
+                    { "axis" :[ "Reprogramming_energy_metabolism"], value: 600},
+                    { "axis" :[ "Resisting_cell_death"], value: 590},
+                    { "axis" :[ "Sustained_angiogenesis"], value: 880},
+                    { "axis" :[ "Sustaining_proliferative_signaling"], value:810 },
+                    { "axis" :[ "Tissue_invasion_and_metastasis"], value: 822},
+                    { "axis" :[ "Tumor-promoting_inflammation"], value: 700 },
+           ] },
+      ];
+
+function showRadar(data) {
+  var chart = RadarChart.chart();
+
+  var
+      w = 600,
+      h = 600;
+  // console.log(data);
+
+
+  RadarChart.defaultConfig.radius = 3;
+  RadarChart.defaultConfig.w = w;
+  RadarChart.defaultConfig.h = h;
+  RadarChart.draw("#radarchart", data);
+
+  function animate(elem, time) {
+      if (!elem) return;
+      var to = elem.offsetTop;
+      var from = window.scrollY;
+      var start = new Date().getTime(),
+          timer = setInterval(function() {
+              var step = Math.min(1, (new Date().getTime() - start) / time);
+              window.scrollTo(0, (from + step * (to - from)) + 1);
+              if (step == 1) {
+                  clearInterval(timer);
+              };
+          }, 25);
+      window.scrollTo(0, (from + 1));
+  }
+
+  var divVal = document.getElementById('radarchart-container');
+  animate(divVal, 600);
+}
+
+function transpose(a) {
+return Object.keys(a[0]).map(function(c) {
+        return a.map(function(r) { return r[c]; });
+});
+}
+
+function isNumeric(n) {
+return !isNaN(parseFloat(n)) && isFinite(n);
+}
+var Order =[];
+
+function RankNormalize(a) {
+var m = a.length; // m rows
+var n = a[0].length; // n columns
+var b = [];
+b.push(a[0]);
+
+for (var j = 1; j < m; j++)  { // foreach row
+   var x = Array(n, 0.0);
+   x.unshift(a[j][0]);
+   b.push( x );
+}
+
+for (var i = 1; i < n; i++) { // foreach column
+    var order = [];
+    for (var j = 1; j < m; j++) { // foreach row
+        var s = a[j][i];
+        if (s == "LumA")
+          debugger;
+        var nn = parseFloat(s);
+        if (isNaN(nn)){
+           nn = 0.0;
+       }
+       order.push({n:nn, j:j});
+    }
+    order.sort( function (a, b) { return a.n - b.n; });
+    
+    var r = 6.0 / order.length;
+    var s = -3.0;
+    for (var o = 0; o < order.length; o++) { // foreach row
+        var oo = order[o];
+        b[oo.j][i] = s;
+        // console.log(o, oo.j, oo.n, a[oo.j][i], b[oo.j][i], s) 
+        s += r;
+    }
+}
+return b;
+}
+
+function FormatForRadar(rect) {
+var m = rect.length; // m rows
+var n = rect[0].length; // n columns
+var radar = [];
+
+for (var i = 1; i < m; i++) { // foreach row
+    var obj = {
+          className: rect[i][0],
+          axes: []
+        };
+    radar.push(obj);
+    for (var j = 1; j < n; j++) { // foreach column
+        obj.axes.push( { axis: [rect[0][j]], value:rect[i][j] } );
+    }
+}
+return radar;
+}
