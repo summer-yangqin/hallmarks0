@@ -26,6 +26,7 @@ binding.renderValue = function(el, data) {
   // need to initialize the nvd3 line chart and d3 selection. We'll
   // store these on $el as a data value called "state".
   if (!$el.data("state")) {
+    showRadar(testdata);
     var chart = nv.models.lineChart()
       .margin({left: 100})
       .useInteractiveGuideline(true)
