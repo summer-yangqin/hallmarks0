@@ -429,7 +429,7 @@ function showRadar(R) {
   var chart = RadarChart.chart();
   var
       w = 600,
-      h = 600;
+      h = 800;
   // console.log(data);
 
 
