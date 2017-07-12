@@ -6,7 +6,7 @@ function wrap(text) {
         words = text.text().split(/\s+/).reverse(),
         word,
         line = [],
-        lineNumber = 0,
+        lineNumber = text.classed("top") ? - words.length : 0,
         lineHeight = 1.1, // ems
         y = text.attr("y"),
         dy = parseFloat(text.attr("dy")),
@@ -219,9 +219,11 @@ var RadarChart = {
             axis.select('text')
             .attr('class', function(d, i){
               var p = getHorizontalPosition(i, 0.5);
+              var q = getVerticalPosition(i, 0.5);
 
               return 'legend ' +
-              ((p < 0.4) ? 'left' : ((p > 0.6) ? 'right' : 'middle'));
+              ((p < 0.4) ? 'left' : ((p > 0.6) ? 'right' : 'middle'))
+                + (q < 0.5 ? " top" : "");
             })
             .attr('dy', function(d, i) {
               var p = getVerticalPosition(i, 0.5);
@@ -422,7 +424,7 @@ function showRadar(R) {
     var data = R.df.map(
             function(elem) {
                 var axes = R.colnames.map( function(colName) {
-                    return { axis: [ colName.replace(/_/g, "\n")], value: elem[colName] }
+                    return { axis: [ colName.replace(/[_\.]/g, "\n")], value: elem[colName] }
                 });
             return { className: elem._row, axes: axes };
          });
@@ -436,6 +438,7 @@ function showRadar(R) {
   RadarChart.defaultConfig.radius = 3;
   RadarChart.defaultConfig.w = w;
   RadarChart.defaultConfig.h = h;
+  RadarChart.defaultConfig.levelTick =  true,
   RadarChart.draw("#radarchart", data);
 
   function animate(elem, time) {
