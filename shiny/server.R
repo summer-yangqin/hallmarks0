@@ -1,6 +1,6 @@
 function(input, output, session) {
   
-  output$mychart <- renderRadarChart({
+  output$radarchart <- renderRadarChart({
     # Return a data frame. Each column will be a series in the hallmark radar chart.
     data.frame(
       Sine = sin(1:100/10 + input$sinePhase * pi/180) * input$sineAmplitude,
