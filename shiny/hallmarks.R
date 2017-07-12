@@ -19,7 +19,7 @@ radarChartOutput <- function(inputId, width="100%", height="400px") {
   )
 }
 # To be called from server.R
-renderLineChart <- function(expr, env=parent.frame(), quoted=FALSE) {
+renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
   # This piece of boilerplate converts the expression `expr` into a
   # function called `func`. It's needed for the RStudio IDE's built-in
   # debugger to work properly on the expression.
