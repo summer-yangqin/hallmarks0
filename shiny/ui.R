@@ -2,7 +2,7 @@ fluidPage(
   tags$h2("JavaScript output binding example"),
   fluidRow(
     column(width=9,
-      lineChartOutput("mychart")
+      radarChartOutput("mychart")
     ),
     column(width=3,
       sliderInput("sinePhase", "Sine phase", -180, 180, 0, step=10,

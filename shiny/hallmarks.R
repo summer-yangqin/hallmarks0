@@ -1,20 +1,20 @@
 library(shiny)
 
 # To be called from ui.R
-lineChartOutput <- function(inputId, width="100%", height="400px") {
+radarChartOutput <- function(inputId, width="100%", height="400px") {
   style <- sprintf("width: %s; height: %s;",
     validateCssUnit(width), validateCssUnit(height))
   
   tagList(
     # Include CSS/JS dependencies. Use "singleton" to make sure that even
-    # if multiple lineChartOutputs are used in the same page, we'll still
+    # if multiple radarChartOutputs are used in the same page, we'll still
     # only include these chunks once.
     singleton(tags$head(
       tags$script(src="d3/d3.v3.min.js"),
-      tags$script(src="linechart-binding.js"),
+      tags$script(src="radar-chart-binding.js"),
       tags$script(src="radar-chart.js")
     )),
-    div(id=inputId, class="nvd3-linechart", style=style, tag("svg", list()))
+    div(id=inputId, class="hallmark-chart", style=style, tag("svg", list()))
 
   )
 }

@@ -2,7 +2,6 @@ function(input, output, session) {
   
   output$mychart <- renderLineChart({
     # Return a data frame. Each column will be a series in the line chart.
-    browser();
     data.frame(
       Sine = sin(1:100/10 + input$sinePhase * pi/180) * input$sineAmplitude,
       Cosine = 0.5 * cos(1:100/10),

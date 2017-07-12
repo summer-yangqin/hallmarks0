@@ -369,7 +369,7 @@ var RadarChart = {
     var chart = RadarChart.chart().config(options);
     var cfg = chart.config();
 
-    d3.select(id).select('.nvd3-linechart').remove();
+    d3.select(id).select('hallmark-chart').remove();
     d3.select(id)
     .append("svg")
     .attr("width", cfg.w)
@@ -423,7 +423,7 @@ function showRadar(data) {
       window.scrollTo(0, (from + 1));
   }
 
-  // var divVal = document.getElementById('nvd3-linechart');
+  // var divVal = document.getElementById('hallmark-chart');
   // animate(divVal, 600);
 }
 
