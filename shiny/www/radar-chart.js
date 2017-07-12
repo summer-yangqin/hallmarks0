@@ -394,7 +394,18 @@ testdata = [
            ] },
       ];
 
-function showRadar(data) {
+function showRadar(R) {
+  debugger;
+    var data = R.df.map(
+            function(elem) {
+                var axes = R.colnames.map( function(colName) {
+                    return { axis: [ colName ], value: elem[colName] }
+                });
+            return { className: elem._row, axes: axes };
+         });
+  debugger;
+
+  console.log(data);
   var chart = RadarChart.chart();
 
   var
@@ -454,8 +465,6 @@ for (var i = 1; i < n; i++) { // foreach column
     var order = [];
     for (var j = 1; j < m; j++) { // foreach row
         var s = a[j][i];
-        if (s == "LumA")
-          debugger;
         var nn = parseFloat(s);
         if (isNaN(nn)){
            nn = 0.0;

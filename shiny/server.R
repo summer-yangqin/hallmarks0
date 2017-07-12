@@ -1,13 +1,9 @@
 function(input, output, session) {
   
+  testdata = read.table("testdata", row.names=1, header=TRUE)
   output$radarchart <- renderRadarChart({
     # Return a data frame. Each column will be a series in the hallmark radar chart.
-    data.frame(
-      Sine = sin(1:100/10 + input$sinePhase * pi/180) * input$sineAmplitude,
-      Cosine = 0.5 * cos(1:100/10),
-      "Sine 2" = sin(1:100/10) * 0.25 + 0.5,
-      "zatz" = 2
-    )
+    data.frame(testdata)
   })
 
 }

@@ -20,7 +20,7 @@ binding.renderValue = function(el, data) {
   // values for a line chart from Shiny. The "el" argument is the
   // div for this particular chart.
   
-  showRadar(testdata);
+  showRadar(data);
 
   var $el = $(el);
     

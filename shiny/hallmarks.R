@@ -1,4 +1,5 @@
 library(shiny)
+library(jsonlite)
 
 # To be called from ui.R
 radarChartOutput <- function(inputId, width="100%", height="400px") {
@@ -12,7 +13,7 @@ radarChartOutput <- function(inputId, width="100%", height="400px") {
     singleton(tags$head(
       tags$script(src="d3/d3.v3.min.js"),
       tags$script(src="radar-chart-binding.js"),
-      tags$script(src="signatures.json"),
+      tags$link(rel="stylesheet", type="text/css", href="radar-chart.css"),
       tags$script(src="radar-chart.js")
     )),
     div(id=inputId, class="hallmark-chart", style=style, tag("svg", list()))
@@ -24,42 +25,25 @@ renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
   # This piece of boilerplate converts the expression `expr` into a
   # function called `func`. It's needed for the RStudio IDE's built-in
   # debugger to work properly on the expression.
-  installExprFunction(expr, "func", env, quoted)
+ installExprFunction(expr, "func", env, quoted)
   
-  function() {
-    dataframe <- func()
-
-    mapply(function(col, name) {
-
-      values <- mapply(function(val, i) {
-        list(x = i, y = val)
-      }, col, 1:nrow(dataframe), SIMPLIFY=FALSE, USE.NAMES=FALSE)
-
-      list(key = name, values = values)
-      
-    }, dataframe, names(dataframe), SIMPLIFY=FALSE, USE.NAMES=FALSE)
-  }
-}
-
-# Data frame or list looks like:
-# 
-# {
-#   "Series A": [1,2,3,4,5],
-#   "Series B": [6,7,8,9,10]
-# }
-# 
-# D3 expects:
-# 
-# [
-#   {
-#     key: "Series A",
-#     values: [{x:1,y:1}, {x:2,y:2}, {x:3,y:3}, {x:4,y:4}, {x:5,y:5}]
-#   },
-#   {
-#     key: "Series B",
-#     values: [{x:1,y:6}, {x:2,y:7}, {x:3,y:8}, {x:4,y:9}, {x:5,y:10}]
-#   }
-# ]
-dataFrameToD3 <- function(df=cars) {
-
+#  function() {
+#    dataframe <- func()
+#
+#    mapply(function(col, name) {
+#
+#      values <- mapply(function(val, i) {
+#        list(x = i, y = val)
+#      }, col, 1:nrow(dataframe), SIMPLIFY=FALSE, USE.NAMES=FALSE)
+#
+#      list(key = name, values = values)
+#      
+#    }, dataframe, names(dataframe), SIMPLIFY=FALSE, USE.NAMES=FALSE)
+#  }
+   df = eval(expr, env, NULL)
+   rownames= row.names(df)
+   colnames= colnames(df)
+   cat("colnames");
+   cat(colnames);
+   function() (toJSON(list(rownames=rownames,colnames=colnames,df=df), pretty=TRUE));
 }
