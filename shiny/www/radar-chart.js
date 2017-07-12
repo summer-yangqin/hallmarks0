@@ -398,11 +398,49 @@ var RadarChart = {
     d3.select(id).select('hallmark-chart').remove();
     d3.select(id)
     .append("svg")
+    .attr("class", "hallmark-svg")
     .attr("width", cfg.w)
     .attr("height", cfg.h)
     .datum(d)
     .call(chart);
+    RadarChart.legend(chart, cfg, d)
+  },
+
+  legend: function(chart, cfg, d) {
+     var LegendOptions = ['Smartphone','Tablet'];
+		
+     var svg = d3.select('.hallmark-svg');
+     var legend = svg.append("g")
+	.attr("class", "legend")
+	.attr("height", 100)
+	.attr("width", 200)
+	.attr('transform', 'translate(90,20)') 
+	;
+	//Create colour squares
+	legend.selectAll('rect')
+	  .data(d)
+	  .enter()
+	  .append("rect")
+	  .attr("x", 25)
+	  .attr("y", function(d, i){ return i * 20;})
+	  .attr("width", 10)
+	  .attr("height", 10)
+	  .style("fill", function(d, i){ return cfg.color(i);})
+	  ;
+	//Create text next to squares
+	legend.selectAll('text')
+	  .data(d)
+	  .enter()
+	  .append("text")
+	  .attr("x", 40 )
+	  .attr("y", function(d, i){ return i * 20 + 9;})
+	  .attr("font-size", "11px")
+	  .attr("fill", "#737373")
+	  .text(function(d) { return d.className; })
+	  ;	
   }
+
+
 };
 
 testdata = [
