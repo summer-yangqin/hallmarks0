@@ -1,3 +1,26 @@
+
+function wrap(text) {
+  text.each(function() {
+    var text = d3.select(this),
+        x = text.attr("x"),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1, // ems
+        y = text.attr("y"),
+        dy = parseFloat(text.attr("dy")),
+        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      line.pop();
+      tspan.text(line.join(" "));
+      line = [word];
+      tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+    }
+  });
+}
 var RadarChart = {
   defaultConfig: {
     containerClass: 'radar-chart',
@@ -206,7 +229,8 @@ var RadarChart = {
             })
             .text(function(d) { return d.name; })
             .attr('x', function(d, i){ return d.xOffset+ (cfg.w/2-radius2)+getHorizontalPosition(i, radius2, cfg.factorLegend); })
-            .attr('y', function(d, i){ return d.yOffset+ (cfg.h/2-radius2)+getVerticalPosition(i, radius2, cfg.factorLegend); });
+            .attr('y', function(d, i){ return d.yOffset+ (cfg.h/2-radius2)+getVerticalPosition(i, radius2, cfg.factorLegend); })
+            .call(wrap)
           }
         }
 
@@ -395,19 +419,14 @@ testdata = [
       ];
 
 function showRadar(R) {
-  debugger;
     var data = R.df.map(
             function(elem) {
                 var axes = R.colnames.map( function(colName) {
-                    return { axis: [ colName ], value: elem[colName] }
+                    return { axis: [ colName.replace(/_/g, "\n")], value: elem[colName] }
                 });
             return { className: elem._row, axes: axes };
          });
-  debugger;
-
-  console.log(data);
   var chart = RadarChart.chart();
-
   var
       w = 600,
       h = 600;

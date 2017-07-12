@@ -43,7 +43,5 @@ renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
    df = eval(expr, env, NULL)
    rownames= row.names(df)
    colnames= colnames(df)
-   cat("colnames");
-   cat(colnames);
    function() (toJSON(list(rownames=rownames,colnames=colnames,df=df), pretty=TRUE));
 }
