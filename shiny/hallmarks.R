@@ -45,3 +45,24 @@ renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
    colnames= colnames(df)
    function() (toJSON(list(rownames=rownames,colnames=colnames,df=df), pretty=TRUE));
 }
+
+simpleCap <- function(x) {
+  s <- strsplit(x, " ")[[1]]
+  paste(toupper(substring(s, 1,1)), substring(s, 2),
+      sep="", collapse=" ")
+}
+
+
+cat("loading signatures");
+
+start.time = Sys.time()
+Signatures <- fromJSON("signatures.json")
+end.time = Sys.time()
+time.taken <- end.time - start.time
+cat(time.taken)
+
+Folders = names(Signatures$index)
+Cancers = lapply(Folders, function(e) { simpleCap(gsub("_", " ", e))})
+names(Folders) <- Cancers;
+
+Studies = Cancers

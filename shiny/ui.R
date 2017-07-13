@@ -5,10 +5,18 @@ fluidPage(
       radarChartOutput("radarchart")
     ),
     column(width=3,
-      sliderInput("sinePhase", "Sine phase", -180, 180, 0, step=10,
-        animate=animationOptions(interval=100, loop=TRUE)),
-      sliderInput("sineAmplitude", "Sine amplitude", -2, 2, 1, step=0.1,
-        animate=animationOptions(interval=100, loop=TRUE))
+
+      selectInput("cancer", 
+        label = "Choose a cancer to display",
+        choices = Cancers,
+        selected = Cancers[1]),
+      
+      selectInput("study", 
+        label = "Choose a study to display",
+        choices = Studies,
+        selected = Studies[1])
+      
+
     )
   )
 )
