@@ -53,16 +53,16 @@ simpleCap <- function(x) {
 }
 
 
-cat("loading signatures");
-
+cat("loading signatures\n");
 start.time = Sys.time()
 Signatures <- fromJSON("signatures.json")
 end.time = Sys.time()
 time.taken <- end.time - start.time
 cat(time.taken)
-
 Folders = names(Signatures$index)
 Cancers = lapply(Folders, function(e) { simpleCap(gsub("_", " ", e))})
 names(Folders) <- Cancers;
 
-Studies = Cancers
+cat("loading metadata\n");
+Metadata = read.table("datasets/metadata.txt", sep="\t", header=TRUE, row.names=1)
+Studies = as.list(Metadata$Study_Title)
