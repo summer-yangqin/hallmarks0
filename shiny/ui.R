@@ -7,14 +7,19 @@ fluidPage(
     column(width=3,
 
       selectInput("cancer", 
-        label = "Choose a cancer to display",
+        label = "Cancer",
         choices = Cancers,
         selected = Cancers[1]),
       
       selectInput("study", 
-        label = "Choose a study to display",
+        label = "Study",
         choices = Studies,
-        selected = Studies[1])
+        selected = Studies[1]),
+      
+      selectInput("sample", 
+                  label = "Sample",
+                  choices = Samples,
+                  selected = Samples[1])
       
 
     )

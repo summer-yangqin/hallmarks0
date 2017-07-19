@@ -47,7 +47,7 @@ renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
 }
 
 simpleCap <- function(x) {
-  s <- strsplit(x, " ")[[1]]
+  s <- strsplit(x, " ")
   paste(toupper(substring(s, 1,1)), substring(s, 2),
       sep="", collapse=" ")
 }
@@ -59,10 +59,14 @@ Signatures <- fromJSON("signatures.json")
 end.time = Sys.time()
 time.taken <- end.time - start.time
 cat(time.taken)
-Folders = names(Signatures$index)
-Cancers = lapply(Folders, function(e) { simpleCap(gsub("_", " ", e))})
-names(Folders) <- Cancers;
+
 
 cat("loading metadata\n");
-Metadata = read.table("datasets/metadata.txt", sep="\t", header=TRUE, row.names=1)
-Studies = as.list(Metadata$Study_Title)
+Metadata = read.table("datasets/metadata.txt", sep="\t", header=TRUE, as.is=TRUE, row.names=1)
+
+Cancers = c("All", unique(sort(Metadata$Cancer)))
+Studies = c("All", as.list(Metadata$Study_Title))
+
+SampleData = NULL
+
+Samples = c("N/A")
