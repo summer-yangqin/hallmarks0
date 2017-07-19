@@ -1,5 +1,8 @@
 library(shiny)
-library(jsonlite)
+
+# Unbelivably, we need both. Always fully qualify names
+library(jsonlite) 
+library(RJSONIO)
 
 # To be called from ui.R
 radarChartOutput <- function(inputId, width="100%", height="400px") {
@@ -43,7 +46,7 @@ renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
    df = eval(expr, env, NULL)
    rownames= row.names(df)
    colnames= colnames(df)
-   function() (toJSON(list(rownames=rownames,colnames=colnames,df=df), pretty=TRUE));
+   function() (jsonlite::toJSON(list(rownames=rownames,colnames=colnames,df=df), pretty=TRUE));
 }
 
 simpleCap <- function(x) {
@@ -55,7 +58,7 @@ simpleCap <- function(x) {
 
 cat("loading signatures\n");
 start.time = Sys.time()
-Signatures <- fromJSON("signatures.json")
+Signatures <- RJSONIO::fromJSON("signatures.json")
 end.time = Sys.time()
 time.taken <- end.time - start.time
 cat(time.taken)
