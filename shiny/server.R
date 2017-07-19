@@ -41,7 +41,9 @@ function(input, output, session) {
       filename = m[1,"File"]
       if (filename != "N/A") {
           sampleData <- read.table(paste0("datasets/", filename), header=TRUE, row.names=1, sep="\t");
-          df <- sampleData[input$sample, ];
+          colnames(sampleData) = lapply(colnames(sampleData), simpleCap);
+          df <- rbind(TCGA[input$cancer,], sampleData[input$sample, ])
+          browser()
           output$radarchart <- renderRadarChart({
             # Return a data frame. Each column will be a series in the hallmark radar chart.
              # browser();

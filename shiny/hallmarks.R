@@ -50,7 +50,7 @@ renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
 }
 
 simpleCap <- function(x) {
-  listOfWords <- strsplit(x, "[_ .]")
+  listOfWords <- strsplit(x, "[-_ .]")
   listOfWords = lapply(listOfWords, function(s) {
       paste0(toupper(substring(s, 1,1)), substring(s, 2))
   })
