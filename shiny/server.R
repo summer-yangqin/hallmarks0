@@ -27,7 +27,6 @@ function(input, output, session) {
     # Return a data frame. Each column will be a series in the hallmark radar chart.
       df = TCGA
       if (!is.null(input$cancer) && input$cancer != "All") {
-        browser();
         df <- TCGA[input$cancer,]
       }
 
