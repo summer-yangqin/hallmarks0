@@ -19,8 +19,10 @@ fluidPage(
       selectInput("sample", 
                   label = "Sample",
                   choices = Samples,
-                  selected = Samples[1])
+                  multiple = TRUE,
+                  selected = Samples[1]),
       
+      tags$i("hint: You can select multiple")
 
     )
   )
