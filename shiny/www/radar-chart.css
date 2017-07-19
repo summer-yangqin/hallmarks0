@@ -1,7 +1,12 @@
+.radar-chart .levelFactor {
+  display: none;
+}
+
 .radar-chart .level {
   stroke: grey;
   stroke-width: 0.5;
 }
+
 
 .radar-chart .axis line {
   fill: none;

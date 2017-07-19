@@ -148,7 +148,13 @@ var RadarChart = {
 
         if (cfg.levelTick){
           levelLine
-          .attr('class', 'level')
+          .attr('class', function(levelFactor, i){
+            if (radius == levelFactor) {
+              return "levelFactor"
+            } else {
+              return "level"
+            }
+          })
           .attr('x1', function(levelFactor, i){
             if (radius == levelFactor) {
               return getHorizontalPosition(i, levelFactor);
