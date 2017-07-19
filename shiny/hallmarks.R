@@ -50,21 +50,22 @@ renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
 }
 
 simpleCap <- function(x) {
-  s <- strsplit(x, " ")
-  paste(toupper(substring(s, 1,1)), substring(s, 2),
-      sep="", collapse=" ")
+  listOfWords <- strsplit(x, "[_ .]")
+  listOfWords = lapply(listOfWords, function(s) {
+      paste0(toupper(substring(s, 1,1)), substring(s, 2))
+  })
+  paste(unlist(listOfWords), sep="", collapse=" ")
 }
 
 
-cat("loading signatures\n");
-start.time = Sys.time()
 Signatures <- RJSONIO::fromJSON("signatures.json")
-end.time = Sys.time()
-time.taken <- end.time - start.time
-cat(time.taken)
+TCGA = data.frame();
+for (sig in Signatures$signatures) {
+    TCGA[simpleCap(sig$tissue), simpleCap(sig$hallmark)] =  round(mean( sig$reference$score[sig$reference$labels == 1] ))
+
+}
 
 
-cat("loading metadata\n");
 Metadata = read.table("datasets/metadata.txt", sep="\t", header=TRUE, as.is=TRUE, row.names=1)
 
 Cancers = c("All", unique(sort(Metadata$Cancer)))
