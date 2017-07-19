@@ -20,7 +20,6 @@ binding.renderValue = function(el, data) {
   // values for a line chart from Shiny. The "el" argument is the
   // div for this particular chart.
   
-  showRadar(data);
 
   var $el = $(el);
     
@@ -35,6 +34,8 @@ binding.renderValue = function(el, data) {
       selection: selection
     });
   }
+  d3.select(el).select("svg").remove();
+  showRadar(data);
   
   // Now, the code that'll run every time a value is rendered...
   

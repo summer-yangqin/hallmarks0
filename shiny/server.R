@@ -44,7 +44,7 @@ function(input, output, session) {
           df <- sampleData[input$sample, ];
           output$radarchart <- renderRadarChart({
             # Return a data frame. Each column will be a series in the hallmark radar chart.
-              browser();
+             # browser();
               df
           })
       }
