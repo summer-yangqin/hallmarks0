@@ -1,5 +1,5 @@
 fluidPage(
-  tags$h2("JavaScript output binding example"),
+  tags$h2("Oncology Model Fidelity Score"),
   fluidRow(
     column(width=9,
       radarChartOutput("radarchart")
@@ -22,7 +22,7 @@ fluidPage(
                   multiple = TRUE,
                   selected = Samples[1]),
       
-      tags$i("hint: You can select multiple")
+      tags$i("You can select multiple samples")
 
     )
   )

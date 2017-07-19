@@ -30,23 +30,13 @@ renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
   # debugger to work properly on the expression.
  installExprFunction(expr, "func", env, quoted)
   
-#  function() {
-#    dataframe <- func()
-#
-#    mapply(function(col, name) {
-#
-#      values <- mapply(function(val, i) {
-#        list(x = i, y = val)
-#      }, col, 1:nrow(dataframe), SIMPLIFY=FALSE, USE.NAMES=FALSE)
-#
-#      list(key = name, values = values)
-#      
-#    }, dataframe, names(dataframe), SIMPLIFY=FALSE, USE.NAMES=FALSE)
-#  }
-   df = eval(expr, env, NULL)
-   rownames= row.names(df)
-   colnames= colnames(df)
-   function() (jsonlite::toJSON(list(rownames=rownames,colnames=colnames,df=df), pretty=TRUE));
+  function() {
+    df <- func()
+
+    rownames= row.names(df)
+    colnames= colnames(df)
+    jsonlite::toJSON(list(rownames=rownames,colnames=colnames,df=df), pretty=TRUE)
+  }
 }
 
 simpleCap <- function(x) {
