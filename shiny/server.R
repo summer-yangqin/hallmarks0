@@ -1,8 +1,5 @@
-
-firstTime = TRUE
-
-
 function(input, output, session) {
+  
 
   observeEvent( input$cancer, {
       if (input$cancer != "All") {
@@ -22,12 +19,13 @@ function(input, output, session) {
       }
     }
   })
+  
+  output$radarchart <- renderLineChart({
+    # Return a data frame. Each column will be a series in the line chart.
+    df = TCGA
 
-  output$radarchart <- renderRadarChart({
-    # Return a data frame. Each column will be a series in the hallmark radar chart.
-      df = TCGA
       if (!is.null(input$cancer) && input$cancer != "All") {
-        df <- TCGA[input$cancer,]
+        df <- df[input$cancer,]
       }
 
       if (!is.null(input$sample) && input$sample != "N/A") {
@@ -39,7 +37,10 @@ function(input, output, session) {
             df <- rbind(df, sampleData[input$sample, ])
         }
       }
-      df
       
+    data.frame(
+      colnames = colnames(df),
+      df = t(df)
+    )
   })
 }

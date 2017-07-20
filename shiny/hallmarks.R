@@ -1,7 +1,8 @@
+############################################################################################
+
 library(shiny)
 
-# Unbelivably, we need both. Always fully qualify names
-library(jsonlite) 
+# Don't use (jsonlite) 
 library(RJSONIO)
 
 # To be called from ui.R
@@ -22,21 +23,6 @@ radarChartOutput <- function(inputId, width="100%", height="400px") {
     div(id=inputId, class="hallmark-chart", style=style, tag("svg", list()))
 
   )
-}
-# To be called from server.R
-renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
-  # This piece of boilerplate converts the expression `expr` into a
-  # function called `func`. It's needed for the RStudio IDE's built-in
-  # debugger to work properly on the expression.
- installExprFunction(expr, "func", env, quoted)
-  
-  function() {
-    df <- func()
-
-    rownames= row.names(df)
-    colnames= colnames(df)
-    jsonlite::toJSON(list(rownames=rownames,colnames=colnames,df=df), pretty=TRUE)
-  }
 }
 
 simpleCap <- function(x) {

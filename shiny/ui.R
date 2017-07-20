@@ -1,9 +1,7 @@
 fluidPage(
   tags$h2("Oncology Model Fidelity Score"),
   fluidRow(
-    column(width=9,
-      radarChartOutput("radarchart")
-    ),
+    column(width=9, radarChartOutput("radarchart")),
     column(width=3,
 
       selectInput("cancer", 

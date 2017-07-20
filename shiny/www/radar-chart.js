@@ -465,13 +465,20 @@ testdata = [
       ];
 
 function showRadar(R) {
-    var data = R.df.map(
-            function(elem) {
-                var axes = R.colnames.map( function(colName) {
-                    return { axis: [ colName.replace(/[_\.]/g, "\n")], value: elem[colName] }
-                });
-            return { className: elem._row, axes: axes };
-         });
+    var colnames = R.shift().values;
+    colnames = colnames.map(function(item) { return item.y });
+    var data = R.map( function(item) {
+	     var colname = item.key;
+	     var values = item.values;
+	     var axes = colnames.map(function(colname, i) {
+		colname = colname.replace(/[_\.]/g, " ")
+		var value =  values[i].y
+		return { axis: [ colname], value: value }
+	     });
+             var className = item.key.replace(/^df\./, "")
+	     className = className.replace(/[_\.]/g, " ")
+             return { className: className, axes: axes };
+          });
   var chart = RadarChart.chart();
   var
       w = 600,
