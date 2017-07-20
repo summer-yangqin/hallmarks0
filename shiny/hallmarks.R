@@ -25,6 +25,29 @@ radarChartOutput <- function(inputId, width="100%", height="400px") {
   )
 }
 
+# To be called from server.R
+renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
+  # This piece of boilerplate converts the expression `expr` into a
+  # function called `func`. It's needed for the RStudio IDE's built-in
+  # debugger to work properly on the expression.
+  installExprFunction(expr, "func", env, quoted)
+  
+  function() {
+    dataframe <- func()
+
+    mapply(function(col, name) {
+
+      values <- mapply(function(val, i) {
+        list(x = i, y = val)
+      }, col, 1:nrow(dataframe), SIMPLIFY=FALSE, USE.NAMES=FALSE)
+
+      list(key = name, values = values)
+      
+    }, dataframe, names(dataframe), SIMPLIFY=FALSE, USE.NAMES=FALSE)
+  }
+}
+
+
 simpleCap <- function(x) {
   listOfWords <- strsplit(x, "[-_ .]")
   listOfWords = lapply(listOfWords, function(s) {

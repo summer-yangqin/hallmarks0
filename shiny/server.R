@@ -20,7 +20,7 @@ function(input, output, session) {
     }
   })
   
-  output$radarchart <- renderLineChart({
+  output$radarchart <- renderRadarChart({
     # Return a data frame. Each column will be a series in the line chart.
     df = TCGA
 
