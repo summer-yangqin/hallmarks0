@@ -1,3 +1,11 @@
+#radarchart {
+ width: 800px;
+ height: 800px !important;
+ background-image: url('hallmarks.svg');
+ background-repeat: no-repeat;
+ background-size: 800px 800px;
+}
+
 .radar-chart .levelFactor {
   display: none;
 }

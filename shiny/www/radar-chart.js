@@ -24,7 +24,7 @@ function wrap(text) {
 var RadarChart = {
   defaultConfig: {
     containerClass: 'radar-chart',
-    w: 600,
+    w: 800,
     h: 600,
     factor: 0.95,
     factorLegend: 1,
@@ -402,13 +402,17 @@ var RadarChart = {
     var cfg = chart.config();
 
     d3.select(id).select('hallmark-chart').remove();
-    d3.select(id)
+
+    svg = d3.select(id)
     .append("svg")
     .attr("class", "hallmark-svg")
     .attr("width", cfg.w)
-    .attr("height", cfg.h)
+    .attr("height", cfg.h);
+
+    svg
     .datum(d)
-    .call(chart);
+    .call(chart)
+
     RadarChart.legend(chart, cfg, d)
   },
 
