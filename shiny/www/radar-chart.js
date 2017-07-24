@@ -36,7 +36,7 @@ var RadarChart = {
     radians: 2 * Math.PI,
     color: d3.scale.category10(),
     axisLine: true,
-    axisText: true,
+    axisText: false,
     circles: true,
     radius: 5,
     open: false,
@@ -404,10 +404,18 @@ var RadarChart = {
     d3.select(id).select('hallmark-chart').remove();
 
     svg = d3.select(id)
+    .append("div")
+    .attr("class", "hallmark-chart")
     .append("svg")
     .attr("class", "hallmark-svg")
     .attr("width", cfg.w)
-    .attr("height", cfg.h);
+    .attr("height", cfg.h)
+    // .attr("transform", "translate(165px, -50%) rotate(18,240,240)")
+    .attr("transform", "translate(160,160)") // 160 is the office into the hallmarks graphic svg
+    .append("g")
+    .attr("transform", "rotate(18,240,240)") // 18 is the degrees, 240 is the center of the radar chart
+
+
 
     svg
     .datum(d)
@@ -418,8 +426,9 @@ var RadarChart = {
 
   legend: function(chart, cfg, d) {
      var LegendOptions = ['Smartphone','Tablet'];
+     var svg = d3.select('.legend')
+         .append("svg")
 		
-     var svg = d3.select('.hallmark-svg');
      var legend = svg.append("g")
 	.attr("class", "legend")
 	.attr("height", 100)
@@ -485,8 +494,8 @@ function showRadar(R) {
           });
   var chart = RadarChart.chart();
   var
-      w = 600,
-      h = 800;
+      w = 480,
+      h = 480;
   // console.log(data);
 
 
