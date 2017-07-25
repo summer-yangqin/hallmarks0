@@ -1,7 +1,6 @@
 #radarchart {
  width: 800px;
  height: 800px !important;
- background-image: url('hallmarks.svg');
  background-repeat: no-repeat;
  background-size: 800px 800px;
  position:relative;
@@ -25,7 +24,7 @@
 }
 .radar-chart .axis .legend {
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: 18px;
 }
 .radar-chart .axis .legend.top {
   dy:1em;

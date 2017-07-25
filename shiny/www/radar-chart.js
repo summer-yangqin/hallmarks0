@@ -1,3 +1,23 @@
+hallmarkOrder = [
+    "Evading Growth Suppressors",
+    "Evading Immune Destruction",
+    "Replicative Immortality",
+    "Tumor Promoting Inflammation",
+    "Tissue Invasion and Metastasis",
+    "Sustained Angiogenesis",
+    "Genome Instability",
+    "Resisting Cell Death",
+    "Reprogramming Energy Metabolism",
+    "Sustaining Proliferative Signaling"
+];
+
+hallmarkOrderMap = {};
+
+for (var i = 0; i < hallmarkOrder.length; i++) {
+    var o = hallmarkOrder[i];
+    hallmarkOrderMap[o.toLowerCase()] = i;
+}
+
 
 function wrap(text) {
   text.each(function() {
@@ -26,7 +46,7 @@ var RadarChart = {
     containerClass: 'radar-chart',
     w: 800,
     h: 600,
-    factor: 0.95,
+    factor: 0.85,
     factorLegend: 1,
     levels: 3,
     levelTick: false,
@@ -36,9 +56,10 @@ var RadarChart = {
     radians: 2 * Math.PI,
     color: d3.scale.category10(),
     axisLine: true,
-    axisText: false,
+    axisText: true,
+    zodiac: false,
     circles: true,
-    radius: 5,
+    radius: 3,
     open: false,
     backgroundTooltipColor: "#555",
     backgroundTooltipOpacity: "0.7",
@@ -401,7 +422,10 @@ var RadarChart = {
     var chart = RadarChart.chart().config(options);
     var cfg = chart.config();
 
-    d3.select(id).select('hallmark-chart').remove();
+    if (cfg.zodiac)
+        d3.select(id).attr("background-image", 'hallmarks.svg');
+
+    d3.select(id).select('.hallmark-chart').remove();
 
     svg = d3.select(id)
     .append("div")
@@ -410,11 +434,12 @@ var RadarChart = {
     .attr("class", "hallmark-svg")
     .attr("width", cfg.w)
     .attr("height", cfg.h)
-    // .attr("transform", "translate(165px, -50%) rotate(18,240,240)")
-    .attr("transform", "translate(160,160)") // 160 is the office into the hallmarks graphic svg
-    .append("g")
-    .attr("transform", "rotate(18,240,240)") // 18 is the degrees, 240 is the center of the radar chart
-
+    if (cfg.zodiac) {
+        svg = svg.attr("transform", "translate(160,160)") // 160 is the office into the hallmarks graphic svg
+            .append("g")
+            .attr("transform", "rotate(-18,240,240)") // 18 is the degrees, 240 is the center of the radar chart
+    } else
+        svg.attr("transform", "translate(165, -50%)")
 
 
     svg
@@ -493,10 +518,27 @@ function showRadar(R) {
              return { className: className, axes: axes };
           });
   var chart = RadarChart.chart();
-  var
+  var w,h;
+
+  if (RadarChart.defaultConfig.zodiac) {
       w = 480,
       h = 480;
+  } else {
+      w = 600,
+      h = 800;
+  }
   // console.log(data);
+
+  data.map(function(x) {
+      debugger
+      x.axes.sort(function(a, b) {
+          debugger
+          var aa = hallmarkOrderMap[a.axis[0].toLowerCase()];
+          var ba = hallmarkOrderMap[b.axis[0].toLowerCase()];
+          debugger;
+          return ba - aa;
+      });
+  })
 
 
   RadarChart.defaultConfig.radius = 3;
@@ -533,7 +575,6 @@ return Object.keys(a[0]).map(function(c) {
 function isNumeric(n) {
 return !isNaN(parseFloat(n)) && isFinite(n);
 }
-var Order =[];
 
 function RankNormalize(a) {
 var m = a.length; // m rows
