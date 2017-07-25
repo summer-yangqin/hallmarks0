@@ -422,8 +422,13 @@ var RadarChart = {
     var chart = RadarChart.chart().config(options);
     var cfg = chart.config();
 
-    if (cfg.zodiac)
-        d3.select(id).attr("background-image", 'hallmarks.svg');
+    if (cfg.zodiac) {
+        d3.select(id).attr("class", "radarchart-zodiac");
+        cfg.axisText = false;
+    } else {
+        d3.select(id).attr("class", "radarchart-nozodiac");
+        cfg.axisText = true;
+    }
 
     d3.select(id).select('.hallmark-chart').remove();
 
@@ -439,7 +444,7 @@ var RadarChart = {
             .append("g")
             .attr("transform", "rotate(-18,240,240)") // 18 is the degrees, 240 is the center of the radar chart
     } else
-        svg.attr("transform", "translate(165, -50%)")
+        svg.attr("transform", "translate(165, 50)")
 
 
     svg
@@ -451,11 +456,15 @@ var RadarChart = {
 
   legend: function(chart, cfg, d) {
      var LegendOptions = ['Smartphone','Tablet'];
+     d3.select('.legend-svg').remove();
+
      var svg = d3.select('.legend')
          .append("svg")
+	  .attr("class", "legend-svg")
 		
+
      var legend = svg.append("g")
-	.attr("class", "legend")
+	.attr("class", "legend-g")
 	.attr("height", 100)
 	.attr("width", 200)
 	.attr('transform', 'translate(90,20)') 
@@ -504,6 +513,8 @@ testdata = [
 
 function showRadar(R) {
     var colnames = R.shift().values;
+    var zodiac = R.pop().values[0].y
+
     colnames = colnames.map(function(item) { return item.y });
     var data = R.map( function(item) {
 	     var colname = item.key;
@@ -520,6 +531,8 @@ function showRadar(R) {
   var chart = RadarChart.chart();
   var w,h;
 
+  RadarChart.defaultConfig.zodiac = zodiac;
+
   if (RadarChart.defaultConfig.zodiac) {
       w = 480,
       h = 480;
@@ -530,12 +543,9 @@ function showRadar(R) {
   // console.log(data);
 
   data.map(function(x) {
-      debugger
       x.axes.sort(function(a, b) {
-          debugger
           var aa = hallmarkOrderMap[a.axis[0].toLowerCase()];
           var ba = hallmarkOrderMap[b.axis[0].toLowerCase()];
-          debugger;
           return ba - aa;
       });
   })

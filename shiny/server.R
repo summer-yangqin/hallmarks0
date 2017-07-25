@@ -40,7 +40,8 @@ function(input, output, session) {
       
     data.frame(
       colnames = colnames(df),
-      df = t(df)
+      df = t(df),
+      zodiac = input$zodiac
     )
   })
 }

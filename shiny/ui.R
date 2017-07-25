@@ -22,8 +22,9 @@ fluidPage(
                   multiple = TRUE,
                   selected = Samples[1]),
       
-      tags$i("You can select multiple samples")
+      tags$i("You can select multiple samples"),
 
+      checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL)
     )
   )
 )
