@@ -6,8 +6,8 @@
 
 library(RJSONIO)
 
-# args <- commandArgs(trailingOnly = TRUE)
-args = c("colon_adenocarcinoma", "tpm_matrix_colon_superOrtho_meta.tsv.log_norm", "/tmp/colon.txt")
+args <- commandArgs(trailingOnly = TRUE)
+# args = c("colon_adenocarcinoma", "tpm_matrix_colon_superOrtho_meta.tsv.log_norm", "/tmp/colon.txt")
 
 printf <- function(...) cat(sprintf(...))
 

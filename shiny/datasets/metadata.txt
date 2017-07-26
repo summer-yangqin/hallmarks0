@@ -5,3 +5,4 @@ PMID	Cancer	Study_Title	BioProject	GEO	File
 26585233	Low Grade Glioma	RNA Sequencing of Tumor-Associated Microglia Reveals Ccl5 as a Stromal Chemokine Critical for Neurofibromatosis-1 Glioma Growth	PRJNA275242	GSE65831	N/A
 27149990	Breast  Cancer	Genomic profiling of murine mammary tumors identifies potential personalized drug targets for p53 deficient mammary cancers	PRJNA247955	N/A	N/A
 28191885	Lung Adenocarcinoma	Molecular definition of a metastatic lung cancer state reveals a targetable CD109â€“Janus kinaseâ€“Stat axis	PRJNA329195,PRJNA329195	GSE84447,GSE84448	N/A
+UCSF1	Prostate	West Coast Dream Team			WCDT_Prostate-Aggregate.txt

@@ -60,9 +60,14 @@ simpleCap <- function(x) {
 Signatures <- RJSONIO::fromJSON("signatures.json")
 TCGA = data.frame();
 for (sig in Signatures$signatures) {
-    TCGA[simpleCap(sig$tissue), simpleCap(sig$hallmark)] =  round(mean( sig$reference$score[sig$reference$labels == 1] ))
-
+    cat(sig$tissue)
+    cat(sig$cancer)
+    m = round(mean( sig$reference$score[sig$reference$labels == 1] ))
+    TCGA[simpleCap(sig$tissue), simpleCap(sig$hallmark)] = m
+    TCGA[simpleCap(sig$cancer), simpleCap(sig$hallmark)] = m
+    
 }
+
 
 
 Metadata = read.table("datasets/metadata.txt", sep="\t", header=TRUE, as.is=TRUE, row.names=1)
