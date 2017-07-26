@@ -2,6 +2,7 @@
 
 import sys
 import csv
+import pdb
 
 def read_input(name):
     reader = csv.reader(open(name, "rb"), delimiter='\t')

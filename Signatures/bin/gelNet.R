@@ -30,7 +30,8 @@ cat("\n")
 #   arg[3] A is the Adjacency matric
 #   arg[4] output_model is the name of the output file
 #   arg[5] hallmark is the hallmark annotation
-#   arg[6] tisuse is the tissue annotation
+#   arg[6] is the healthy tissue annotation
+#   arg[7] is the cancer tissue annotation
 
 cat(args[1]);
 X <- read.table(args[1], header=TRUE, row.names=1)
@@ -44,6 +45,7 @@ A <- read.table(args[3], header=TRUE, row.names=1);
 output_model = args[4]
 hallmark = args[5]
 tissue = args[6]
+cancer = args[7]
 genes <- row.names(A)
 L <- adj2nlapl(A)
 X <- X[,genes]
@@ -62,6 +64,7 @@ model$w = weights;
 model$numberOfGenes = length(weights);
 model$hallmark = hallmark;
 model$tissue = tissue;
+model$cancer = cancer;
 
 genes = labels(model$w);
 XX = X[,genes];

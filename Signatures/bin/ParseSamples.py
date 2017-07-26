@@ -7,6 +7,13 @@ from __future__ import print_function
 import re, sys
 
 
+def mangle(specific):
+    specific = specific.replace(" ", "_")
+    specific = specific.replace("|", "_or_")
+    specific = specific.replace("__", "_")
+    return specific
+
+    
 
 def parseExpr(e):
     e = e.replace("_", " ");
@@ -34,7 +41,10 @@ def processLine(phe, general):
         for e in pat[general]:
             if re.search(e, phe, re.IGNORECASE):
                 sample = phe.split("\t")[0];
-                specific = general + "." + pat["cancer"]
+                if general == "TCGA":
+                    specific = general + "." + mangle(pat["cancer"])
+                else:
+                    specific = general + "." + mangle(pat["base"])
                 if not specific in samplelists:
                     samplelists[specific] = set();
                 samplelists[specific].add(sample)
@@ -42,6 +52,11 @@ def processLine(phe, general):
 for general  in ["GTEX", "TCGA"]:
     for phe in open("ReferenceData/" + general + ".phenotype"):
         processLine(phe, general)
+
+with open("lists/modellist", "w") as f:
+    for pat  in pats:
+        f.write(mangle(pat["base"]) + "\t" + mangle(pat["cancer"]) + "\n")
+
 
 for specific, samplelist in samplelists.iteritems():
     with open("lists/"+specific, "w") as f:

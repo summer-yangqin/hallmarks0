@@ -2,7 +2,6 @@
 
 import re
 import sys
-import pdb
 
 # Slice data from a tsv
 
