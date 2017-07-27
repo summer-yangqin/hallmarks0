@@ -5,6 +5,7 @@ See http://oncologymodels.org/AACR-2017-poster.pdf for full text
 
 BACKGROUND: How can we compare animal models (GEMM, PDX) to human cancer?
 Animal models remain a cornerstone of research efforts in Oncology to model the complexity of cancer progression and to discover new therapeutic approaches to disease management. With the advent of new genomic manipulation techniques such as CRISPR, and advances in mouse modeling with genetically engineered mouse models (GEMM) and patient-derived xenografts (PDX), we can expect the development of novel and powerful animal models in the near future. As part of the NCI Oncology Model Forum Project, we are developing a new scoring system called the Oncology Model Fidelity Scores (OMF score), which allow researchers and clinicians to compare animal models and select those most suited for the question at hand, whether in basic science, for translational research, or within clinical applications.
+
 METHODS:
 The formalism and tools we are developing for the analysis of mouse models and other model organisms are based on the Hallmarks of Cancer6,7 and therapeutic pathways as well as The Cancer Genome Atlas5 (TCGA), GTEX9 and other comprehensive systems. The scoring system begins with RNASEQ expression data analysis, and is designed for use in mapping animal models both to individual patients and to a TCGA cohort. We are applying this scoring system to mouse models1,3,4,10 available through NCI’s Oncology Model Forum. Our goal is to understand how these animal models compare to human cancers represented by TCGA data. We have normalized the scores to the 0-1000 range, where scores less than 500 indicate gene signatures that correlate with tissue-specific normal tissue, and scores greater than 500 are indicative of gene signatures that correlate with tissue-specific cancer tissue. The Hallmark-based technique conveys an overall understanding of the constitutive pathway-based gene sets that contribute to cancer.
 Deriving Scores
@@ -21,8 +22,19 @@ CONCLUSIONS:
 Animal models are central to our basic and translational research mission to treat and cure cancer, but we should not expect these models to recapitulate all aspects of human cancer. With the first comprehensive catalog of gene expression in healthy tissue and cancer tissues from GTEX and TCGA, we now have a foundation to create metrics such as the Oncology Model Fidelity Score that will enable us to better understand the benefits and limitations of individual preclinical models. Ultimately, the OMF Score will help to advance patient care through efficient identification and validation of animal models for a variety of applications, from pre-clinical testing of novel therapeutics to the use of patient-specific animal models.
 
 
-Source Code:
+SOURCE CODE: 
+
+The general flow is: 
+first assemble the lists of genes in genelists, 
+then create the signatures from  the gene lists and 
+then create the scores from the signatues
+finally use the R shiny web app framework to display  the signatures
+
 
 genelists folder contains the various ways we are experimenting to generate gene list
 
+Signatures creates the signatures
 
+Scores is where scores are made from scores
+
+shiny web app

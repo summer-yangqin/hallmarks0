@@ -57,7 +57,7 @@ simpleCap <- function(x) {
 }
 
 
-Signatures <- RJSONIO::fromJSON("signatures.json")
+Signatures <- RJSONIO::fromJSON("../Signatures/signatures")
 TCGA = data.frame();
 for (sig in Signatures$signatures) {
     cat(sig$tissue)
