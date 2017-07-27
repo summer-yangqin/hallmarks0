@@ -6,6 +6,7 @@ signatures : lists/modellist  ../genelists/GO/data/hallmarks.genes
 	Rscript bin/processSigs.R Models/*.signature
 
 lists/modellist : step1 MapControlToDiseaseTissue
+	mkdir -p lists
 	python bin/ParseSamples.py
 
 step1 ReferenceData/NETWORK ReferenceData/GTEX.RSEM ReferenceData/GTEX.phenotype ReferenceData/TCGA.RSEM ReferenceData/TCGA.phenotype :
