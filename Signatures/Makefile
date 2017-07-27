@@ -1,11 +1,11 @@
 
 
 
-signatures : lists/modellist 
-	bash  bin/buildSignatures.sh
+signatures : lists/modellist  ../genelists/GO/data/hallmarks.genes
+	bash  bin/buildSignatures.sh ../genelists/GO/data/hallmarks.genes
 	Rscript bin/processSigs.R Models/*.signature
 
-lists/modellist : step1 
+lists/modellist : step1 MapControlToDiseaseTissue
 	python bin/ParseSamples.py
 
 step1 ReferenceData/NETWORK ReferenceData/GTEX.RSEM ReferenceData/GTEX.phenotype ReferenceData/TCGA.RSEM ReferenceData/TCGA.phenotype :
