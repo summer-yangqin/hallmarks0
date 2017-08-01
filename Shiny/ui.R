@@ -1,8 +1,12 @@
+library(shiny)
+library(rhandsontable)
+
 fluidPage(
   tags$h2("Oncology Model Fidelity Score"),
   fluidRow(
     column(width=9, 
         tags$div(class="legend", tags$p("Legend:")),
+        rHandsontableOutput("hot", height = 350),
         radarChartOutput("radarchart")),
     column(width=3,
 
@@ -24,7 +28,9 @@ fluidPage(
       
       tags$i("You can select multiple samples"),
 
-      checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL)
+      checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL),
+      bookmarkButton()
     )
   )
 )
+

@@ -57,15 +57,13 @@ simpleCap <- function(x) {
 }
 
 
-Signatures <- RJSONIO::fromJSON("../Signatures/signatures")
+# Signatures <- RJSONIO::fromJSON("../Signatures/signatures")
+Signatures <- RJSONIO::fromJSON("signatures")
 TCGA = data.frame();
 for (sig in Signatures$signatures) {
-    cat(sig$tissue)
-    cat(sig$cancer)
     m = round(mean( sig$reference$score[sig$reference$labels == 1] ))
     TCGA[simpleCap(sig$tissue), simpleCap(sig$hallmark)] = m
     TCGA[simpleCap(sig$cancer), simpleCap(sig$hallmark)] = m
-    
 }
 
 
@@ -78,3 +76,6 @@ Studies = c("All", as.list(Metadata$Study_Title))
 SampleData = NULL
 
 Samples = c("N/A")
+
+enableBookmarking(store = "url")
+
