@@ -1,26 +1,28 @@
-read.table.preferred = function(name)  {
+read.table.hot = function(name)  {
     table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
-
-    
+    rownames(table) = table$Biosample.ID
+    cbind(show=rep(FALSE, dim(table)[1]), table)
 }
 
 # Cross-session reactive file reader. all sessions DB and this reader (so cool!)
 # This may need to be sped up
-DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.preferred)
+DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 
 
 function(input, output, session) {
+    setBookmarkExclude(c("hot"))
 
-#  onBookmark(function(state) {
-#    vals$savedTime <- Sys.time()
-#    # state is a mutable reference object, and we can add arbitrary values
-#    # to it.
-#    state$values$time <- vals$savedTime
-#  })
-#
-#  onRestore(function(state) {
-#    vals$savedTime <- state$values$time
-#  })
+  onBookmark(function(state) {
+    state$values$savedTime <- Sys.time()
+    # state is a mutable reference object, and we can add arbitrary values
+    # to it.
+    state
+  })
+
+  onRestore(function(state) {
+     browser()
+     cat(state$values$savedTime)
+  })
   
 
   observeEvent( input$cancer, {
@@ -93,7 +95,27 @@ function(input, output, session) {
 
   output$hot <- renderRHandsontable({
     if (!is.null(DB))
-      rhandsontable(DB(), useTypes = TRUE, stretchH = "all", filter = TRUE)
+      db = DB()
+      browser()
+      rhandsontable(db, colnames(db), rownames(db),
+                    useTypes = TRUE, stretchH = "all", filter = TRUE, selectCallback=TRUE) %>%
+
+          hot_table( fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE)
+  })
+
+  output$selected=renderPrint({
+    cat('Selected Row:',input$hot_select$select$r)
+    cat('\nSelected Column:',input$hot_select$select$c)
+    cat('\nSelected Cell Value:',
+        input$hot_select$data[[
+          input$hot_select$select$r]][[input$hot_select$select$c]])
+    cat('\nSelected Range: R',input$hot_select$select$r,
+        'C',input$hot_select$select$c,':R',input$hot_select$select$r2,
+        'C',input$hot_select$select$c2,sep="")
+    cat('\nChanged Cell Row Column:',input$hot$changes$changes[[1]][[1]],
+        input$hot$changes$changes[[1]][[2]])    
+    cat('\nChanged Cell Old Value:',input$hot$changes$changes[[1]][[3]])
+    cat('\nChanged Cell New Value:',input$hot$changes$changes[[1]][[4]])
   })
 }
 

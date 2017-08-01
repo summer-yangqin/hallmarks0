@@ -1,5 +1,4 @@
 library(shiny)
-library(rhandsontable)
 
 fluidPage(
   tags$h2("Oncology Model Fidelity Score"),
@@ -7,6 +6,7 @@ fluidPage(
     column(width=9, 
         tags$div(class="legend", tags$p("Legend:")),
         rHandsontableOutput("hot", height = 350),
+        verbatimTextOutput('selected'),
         radarChartOutput("radarchart")),
     column(width=3,
 
