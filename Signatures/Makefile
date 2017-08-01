@@ -1,8 +1,8 @@
 
 
 
-signatures : lists/modellist  ../genelists/GO/data/hallmarks.genes
-	bash  ../bin/buildSignatures.sh ../genelists/GO/data/hallmarks.genes
+signatures : lists/modellist  ../GeneLists/data/hallmarks.genes
+	bash  ../bin/buildSignatures.sh  ../GeneLists/data/hallmarks.genes
 	Rscript ../bin/processSigs.R Models/*.signature
 
 lists/modellist : step1 MapControlToDiseaseTissue
