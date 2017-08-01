@@ -2203,4 +2203,500 @@ UniProtKB	Q8IZQ8	-	MYOCD	9606	-	GO:0035886	vascular smooth muscle cell different
 UniProtKB	Q8IZQ8	-	MYOCD	9606	-	GO:0097070	ductus arteriosus closure	GO_REF:0000107	IEA	UniProtKB:Q8VIM5|ensembl:ENSMUSP00000104335	Process	20170722	Ensembl
 UniProtKB	Q8N119	-	MMP21	9606	-	GO:0060976	coronary vasculature development	GO_REF:0000107	IEA	UniProtKB:Q8K3F2|ensembl:ENSMUSP00000033278	Process	20170722	Ensembl
 UniProtKB	Q8N1I0	-	DOCK4	9606	-	GO:1904694	negative regulation of vascular smooth muscle contraction	PMID:22158624	IMP	-	Process	20150929	BHF-UCL
-UniPro
+UniProtKB	Q8N264	-	ARHGAP24	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q8N302	-	AGGF1	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q8N302	-	AGGF1	9606	-	GO:0001570	vasculogenesis	PMID:15905966	TAS	-	Process	20051122	UniProt
+UniProtKB	Q8N302	-	AGGF1	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:14961121	IDA	-	Process	20051122	UniProt
+UniProtKB	Q8N335	-	GPD1L	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	PMID:17967977	IMP	-	Process	20121220	BHF-UCL
+UniProtKB	Q8N335	-	GPD1L	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	PMID:19666841	IMP	-	Process	20121220	BHF-UCL
+UniProtKB	Q8N3E9	-	PLCD3	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR028406	Process	20170722	InterPro
+UniProtKB	Q8N3E9	-	PLCD3	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q8K2J0|ensembl:ENSMUSP00000099366	Process	20170722	Ensembl
+UniProtKB	Q8N3E9	-	PLCD3	9606	-	GO:0060716	labyrinthine layer blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q8K2J0|ensembl:ENSMUSP00000099366	Process	20170722	Ensembl
+UniProtKB	Q8N3Y1	-	FBXW8	9606	-	GO:0060716	labyrinthine layer blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q8BIA4|ensembl:ENSMUSP00000047012	Process	20170722	Ensembl
+UniProtKB	Q8N6M6	-	AOPEP	9606	-	GO:0002003	angiotensin maturation	Reactome:R-HSA-2022377	TAS	-	Process	20170526	Reactome
+UniProtKB	Q8N6P3	-	-	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR028843	Process	20170722	InterPro
+UniProtKB	Q8N6T7	-	SIRT6	9606	-	GO:1905555	positive regulation blood vessel branching	PMID:23201774	IMP	-	Process	20161012	BHF-UCL
+UniProtKB	Q8N8U9	-	BMPER	9606	-	GO:0002043	blood vessel endothelial cell proliferation involved in sprouting angiogenesis	PMID:18787191	IDA	-	Process	20100520	BHF-UCL
+UniProtKB	Q8NCM8	-	DYNC2H1	9606	-	GO:0060976	coronary vasculature development	GO_REF:0000107	IEA	UniProtKB:Q45VK7|ensembl:ENSMUSP00000120007	Process	20170722	Ensembl
+UniProtKB	Q8NFT0	-	-	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR029586	Process	20170722	InterPro
+UniProtKB	Q8NFT1	-	-	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR029586	Process	20170722	InterPro
+UniProtKB	Q8NI99	-	ANGPTL6	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q8TAT2	-	FGFBP3	9606	-	GO:0043117	positive regulation of vascular permeability	PMID:18669637	IDA	-	Process	20091016	MGI
+UniProtKB	Q8TAX0	-	OSR1	9606	-	GO:0072239	metanephric glomerulus vasculature development	GO_REF:0000024	ISS	UniProtKB:Q9WVG7	Process	20110405	UniProt
+UniProtKB	Q8TAX0	-	OSR1	9606	-	GO:0072239	metanephric glomerulus vasculature development	GO_REF:0000107	IEA	UniProtKB:Q9WVG7|ensembl:ENSMUSP00000055486	Process	20170722	Ensembl
+UniProtKB	Q8TB73	-	NDNF	9606	-	GO:0001525	angiogenesis	PMID:24706764	IDA	-	Process	20150918	UniProt
+UniProtKB	Q8TB73	-	NDNF	9606	-	GO:0061042	vascular wound healing	GO_REF:0000024	ISS	UniProtKB:Q8C119	Process	20150918	UniProt
+UniProtKB	Q8TB73	-	NDNF	9606	-	GO:0061042	vascular wound healing	GO_REF:0000107	IEA	UniProtKB:Q8C119|ensembl:ENSMUSP00000051297	Process	20170722	Ensembl
+UniProtKB	Q8TD43	-	TRPM4	9606	-	GO:0042310	vasoconstriction	GO_REF:0000002	IEA	InterPro:IPR029581	Process	20170722	InterPro
+UniProtKB	Q8TD43	-	TRPM4	9606	-	GO:0045907	positive regulation of vasoconstriction	GO_REF:0000024	ISS	UniProtKB:Q9ESQ5	Process	20160322	BHF-UCL
+UniProtKB	Q8TE57	-	ADAMTS16	9606	-	GO:0003073	regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:D3ZLL7|ensembl:ENSRNOP00000022790	Process	20170722	Ensembl
+UniProtKB	Q8WUF5	-	PPP1R13L	9606	-	GO:0060048	cardiac muscle contraction	GO_REF:0000107	IEA	UniProtKB:Q5I1X5|ensembl:ENSMUSP00000047839	Process	20170722	Ensembl
+UniProtKB	Q8WUI4	-	HDAC7	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q8C2B3|ensembl:ENSMUSP00000112110	Process	20170722	Ensembl
+UniProtKB	Q8WUI4	-	HDAC7	9606	-	GO:0090050	positive regulation of cell migration involved in sprouting angiogenesis	PMID:19351956	IMP	-	Process	20090907	BHF-UCL
+UniProtKB	Q8WW38	-	ZFPM2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q8CCH7|ensembl:ENSMUSP00000051335	Process	20170722	Ensembl
+UniProtKB	Q8WWQ8	-	STAB2	9606	-	GO:0001525	angiogenesis	PMID:12077138	NAS	-	Process	20050308	UniProt
+UniProtKB	Q8WZ42	-	TTN	9606	-	GO:0060048	cardiac muscle contraction	PMID:11846417	IMP	-	Process	20120927	BHF-UCL
+UniProtKB	Q8WZ75	-	ROBO4	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q8WZ75	-	ROBO4	9606	-	GO:0001525	angiogenesis	PMID:15849270	IGI	UniProtKB:Q71B05	Process	20170306	UniProt
+UniProtKB	Q92481	-	TFAP2B	9606	-	GO:0035909	aorta morphogenesis	GO_REF:0000024	ISS	UniProtKB:Q61313	Process	20110909	UniProt
+UniProtKB	Q92481	-	TFAP2B	9606	-	GO:0035909	aorta morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q61313|ensembl:ENSMUSP00000027059	Process	20170722	Ensembl
+UniProtKB	Q92481	-	TFAP2B	9606	-	GO:0097070	ductus arteriosus closure	GO_REF:0000024	ISS	UniProtKB:Q61313	Process	20110909	UniProt
+UniProtKB	Q92481	-	TFAP2B	9606	-	GO:0097070	ductus arteriosus closure	GO_REF:0000107	IEA	UniProtKB:Q61313|ensembl:ENSMUSP00000027059	Process	20170722	Ensembl
+UniProtKB	Q92629	-	SGCD	9606	-	GO:0060047	heart contraction	GO_REF:0000033	IBA	PANTHER:PTN000986439	Process	20141029	GO_Central
+UniProtKB	Q92736	-	RYR2	9606	-	GO:0060048	cardiac muscle contraction	PMID:10830164	IMP	-	Process	20090203	BHF-UCL
+UniProtKB	Q92736	-	RYR2	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	GO_REF:0000024	ISS	UniProtKB:E9Q401	Process	20120620	BHF-UCL
+UniProtKB	Q92736	-	RYR2	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	GO_REF:0000107	IEA	UniProtKB:E9Q401|ensembl:ENSMUSP00000021750	Process	20170722	Ensembl
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0001945	lymph vessel development	GO_REF:0000107	IEA	UniProtKB:P48437|ensembl:ENSMUSP00000135703	Process	20170722	Ensembl
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0001946	lymphangiogenesis	PMID:12412020	IDA	-	Process	20090818	BHF-UCL
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0048845	venous blood vessel morphogenesis	GO_REF:0000024	ISS	UniProtKB:P48437	Process	20090120	BHF-UCL
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0048845	venous blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:P48437|ensembl:ENSMUSP00000135703	Process	20170722	Ensembl
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0060414	aorta smooth muscle tissue morphogenesis	GO_REF:0000024	ISS	UniProtKB:P48437	Process	20090226	BHF-UCL
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0060414	aorta smooth muscle tissue morphogenesis	GO_REF:0000107	IEA	UniProtKB:P48437|ensembl:ENSMUSP00000135703	Process	20170722	Ensembl
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0060836	lymphatic endothelial cell differentiation	GO_REF:0000107	IEA	UniProtKB:P48437|ensembl:ENSMUSP00000135703	Process	20170722	Ensembl
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0060836	lymphatic endothelial cell differentiation	PMID:12198161	IDA	-	Process	20090813	BHF-UCL
+UniProtKB	Q92786	-	PROX1	9606	-	GO:0060849	regulation of transcription involved in lymphatic endothelial cell fate commitment	PMID:18815287	IMP	-	Process	20090820	BHF-UCL
+UniProtKB	Q92819	-	HAS2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000024	ISS	UniProtKB:P70312	Process	20130909	UniProt
+UniProtKB	Q92819	-	HAS2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:P70312|ensembl:ENSMUSP00000062212	Process	20170722	Ensembl
+UniProtKB	Q92823	-	NRCAM	9606	-	GO:0001525	angiogenesis	PMID:11866539	IEP	-	Process	20110330	UniProt
+UniProtKB	Q92824	-	PCSK5	9606	-	GO:0002001	renin secretion into blood stream	PMID:8901832	IEP	-	Process	20080616	BHF-UCL
+UniProtKB	Q92824	-	PCSK5	9606	-	GO:0060976	coronary vasculature development	GO_REF:0000107	IEA	UniProtKB:Q04592|ensembl:ENSMUSP00000025618	Process	20170722	Ensembl
+UniProtKB	Q92826	-	HOXB13	9606	-	GO:0001525	angiogenesis	PMID:17972163	IEP	-	Process	20100323	UniProt
+UniProtKB	Q92847	-	GHSR	9606	-	GO:1903672	positive regulation of sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:O08725|ensembl:ENSRNOP00000038418	Process	20170722	Ensembl
+UniProtKB	Q92908	-	GATA6	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:21127043	IDA	-	Process	20101223	UniProt
+UniProtKB	Q92908	-	GATA6	9606	-	GO:0060947	cardiac vascular smooth muscle cell differentiation	PMID:11889139	IMP	-	Process	20110106	UniProt
+UniProtKB	Q92908	-	GATA6	9606	-	GO:0060947	cardiac vascular smooth muscle cell differentiation	PMID:12615657	IMP	-	Process	20110106	UniProt
+UniProtKB	Q92990	-	GLMN	9606	-	GO:0001570	vasculogenesis	PMID:11845407	IMP	-	Process	20040820	UniProt
+UniProtKB	Q969H8	-	MYDGF	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q969H8	-	MYDGF	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9CPT4|ensembl:ENSMUSP00000019723	Process	20170722	Ensembl
+UniProtKB	Q969H8	-	MYDGF	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:25581518	IDA	-	Process	20150123	UniProt
+UniProtKB	Q96AV8	-	E2F7	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q6S7F2|ensembl:ENSMUSP00000073453	Process	20170722	Ensembl
+UniProtKB	Q96AV8	-	E2F7	9606	-	GO:0002040	sprouting angiogenesis	PMID:22903062	IMP	-	Process	20121102	UniProt
+UniProtKB	Q96BF3	-	TMIGD2	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:22419821	IMP	-	Process	20130205	CACAO
+UniProtKB	Q96BN8	-	OTULIN	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q96BN8	-	OTULIN	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q3UCV8	Process	20130614	UniProt
+UniProtKB	Q96BN8	-	OTULIN	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q3UCV8|ensembl:ENSMUSP00000057893	Process	20170722	Ensembl
+UniProtKB	Q96E22	-	NUS1	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q96EB6	-	SIRT1	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q923E4|ensembl:ENSMUSP00000112595	Process	20170722	Ensembl
+UniProtKB	Q96EB6	-	SIRT1	9606	-	GO:0001525	angiogenesis	PMID:20620956	IDA	-	Process	20111017	UniProt
+UniProtKB	Q96EB6	-	SIRT1	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:24048733	IMP	-	Process	20160212	UniProt
+UniProtKB	Q96GU8	-	NRP2	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR027143	Process	20170722	InterPro
+UniProtKB	Q96HF1	-	SFRP2	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000024	ISS	UniProtKB:P97299	Process	20100819	BHF-UCL
+UniProtKB	Q96HF1	-	SFRP2	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:P97299|ensembl:ENSMUSP00000029625	Process	20170722	Ensembl
+UniProtKB	Q96HF1	-	SFRP2	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000024	ISS	UniProtKB:P97299	Process	20100819	BHF-UCL
+UniProtKB	Q96HF1	-	SFRP2	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:P97299|ensembl:ENSMUSP00000029625	Process	20170722	Ensembl
+UniProtKB	Q96I87	-	PKNOX1	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:O70477|ensembl:ENSMUSP00000135804	Process	20170722	Ensembl
+UniProtKB	Q96LD1	-	SGCZ	9606	-	GO:0060047	heart contraction	GO_REF:0000033	IBA	PANTHER:PTN000986439	Process	20141029	GO_Central
+UniProtKB	Q96LR9	-	APOLD1	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q96LR9	-	APOLD1	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q6B959|ensembl:ENSRNOP00000010289	Process	20170722	Ensembl
+UniProtKB	Q96MT3	-	PRICKLE1	9606	-	GO:0035904	aorta development	GO_REF:0000107	IEA	UniProtKB:Q3U5C7|ensembl:ENSMUSP00000104878	Process	20170722	Ensembl
+UniProtKB	Q96MT3	-	PRICKLE1	9606	-	GO:0060976	coronary vasculature development	GO_REF:0000107	IEA	UniProtKB:Q3U5C7|ensembl:ENSMUSP00000104878	Process	20170722	Ensembl
+UniProtKB	Q96PD4	-	IL17F	9606	-	GO:0016525	negative regulation of angiogenesis	PMID:11591732	IDA	-	Process	20040723	UniProt
+UniProtKB	Q96PE1	-	ADGRA2	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q96PE1	-	ADGRA2	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q91ZV8|ensembl:ENSMUSP00000033876	Process	20170722	Ensembl
+UniProtKB	Q96PE1	-	ADGRA2	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q91ZV8	Process	20101213	UniProt
+UniProtKB	Q96PE1	-	ADGRA2	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q91ZV8|ensembl:ENSMUSP00000033876	Process	20170722	Ensembl
+UniProtKB	Q96PH1	-	NOX5	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q96PH1	UniProtKB:Q96PH1-4	NOX5	9606	-	GO:0001525	angiogenesis	PMID:17275676	IDA	-	Process	20110308	UniProt
+UniProtKB	Q96PH1	UniProtKB:Q96PH1-5	NOX5	9606	-	GO:0001525	angiogenesis	PMID:17275676	IDA	-	Process	20110308	UniProt
+UniProtKB	Q96PU5	-	NEDD4L	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	PMID:22879586	ISS	UniProtKB:F1LRN8	Process	20130722	BHF-UCL
+UniProtKB	Q96PU8	-	QKI	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QYS9|ensembl:ENSMUSP00000095025	Process	20170722	Ensembl
+UniProtKB	Q96RK4	-	BBS4	9606	-	GO:0003085	negative regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:Q8C1Z7|ensembl:ENSMUSP00000026265	Process	20170722	Ensembl
+UniProtKB	Q96S42	-	NODAL	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:P43021|ensembl:ENSMUSP00000039653	Process	20170722	Ensembl
+UniProtKB	Q96S42	-	NODAL	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:21116837	IMP	-	Process	20120521	BHF-UCL
+UniProtKB	Q96S79	-	RASL10B	9606	-	GO:0003050	regulation of systemic arterial blood pressure by atrial natriuretic peptide	GO_REF:0000024	ISS	UniProtKB:Q5SSG5	Process	20120717	UniProt
+UniProtKB	Q96S79	-	RASL10B	9606	-	GO:0003050	regulation of systemic arterial blood pressure by atrial natriuretic peptide	GO_REF:0000107	IEA	UniProtKB:Q5SSG5|ensembl:ENSMUSP00000132696	Process	20170722	Ensembl
+UniProtKB	Q96T37	-	RBM15	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q0VBL3|ensembl:ENSMUSP00000054424	Process	20170722	Ensembl
+UniProtKB	Q96T37	-	RBM15	9606	-	GO:0060674	placenta blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q0VBL3|ensembl:ENSMUSP00000054424	Process	20170722	Ensembl
+UniProtKB	Q96T49	-	PPP1R16B	9606	-	GO:1903589	positive regulation of blood vessel endothelial cell proliferation involved in sprouting angiogenesis	PMID:25007873	IMP	-	Process	20141124	GO_Central
+UniProtKB	Q96T52	-	IMMP2L	9606	-	GO:0061300	cerebellum vasculature development	GO_REF:0000107	IEA	UniProtKB:Q8BPT6|ensembl:ENSMUSP00000118779	Process	20170722	Ensembl
+UniProtKB	Q96TA1	-	FAM129B	9606	-	GO:0016525	negative regulation of angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q8CCV7	Process	20170216	UniProt
+UniProtKB	Q99466	-	NOTCH4	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000024	ISS	UniProtKB:P31695	Process	20041006	UniProt
+UniProtKB	Q99502	-	EYA1	9606	-	GO:0035909	aorta morphogenesis	GO_REF:0000107	IEA	UniProtKB:P97767|ensembl:ENSMUSP00000027066	Process	20170722	Ensembl
+UniProtKB	Q99527	-	GPER1	9606	-	GO:0097755	positive regulation of blood vessel diameter	GO_REF:0000024	ISS	UniProtKB:O08878	Process	20130823	UniProt
+UniProtKB	Q99542	-	MMP19	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q99571	-	P2RX4	9606	-	GO:0008217	regulation of blood pressure	PMID:11606481	IMP	-	Process	20080609	BHF-UCL
+UniProtKB	Q99571	-	P2RX4	9606	-	GO:0008217	regulation of blood pressure	PMID:15130891	IMP	-	Process	20080609	BHF-UCL
+UniProtKB	Q99593	-	TBX5	9606	-	GO:0060980	cell migration involved in coronary vasculogenesis	PMID:20299672	TAS	-	Process	20100510	DFLAT
+UniProtKB	Q99626	-	CDX2	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:P43241|ensembl:ENSMUSP00000031650	Process	20170722	Ensembl
+UniProtKB	Q99697	-	PITX2	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:P97474|ensembl:ENSMUSP00000047359	Process	20170722	Ensembl
+UniProtKB	Q99697	-	PITX2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:P97474|ensembl:ENSMUSP00000047359	Process	20170722	Ensembl
+UniProtKB	Q99697	-	PITX2	9606	-	GO:0003350	pulmonary myocardium development	GO_REF:0000107	IEA	UniProtKB:P97474|ensembl:ENSMUSP00000047359	Process	20170722	Ensembl
+UniProtKB	Q99697	-	PITX2	9606	-	GO:0035886	vascular smooth muscle cell differentiation	GO_REF:0000107	IEA	UniProtKB:P97474|ensembl:ENSMUSP00000047359	Process	20170722	Ensembl
+UniProtKB	Q99697	-	PITX2	9606	-	GO:0060577	pulmonary vein morphogenesis	GO_REF:0000107	IEA	UniProtKB:P97474|ensembl:ENSMUSP00000047359	Process	20170722	Ensembl
+UniProtKB	Q99697	-	PITX2	9606	-	GO:0060578	superior vena cava morphogenesis	GO_REF:0000107	IEA	UniProtKB:P97474|ensembl:ENSMUSP00000047359	Process	20170722	Ensembl
+UniProtKB	Q99717	-	SMAD5	9606	-	GO:0060048	cardiac muscle contraction	GO_REF:0000107	IEA	UniProtKB:P97454|ensembl:ENSMUSP00000065798	Process	20170722	Ensembl
+UniProtKB	Q99759	-	MAP3K3	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q61084|ensembl:ENSMUSP00000002044	Process	20170722	Ensembl
+UniProtKB	Q99801	-	NKX3-1	9606	-	GO:0035907	dorsal aorta development	GO_REF:0000107	IEA	UniProtKB:P97436|ensembl:ENSMUSP00000022646	Process	20170722	Ensembl
+UniProtKB	Q99814	-	EPAS1	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q99814	-	EPAS1	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:P97481|ensembl:ENSMUSP00000024954	Process	20170722	Ensembl
+UniProtKB	Q99828	-	CIB1	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q99828	-	CIB1	9606	-	GO:0090050	positive regulation of cell migration involved in sprouting angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q9Z0F4	Process	20140110	UniProt
+UniProtKB	Q99828	-	CIB1	9606	-	GO:0090050	positive regulation of cell migration involved in sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9Z0F4|ensembl:ENSMUSP00000070901	Process	20170722	Ensembl
+UniProtKB	Q99835	-	SMO	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:P56726|ensembl:ENSMUSP00000001812	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0001945	lymph vessel development	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0001946	lymphangiogenesis	PMID:12114478	IMP	-	Process	20061205	UniProt
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0035470	positive regulation of vascular wound healing	GO_REF:0000024	ISS	UniProtKB:Q61850	Process	20110119	BHF-UCL
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0035470	positive regulation of vascular wound healing	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0048844	artery morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0050880	regulation of blood vessel size	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0072011	glomerular endothelium development	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0072144	glomerular mesangial cell development	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0090050	positive regulation of cell migration involved in sprouting angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q61850	Process	20110119	BHF-UCL
+UniProtKB	Q99958	-	FOXC2	9606	-	GO:0090050	positive regulation of cell migration involved in sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q61850|ensembl:ENSMUSP00000055290	Process	20170722	Ensembl
+UniProtKB	Q99959	-	PKP2	9606	-	GO:0086002	cardiac muscle cell action potential involved in contraction	PMID:22889254	IMP	-	Process	20120928	BHF-UCL
+UniProtKB	Q99959	-	PKP2	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	PMID:22889254	IMP	-	Process	20120928	BHF-UCL
+UniProtKB	Q99966	-	CITED1	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:P97769|ensembl:ENSMUSP00000098890	Process	20170722	Ensembl
+UniProtKB	Q99985	-	SEMA3C	9606	-	GO:0003350	pulmonary myocardium development	GO_REF:0000107	IEA	UniProtKB:Q62181|ensembl:ENSMUSP00000030568	Process	20170722	Ensembl
+UniProtKB	Q9BRJ9	-	MESP1	9606	-	GO:0060947	cardiac vascular smooth muscle cell differentiation	PMID:18297060	IMP	-	Process	20101013	BHF-UCL
+UniProtKB	Q9BRP0	-	OVOL2	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q8CIV7|ensembl:ENSMUSP00000044026	Process	20170722	Ensembl
+UniProtKB	Q9BRP0	-	OVOL2	9606	-	GO:0060716	labyrinthine layer blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q8CIV7|ensembl:ENSMUSP00000044026	Process	20170722	Ensembl
+UniProtKB	Q9BSN7	-	TMEM204	9606	-	GO:0001945	lymph vessel development	GO_REF:0000033	IBA	PANTHER:PTN000794545	Process	20151109	GO_Central
+UniProtKB	Q9BSN7	-	TMEM204	9606	-	GO:0001945	lymph vessel development	GO_REF:0000107	IEA	UniProtKB:Q7TQI0|ensembl:ENSMUSP00000024984	Process	20170722	Ensembl
+UniProtKB	Q9BSQ5	-	CCM2	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q8K2Y9|ensembl:ENSMUSP00000000388	Process	20170722	Ensembl
+UniProtKB	Q9BSQ5	-	CCM2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q8K2Y9|ensembl:ENSMUSP00000000388	Process	20170722	Ensembl
+UniProtKB	Q9BSQ5	-	CCM2	9606	-	GO:0001570	vasculogenesis	PMID:14740320	IMP	-	Process	20060308	UniProt
+UniProtKB	Q9BSQ5	-	CCM2	9606	-	GO:0048845	venous blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q8K2Y9|ensembl:ENSMUSP00000000388	Process	20170722	Ensembl
+UniProtKB	Q9BSQ5	-	CCM2	9606	-	GO:0060837	blood vessel endothelial cell differentiation	GO_REF:0000107	IEA	UniProtKB:Q8K2Y9|ensembl:ENSMUSP00000000388	Process	20170722	Ensembl
+UniProtKB	Q9BT56	-	SPX	9606	-	GO:0003084	positive regulation of systemic arterial blood pressure	GO_REF:0000024	ISS	UniProtKB:M0R8L2:PRO_0000430224	Process	20140701	UniProt
+UniProtKB	Q9BT56	-	SPX	9606	-	GO:0003084	positive regulation of systemic arterial blood pressure	GO_REF:0000024	ISS	UniProtKB:M0R8L2:PRO_0000430226	Process	20140701	UniProt
+UniProtKB	Q9BTE1	-	DCTN5	9606	-	GO:0035904	aorta development	GO_REF:0000107	IEA	UniProtKB:Q9QZB9|ensembl:ENSMUSP00000033156	Process	20170722	Ensembl
+UniProtKB	Q9BTE1	-	DCTN5	9606	-	GO:0060976	coronary vasculature development	GO_REF:0000107	IEA	UniProtKB:Q9QZB9|ensembl:ENSMUSP00000033156	Process	20170722	Ensembl
+UniProtKB	Q9BUL8	-	PDCD10	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9BUL8	-	PDCD10	9606	-	GO:0090051	negative regulation of cell migration involved in sprouting angiogenesis	PMID:23388056	IMP	-	Process	20141114	UniProt
+UniProtKB	Q9BUL8	-	PDCD10	9606	-	GO:1903588	negative regulation of blood vessel endothelial cell proliferation involved in sprouting angiogenesis	PMID:23388056	IMP	-	Process	20141114	UniProt
+UniProtKB	Q9BUP3	-	HTATIP2	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9BX67	-	JAM3	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9BX67	-	JAM3	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9D8B7|ensembl:ENSMUSP00000034472	Process	20170722	Ensembl
+UniProtKB	Q9BX67	-	JAM3	9606	-	GO:0001525	angiogenesis	PMID:20592283	IDA	-	Process	20110418	UniProt
+UniProtKB	Q9BX79	-	STRA6	9606	-	GO:0001568	blood vessel development	PMID:17273977	IMP	-	Process	20110503	DFLAT
+UniProtKB	Q9BX79	-	STRA6	9606	-	GO:0048844	artery morphogenesis	PMID:17273977	IMP	-	Process	20110503	DFLAT
+UniProtKB	Q9BX79	-	STRA6	9606	-	GO:0060426	lung vasculature development	PMID:17273977	IMP	-	Process	20110503	DFLAT
+UniProtKB	Q9BX79	-	STRA6	9606	-	GO:0061156	pulmonary artery morphogenesis	PMID:17273977	IMP	-	Process	20110503	DFLAT
+UniProtKB	Q9BX79	-	STRA6	9606	-	GO:0097070	ductus arteriosus closure	PMID:19500772	IMP	-	Process	20130411	DFLAT
+UniProtKB	Q9BXC9	-	BBS2	9606	-	GO:0014824	artery smooth muscle contraction	GO_REF:0000107	IEA	UniProtKB:Q9CWF6|ensembl:ENSMUSP00000034206	Process	20170722	Ensembl
+UniProtKB	Q9BXC9	-	BBS2	9606	-	GO:0042311	vasodilation	GO_REF:0000107	IEA	UniProtKB:Q9CWF6|ensembl:ENSMUSP00000034206	Process	20170722	Ensembl
+UniProtKB	Q9BXJ9	-	NAA15	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9BXY4	-	RSPO3	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q2TJ95|ensembl:ENSMUSP00000090287	Process	20170722	Ensembl
+UniProtKB	Q9BXY4	-	RSPO3	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q2TJ95	Process	20160209	UniProt
+UniProtKB	Q9BXY4	-	RSPO3	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q2TJ95|ensembl:ENSMUSP00000090287	Process	20170722	Ensembl
+UniProtKB	Q9BY07	-	SLC4A5	9606	-	GO:0003073	regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:D3YVG0|ensembl:ENSMUSP00000041007	Process	20170722	Ensembl
+UniProtKB	Q9BY76	-	ANGPTL4	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR028793	Process	20170722	InterPro
+UniProtKB	Q9BY76	-	ANGPTL4	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9BY76	-	ANGPTL4	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:11953136	TAS	-	Process	20061205	UniProt
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0002003	angiotensin maturation	GO_REF:0000002	IEA	InterPro:IPR033591	Process	20170722	InterPro
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0002003	angiotensin maturation	Reactome:R-HSA-2022378	TAS	-	Process	20170526	Reactome
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0002003	angiotensin maturation	Reactome:R-HSA-2022379	TAS	-	Process	20170526	Reactome
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0002005	angiotensin catabolic process in blood	PMID:10924499	IC	GO:0004180	Process	20080519	BHF-UCL
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0003051	angiotensin-mediated drinking behavior	PMID:18258853	IMP	-	Process	20080516	BHF-UCL
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0003081	regulation of systemic arterial blood pressure by renin-angiotensin	PMID:10924499	IC	GO:0004180	Process	20080519	BHF-UCL
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0003081	regulation of systemic arterial blood pressure by renin-angiotensin	PMID:18258853	IMP	-	Process	20080516	BHF-UCL
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0019229	regulation of vasoconstriction	PMID:15380922	IC	GO:0004180	Process	20080519	BHF-UCL
+UniProtKB	Q9BYF1	-	ACE2	9606	-	GO:0097746	regulation of blood vessel diameter	PMID:15380922	IC	GO:0004180	Process	20080519	BHF-UCL
+UniProtKB	Q9BYW2	-	SETD2	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:E9Q5F9|ensembl:ENSMUSP00000116313	Process	20170722	Ensembl
+UniProtKB	Q9BYW2	-	SETD2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:E9Q5F9|ensembl:ENSMUSP00000116313	Process	20170722	Ensembl
+UniProtKB	Q9BYW2	-	SETD2	9606	-	GO:0035441	cell migration involved in vasculogenesis	GO_REF:0000107	IEA	UniProtKB:E9Q5F9|ensembl:ENSMUSP00000116313	Process	20170722	Ensembl
+UniProtKB	Q9BYW2	-	SETD2	9606	-	GO:0060977	coronary vasculature morphogenesis	GO_REF:0000107	IEA	UniProtKB:E9Q5F9|ensembl:ENSMUSP00000116313	Process	20170722	Ensembl
+UniProtKB	Q9BYZ0	-	ADRB2	9606	-	GO:0097746	regulation of blood vessel diameter	GO_REF:0000002	IEA	InterPro:IPR000332	Process	20170722	InterPro
+UniProtKB	Q9BZL6	-	PRKD2	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9BZL6	-	PRKD2	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:18440775	IMP	-	Process	20120228	BHF-UCL
+UniProtKB	Q9BZL6	-	PRKD2	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:19001381	IMP	-	Process	20111214	UniProt
+UniProtKB	Q9BZL6	-	PRKD2	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:20497126	IGI	UniProtKB:Q15139	Process	20120228	BHF-UCL
+UniProtKB	Q9H1R3	-	MYLK2	9606	-	GO:0060048	cardiac muscle contraction	PMID:16448786	IC	GO:0004687	Process	20080124	BHF-UCL
+UniProtKB	Q9H1R3	-	MYLK2	9606	-	GO:0060048	cardiac muscle contraction	PMID:16448786	IC	GO:0006941	Process	20080124	BHF-UCL
+UniProtKB	Q9H1Y0	-	ATG5	9606	-	GO:0042311	vasodilation	GO_REF:0000107	IEA	UniProtKB:Q99J83|ensembl:ENSMUSP00000044769	Process	20170722	Ensembl
+UniProtKB	Q9H1Y0	-	ATG5	9606	-	GO:0060047	heart contraction	GO_REF:0000107	IEA	UniProtKB:Q99J83|ensembl:ENSMUSP00000044769	Process	20170722	Ensembl
+UniProtKB	Q9H255	-	OR51E2	9606	-	GO:0045777	positive regulation of blood pressure	GO_REF:0000024	ISS	UniProtKB:Q8VBV9	Process	20140626	UniProt
+UniProtKB	Q9H255	-	OR51E2	9606	-	GO:0045777	positive regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:Q8VBV9|ensembl:ENSMUSP00000149274	Process	20170722	Ensembl
+UniProtKB	Q9H255	-	OR51E2	9606	-	GO:1900135	positive regulation of renin secretion into blood stream	GO_REF:0000024	ISS	UniProtKB:Q8VBV9	Process	20140626	UniProt
+UniProtKB	Q9H255	-	OR51E2	9606	-	GO:1900135	positive regulation of renin secretion into blood stream	GO_REF:0000107	IEA	UniProtKB:Q8VBV9|ensembl:ENSMUSP00000149274	Process	20170722	Ensembl
+UniProtKB	Q9H2D7	-	NRP1	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR027146	Process	20170722	InterPro
+UniProtKB	Q9H2D8	-	NRP1	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR027146	Process	20170722	InterPro
+UniProtKB	Q9H2D9	-	NRP1	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR027146	Process	20170722	InterPro
+UniProtKB	Q9H2E0	-	NRP1	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR027146	Process	20170722	InterPro
+UniProtKB	Q9H2E1	-	NRP1	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR014648|InterPro:IPR027146	Process	20170722	InterPro
+UniProtKB	Q9H2F5	-	EPC1	9606	-	GO:0035886	vascular smooth muscle cell differentiation	GO_REF:0000107	IEA	UniProtKB:D4A6E4|ensembl:ENSRNOP00000019968	Process	20170722	Ensembl
+UniProtKB	Q9H2J4	-	PDCL3	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9H2J4	-	PDCL3	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:23792958	IMP	-	Process	20140115	MGI
+UniProtKB	Q9H2S1	-	KCNN2	9606	-	GO:0098914	membrane repolarization during atrial cardiac muscle cell action potential	PMID:19139040	ISS	UniProtKB:P58390	Process	20161028	BHF-UCL
+UniProtKB	Q9H2S6	-	TNMD	9606	-	GO:0016525	negative regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9EP64|ensembl:ENSMUSP00000033602	Process	20170722	Ensembl
+UniProtKB	Q9H2X6	-	HIPK2	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:19046997	IDA	-	Process	20110913	UniProt
+UniProtKB	Q9H3C7	-	GGNBP2	9606	-	GO:0060716	labyrinthine layer blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q5SV77|ensembl:ENSMUSP00000103716	Process	20170722	Ensembl
+UniProtKB	Q9H3S1	-	SEMA4A	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9H3S1	-	SEMA4A	9606	-	GO:0016525	negative regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q62178|ensembl:ENSMUSP00000029700	Process	20170722	Ensembl
+UniProtKB	Q9H461	-	FZD8	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q61091|ensembl:ENSMUSP00000039660	Process	20170722	Ensembl
+UniProtKB	Q9H488	-	POFUT1	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q91ZW2|ensembl:ENSMUSP00000053122	Process	20170722	Ensembl
+UniProtKB	Q9H4A3	-	WNK1	9606	-	GO:0003084	positive regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:P83741|ensembl:ENSMUSP00000086017	Process	20170722	Ensembl
+UniProtKB	Q9H4A4	-	RNPEP	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000033	IBA	PANTHER:PTN000164305	Process	20150424	GO_Central
+UniProtKB	Q9H4E5	-	RHOJ	9606	-	GO:0061299	retina vasculature morphogenesis in camera-type eye	GO_REF:0000107	IEA	UniProtKB:Q9ER71|ensembl:ENSMUSP00000059498	Process	20170722	Ensembl
+UniProtKB	Q9H4X1	-	RGCC	9606	-	GO:0016525	negative regulation of angiogenesis	PMID:19652095	IDA	-	Process	20120822	BHF-UCL
+UniProtKB	Q9H6I2	-	SOX17	9606	-	GO:0001525	angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q61473	Process	20100317	BHF-UCL
+UniProtKB	Q9H6I2	-	SOX17	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q61473|ensembl:ENSMUSP00000027035	Process	20170722	Ensembl
+UniProtKB	Q9H6I2	-	SOX17	9606	-	GO:0001570	vasculogenesis	GO_REF:0000024	ISS	UniProtKB:Q61473	Process	20100317	BHF-UCL
+UniProtKB	Q9H6I2	-	SOX17	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q61473|ensembl:ENSMUSP00000027035	Process	20170722	Ensembl
+UniProtKB	Q9H6U6	-	BCAS3	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9H6X2	-	ANTXR1	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q9CZ52|ensembl:ENSMUSP00000045634	Process	20170722	Ensembl
+UniProtKB	Q9H799	-	C5orf42	9606	-	GO:0060976	coronary vasculature development	GO_REF:0000107	IEA	UniProtKB:Q8CE72|ensembl:ENSMUSP00000106247	Process	20170722	Ensembl
+UniProtKB	Q9H7D0	-	DOCK5	9606	-	GO:1904694	negative regulation of vascular smooth muscle contraction	PMID:22158624	IMP	-	Process	20150929	BHF-UCL
+UniProtKB	Q9H8L6	-	MMRN2	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9H8L6	-	MMRN2	9606	-	GO:0090051	negative regulation of cell migration involved in sprouting angiogenesis	PMID:22020326	IDA	-	Process	20121008	UniProt
+UniProtKB	Q9HB40	-	SCPEP1	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000024	ISS	UniProtKB:Q920A5	Process	20140528	UniProt
+UniProtKB	Q9HB40	-	SCPEP1	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:Q920A5|ensembl:ENSMUSP00000000287	Process	20170722	Ensembl
+UniProtKB	Q9HB40	-	SCPEP1	9606	-	GO:0097755	positive regulation of blood vessel diameter	GO_REF:0000024	ISS	UniProtKB:Q920A5	Process	20140528	UniProt
+UniProtKB	Q9HB40	-	SCPEP1	9606	-	GO:0097755	positive regulation of blood vessel diameter	GO_REF:0000107	IEA	UniProtKB:Q920A5|ensembl:ENSMUSP00000000287	Process	20170722	Ensembl
+UniProtKB	Q9HBA0	-	TRPV4	9606	-	GO:0043117	positive regulation of vascular permeability	GO_REF:0000107	IEA	UniProtKB:Q9EPK8|ensembl:ENSMUSP00000071859	Process	20170722	Ensembl
+UniProtKB	Q9HBA0	-	TRPV4	9606	-	GO:0043117	positive regulation of vascular permeability	GO_REF:0000107	IEA	UniProtKB:Q9ERZ8|ensembl:ENSRNOP00000001586	Process	20170722	Ensembl
+UniProtKB	Q9HBA0	-	TRPV4	9606	-	GO:0043117	positive regulation of vascular permeability	PMID:23136043	IMP	-	Process	20150727	UniProt
+UniProtKB	Q9HC23	-	PROK2	9606	-	GO:0001525	angiogenesis	PMID:12604792	IDA	-	Process	20031202	UniProt
+UniProtKB	Q9HCS2	-	CYP4F12	9606	-	GO:0003095	pressure natriuresis	GO_REF:0000024	ISS	UniProtKB:P78329	Process	20120130	UniProt
+UniProtKB	Q9HCX3	-	ZNF304	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9HCX3	-	ZNF304	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:26081979	IMP	-	Process	20160223	UniProt
+UniProtKB	Q9HDB5	-	NRXN3	9606	-	GO:0001525	angiogenesis	GO_REF:0000024	ISS	UniProtKB:D0PRN4	Process	20110623	UniProt
+UniProtKB	Q9HDB5	-	NRXN3	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9NP31	-	SH2D2A	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9NP84	-	TNFRSF12A	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9NPJ1	-	MKKS	9606	-	GO:0014824	artery smooth muscle contraction	GO_REF:0000107	IEA	UniProtKB:Q9JI70|ensembl:ENSMUSP00000105716	Process	20170722	Ensembl
+UniProtKB	Q9NPJ1	-	MKKS	9606	-	GO:0042311	vasodilation	GO_REF:0000107	IEA	UniProtKB:Q9JI70|ensembl:ENSMUSP00000105716	Process	20170722	Ensembl
+UniProtKB	Q9NPJ1	-	MKKS	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:Q9JI70|ensembl:ENSMUSP00000105716	Process	20170722	Ensembl
+UniProtKB	Q9NQ30	-	ESM1	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9NQ30	-	ESM1	9606	-	GO:0001525	angiogenesis	PMID:11866539	IEP	-	Process	20110330	UniProt
+UniProtKB	Q9NQ30	-	ESM1	9606	-	GO:0002040	sprouting angiogenesis	PMID:20616313	IMP	-	Process	20130904	UniProt
+UniProtKB	Q9NQ38	-	SPINK5	9606	-	GO:0016525	negative regulation of angiogenesis	PMID:15680911	TAS	-	Process	20060111	UniProt
+UniProtKB	Q9NQB0	-	TCF7L2	9606	-	GO:0001568	blood vessel development	PMID:15578569	IMP	-	Process	20080425	BHF-UCL
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0001525	angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q9JI71	Process	20120925	BHF-UCL
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9JI71|ensembl:ENSMUSP00000099575	Process	20170722	Ensembl
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000024	ISS	UniProtKB:Q9JI71	Process	20120730	BHF-UCL
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9JI71|ensembl:ENSMUSP00000099575	Process	20170722	Ensembl
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0035912	dorsal aorta morphogenesis	GO_REF:0000024	ISS	UniProtKB:Q9JI71	Process	20120403	BHF-UCL
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0035912	dorsal aorta morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9JI71|ensembl:ENSMUSP00000099575	Process	20170722	Ensembl
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0072554	blood vessel lumenization	GO_REF:0000107	IEA	UniProtKB:Q9JI71|ensembl:ENSMUSP00000099575	Process	20170722	Ensembl
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0090051	negative regulation of cell migration involved in sprouting angiogenesis	PMID:20616313	IMP	-	Process	20130419	UniProt
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:0090051	negative regulation of cell migration involved in sprouting angiogenesis	PMID:23388056	IDA	-	Process	20141114	UniProt
+UniProtKB	Q9NR61	-	DLL4	9606	-	GO:1903588	negative regulation of blood vessel endothelial cell proliferation involved in sprouting angiogenesis	PMID:23388056	IDA	-	Process	20141114	UniProt
+UniProtKB	Q9NRA0	-	SPHK2	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q9JIA7|ensembl:ENSMUSP00000103366	Process	20170722	Ensembl
+UniProtKB	Q9NRY4	-	ARHGAP35	9606	-	GO:0043116	negative regulation of vascular permeability	GO_REF:0000107	IEA	UniProtKB:Q91YM2|ensembl:ENSMUSP00000075242	Process	20170722	Ensembl
+UniProtKB	Q9NS00	-	C1GALT1	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9NS00	-	C1GALT1	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9JJ06|ensembl:ENSMUSP00000047931	Process	20170722	Ensembl
+UniProtKB	Q9NS00	-	C1GALT1	9606	-	GO:0001525	angiogenesis	PMID:17228361	IMP	-	Process	20070420	UniProt
+UniProtKB	Q9NS75	-	CYSLTR2	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q924T9|ensembl:ENSRNOP00000020187	Process	20170722	Ensembl
+UniProtKB	Q9NSA3	-	CTNNBIP1	9606	-	GO:0002528	regulation of vascular permeability involved in acute inflammatory response	PMID:18287330	IMP	-	Process	20100722	BHF-UCL
+UniProtKB	Q9NV29	-	TMEM100	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9CQG9|ensembl:ENSMUSP00000090464	Process	20170722	Ensembl
+UniProtKB	Q9NV29	-	TMEM100	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q9CQG9|ensembl:ENSMUSP00000090464	Process	20170722	Ensembl
+UniProtKB	Q9NV29	-	TMEM100	9606	-	GO:0060842	arterial endothelial cell differentiation	GO_REF:0000107	IEA	UniProtKB:Q9CQG9|ensembl:ENSMUSP00000090464	Process	20170722	Ensembl
+UniProtKB	Q9NV29	-	TMEM100	9606	-	GO:2001214	positive regulation of vasculogenesis	GO_REF:0000024	ISS	UniProtKB:Q9CQG9	Process	20131023	UniProt
+UniProtKB	Q9NV29	-	TMEM100	9606	-	GO:2001214	positive regulation of vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q9CQG9|ensembl:ENSMUSP00000090464	Process	20170722	Ensembl
+UniProtKB	Q9NVD7	-	PARVA	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9NVD7	-	PARVA	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q9EPC1	Process	20121026	UniProt
+UniProtKB	Q9NWT6	-	HIF1AN	9606	-	GO:2001214	positive regulation of vasculogenesis	PMID:17636018	NAS	-	Process	20120313	UniProt
+UniProtKB	Q9NY15	-	STAB1	9606	-	GO:0016525	negative regulation of angiogenesis	PMID:12077138	IMP	-	Process	20040817	UniProt
+UniProtKB	Q9NY41	-	CHI3L1	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000002	IEA	InterPro:IPR028538	Process	20170722	InterPro
+UniProtKB	Q9NY72	-	SCN3B	9606	-	GO:0060048	cardiac muscle contraction	PMID:20042427	IMP	-	Process	20120530	BHF-UCL
+UniProtKB	Q9NY72	-	SCN3B	9606	-	GO:0060048	cardiac muscle contraction	PMID:21051419	IMP	-	Process	20120530	BHF-UCL
+UniProtKB	Q9NY72	-	SCN3B	9606	-	GO:0086002	cardiac muscle cell action potential involved in contraction	PMID:21051419	IMP	-	Process	20120530	BHF-UCL
+UniProtKB	Q9NY72	-	SCN3B	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	GO_REF:0000107	IEA	UniProtKB:Q8BHK2|ensembl:ENSMUSP00000051627	Process	20170722	Ensembl
+UniProtKB	Q9NY72	-	SCN3B	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	PMID:20042427	IMP	-	Process	20120530	BHF-UCL
+UniProtKB	Q9NY72	-	SCN3B	9606	-	GO:0086014	atrial cardiac muscle cell action potential	PMID:21051419	IMP	-	Process	20120530	BHF-UCL
+UniProtKB	Q9NYA1	-	SPHK1	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q8CI15|ensembl:ENSMUSP00000131010	Process	20170722	Ensembl
+UniProtKB	Q9NYA1	-	SPHK1	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:12441135	IDA	-	Process	20030813	UniProt
+UniProtKB	Q9NZ08	-	ERAP1	9606	-	GO:0001525	angiogenesis	PMID:15691326	TAS	-	Process	20050614	HGNC
+UniProtKB	Q9NZ08	-	ERAP1	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000002	IEA	InterPro:IPR033520	Process	20170722	InterPro
+UniProtKB	Q9NZ08	-	ERAP1	9606	-	GO:0008217	regulation of blood pressure	PMID:11056387	NAS	-	Process	20040311	UniProt
+UniProtKB	Q9NZ08	-	ERAP1	9606	-	GO:0008217	regulation of blood pressure	PMID:15691326	TAS	-	Process	20050614	HGNC
+UniProtKB	Q9NZ08	-	ERAP1	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9EQH2|ensembl:ENSMUSP00000133166	Process	20170722	Ensembl
+UniProtKB	Q9NZI7	-	UBP1	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q811S7|ensembl:ENSMUSP00000081946	Process	20170722	Ensembl
+UniProtKB	Q9NZJ5	-	EIF2AK3	9606	-	GO:0001525	angiogenesis	PMID:22915762	IMP	-	Process	20141110	ParkinsonsUK-UCL
+UniProtKB	Q9P2D1	-	CHD7	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:A2AJK6|ensembl:ENSMUSP00000059079	Process	20170722	Ensembl
+UniProtKB	Q9P2D1	-	CHD7	9606	-	GO:0035904	aorta development	GO_REF:0000107	IEA	UniProtKB:A2AJK6|ensembl:ENSMUSP00000059079	Process	20170722	Ensembl
+UniProtKB	Q9P2D1	-	CHD7	9606	-	GO:0035909	aorta morphogenesis	GO_REF:0000107	IEA	UniProtKB:A2AJK6|ensembl:ENSMUSP00000059079	Process	20170722	Ensembl
+UniProtKB	Q9P2D1	-	CHD7	9606	-	GO:0048844	artery morphogenesis	GO_REF:0000107	IEA	UniProtKB:A2AJK6|ensembl:ENSMUSP00000059079	Process	20170722	Ensembl
+UniProtKB	Q9P2L0	-	WDR35	9606	-	GO:0097756	negative regulation of blood vessel diameter	GO_REF:0000107	IEA	UniProtKB:A6N6J5|ensembl:ENSRNOP00000042019	Process	20170722	Ensembl
+UniProtKB	Q9UBL9	-	P2RX2	9606	-	GO:0003029	detection of hypoxic conditions in blood by carotid body chemoreceptor signaling	GO_REF:0000107	IEA	UniProtKB:Q8K3P1|ensembl:ENSMUSP00000054233	Process	20170722	Ensembl
+UniProtKB	Q9UBM7	-	DHCR7	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:O88455|ensembl:ENSMUSP00000073541	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000024	ISS	UniProtKB:Q9QUS4	Process	20140103	BHF-UCL
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0035910	ascending aorta morphogenesis	GO_REF:0000024	ISS	UniProtKB:Q9QUS4	Process	20120730	BHF-UCL
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0035910	ascending aorta morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0035912	dorsal aorta morphogenesis	GO_REF:0000024	ISS	UniProtKB:Q9QUS4	Process	20120730	BHF-UCL
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0035912	dorsal aorta morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0060716	labyrinthine layer blood vessel development	GO_REF:0000024	ISS	UniProtKB:Q9QUS4	Process	20120730	BHF-UCL
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0060716	labyrinthine layer blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0060840	artery development	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0060842	arterial endothelial cell differentiation	GO_REF:0000024	ISS	UniProtKB:Q9QUS4	Process	20120730	BHF-UCL
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0060842	arterial endothelial cell differentiation	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0060948	cardiac vascular smooth muscle cell development	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0060977	coronary vasculature morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0061156	pulmonary artery morphogenesis	GO_REF:0000024	ISS	UniProtKB:Q9QUS4	Process	20120730	BHF-UCL
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0061156	pulmonary artery morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QUS4|ensembl:ENSMUSP00000019924	Process	20170722	Ensembl
+UniProtKB	Q9UBP5	-	HEY2	9606	-	GO:0097084	vascular smooth muscle cell development	PMID:15821257	IEP	-	Process	20110802	UniProt
+UniProtKB	Q9UBR2	-	CTSZ	9606	-	GO:0002003	angiotensin maturation	Reactome:R-HSA-2022381	TAS	-	Process	20170526	Reactome
+UniProtKB	Q9UBU3	-	GHRL	9606	-	GO:0016525	negative regulation of angiogenesis	PMID:15572208	NAS	-	Process	20071024	UniProt
+UniProtKB	Q9UBU3	-	GHRL	9606	-	GO:1903672	positive regulation of sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QYH7|ensembl:ENSRNOP00000014103	Process	20170722	Ensembl
+UniProtKB	Q9UEW8	-	STK39	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:Q9Z1W9|ensembl:ENSMUSP00000099776	Process	20170722	Ensembl
+UniProtKB	Q9UGM6	-	WARS2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q9CYK1|ensembl:ENSMUSP00000004343	Process	20170722	Ensembl
+UniProtKB	Q9UHF1	-	EGFL7	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9UHF1	-	EGFL7	9606	-	GO:0001568	blood vessel development	GO_REF:0000024	ISS	UniProtKB:Q9QXT5	Process	20041109	UniProt
+UniProtKB	Q9UHF1	-	EGFL7	9606	-	GO:0001570	vasculogenesis	GO_REF:0000024	ISS	UniProtKB:Q9QXT5	Process	20041109	UniProt
+UniProtKB	Q9UHN6	-	TMEM2	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9UHN6	-	TMEM2	9606	-	GO:1903670	regulation of sprouting angiogenesis	GO_REF:0000024	ISS	UniProtKB:A3KPQ7	Process	20170428	UniProt
+UniProtKB	Q9UHW9	-	SLC12A6	9606	-	GO:0001525	angiogenesis	PMID:10187864	NAS	-	Process	20100415	UniProt
+UniProtKB	Q9UII2	-	ATPIF1	9606	-	GO:0001525	angiogenesis	PMID:15528193	TAS	-	Process	20060809	UniProt
+UniProtKB	Q9UIQ6	-	LNPEP	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000033	IBA	PANTHER:PTN000745637	Process	20150424	GO_Central
+UniProtKB	Q9UJ90	-	KCNE5	9606	-	GO:0060048	cardiac muscle contraction	PMID:18313602	IMP	-	Process	20130716	BHF-UCL
+UniProtKB	Q9UJ90	-	KCNE5	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	PMID:21493962	IMP	-	Process	20130716	BHF-UCL
+UniProtKB	Q9UJ90	-	KCNE5	9606	-	GO:0086014	atrial cardiac muscle cell action potential	PMID:18313602	IMP	-	Process	20130716	BHF-UCL
+UniProtKB	Q9UJM3	-	ERRFI1	9606	-	GO:0060426	lung vasculature development	GO_REF:0000024	ISS	UniProtKB:Q99JZ7	Process	20100303	UniProt
+UniProtKB	Q9UJM3	-	ERRFI1	9606	-	GO:0060426	lung vasculature development	GO_REF:0000107	IEA	UniProtKB:Q99JZ7|ensembl:ENSMUSP00000030811	Process	20170722	Ensembl
+UniProtKB	Q9UJU2	-	LEF1	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000033	IBA	PANTHER:PTN000042971	Process	20110805	GO_Central
+UniProtKB	Q9UJU2	-	LEF1	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:P27782|ensembl:ENSMUSP00000029611	Process	20170722	Ensembl
+UniProtKB	Q9UJU2	-	LEF1	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000033	IBA	PANTHER:PTN000042971	Process	20110805	GO_Central
+UniProtKB	Q9UJU2	-	LEF1	9606	-	GO:0002040	sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:P27782|ensembl:ENSMUSP00000029611	Process	20170722	Ensembl
+UniProtKB	Q9UJU2	-	LEF1	9606	-	GO:1902262	apoptotic process involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:P27782|ensembl:ENSMUSP00000029611	Process	20170722	Ensembl
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0001525	angiogenesis	PMID:23972370	IMP	-	Process	20140307	UniProt
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9WV56|ensembl:ENSMUSP00000098286	Process	20170722	Ensembl
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	PMID:20406889	IDA	-	Process	20100624	DFLAT
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q9WV56|ensembl:ENSMUSP00000098286	Process	20170722	Ensembl
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0016525	negative regulation of angiogenesis	PMID:20406889	TAS	-	Process	20100602	DFLAT
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9WV56|ensembl:ENSMUSP00000098286	Process	20170722	Ensembl
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:20406889	IDA	-	Process	20100624	DFLAT
+UniProtKB	Q9UK05	-	GDF2	9606	-	GO:0048514	blood vessel morphogenesis	PMID:20406889	IDA	-	Process	20100624	DFLAT
+UniProtKB	Q9UK17	-	KCND3	9606	-	GO:0098915	membrane repolarization during ventricular cardiac muscle cell action potential	GO_REF:0000108	IEA	GO:1902282	Process	20170722	GOC
+UniProtKB	Q9UK17	-	KCND3	9606	contributes_to	GO:1902282	voltage-gated potassium channel activity involved in ventricular cardiac muscle cell action potential repolarization	PMID:21349352	IMP	-	Function	20161027	BHF-UCL
+UniProtKB	Q9UKP6	-	UTS2R	9606	-	GO:0003105	negative regulation of glomerular filtration	GO_REF:0000107	IEA	UniProtKB:P49684|ensembl:ENSRNOP00000051809	Process	20170722	Ensembl
+UniProtKB	Q9UKP6	-	UTS2R	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000002	IEA	InterPro:IPR000670	Process	20170722	InterPro
+UniProtKB	Q9UKP6	-	UTS2R	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:P49684|ensembl:ENSRNOP00000051809	Process	20170722	Ensembl
+UniProtKB	Q9UKP6	-	UTS2R	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P49684|ensembl:ENSRNOP00000051809	Process	20170722	Ensembl
+UniProtKB	Q9UKP6	-	UTS2R	9606	-	GO:0045777	positive regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P49684|ensembl:ENSRNOP00000051809	Process	20170722	Ensembl
+UniProtKB	Q9UKP6	-	UTS2R	9606	-	GO:0045907	positive regulation of vasoconstriction	GO_REF:0000107	IEA	UniProtKB:P49684|ensembl:ENSRNOP00000051809	Process	20170722	Ensembl
+UniProtKB	Q9UKP6	-	UTS2R	9606	-	GO:0097746	regulation of blood vessel diameter	GO_REF:0000002	IEA	InterPro:IPR000670	Process	20170722	InterPro
+UniProtKB	Q9UKU6	-	TRHDE	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000033	IBA	PANTHER:PTN000745637	Process	20150424	GO_Central
+UniProtKB	Q9UKV0	-	HDAC9	9606	-	GO:0090050	positive regulation of cell migration involved in sprouting angiogenesis	PMID:19351956	IMP	-	Process	20090907	BHF-UCL
+UniProtKB	Q9UKW4	-	VAV3	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9ULI3	-	HEG1	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:E9Q7X6|ensembl:ENSMUSP00000119790	Process	20170722	Ensembl
+UniProtKB	Q9ULI3	-	HEG1	9606	-	GO:0001945	lymph vessel development	GO_REF:0000107	IEA	UniProtKB:E9Q7X6|ensembl:ENSMUSP00000119790	Process	20170722	Ensembl
+UniProtKB	Q9ULI3	-	HEG1	9606	-	GO:0048845	venous blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:E9Q7X6|ensembl:ENSMUSP00000119790	Process	20170722	Ensembl
+UniProtKB	Q9ULJ6	-	ZMIZ1	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q6P1E1|ensembl:ENSMUSP00000124863	Process	20170722	Ensembl
+UniProtKB	Q9ULJ6	-	ZMIZ1	9606	-	GO:0048844	artery morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q6P1E1|ensembl:ENSMUSP00000124863	Process	20170722	Ensembl
+UniProtKB	Q9ULV1	-	FZD4	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q61088|ensembl:ENSMUSP00000049852	Process	20170722	Ensembl
+UniProtKB	Q9ULV1	-	FZD4	9606	-	GO:0001570	vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q61088|ensembl:ENSMUSP00000049852	Process	20170722	Ensembl
+UniProtKB	Q9ULV1	-	FZD4	9606	-	GO:0061299	retina vasculature morphogenesis in camera-type eye	GO_REF:0000107	IEA	UniProtKB:Q61088|ensembl:ENSMUSP00000049852	Process	20170722	Ensembl
+UniProtKB	Q9ULV1	-	FZD4	9606	-	GO:0061299	retina vasculature morphogenesis in camera-type eye	PMID:12172548	IMP	-	Process	20101213	BHF-UCL
+UniProtKB	Q9ULV1	-	FZD4	9606	-	GO:0061299	retina vasculature morphogenesis in camera-type eye	PMID:15024691	IMP	-	Process	20101213	BHF-UCL
+UniProtKB	Q9ULV1	-	FZD4	9606	-	GO:0061301	cerebellum vasculature morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q61088|ensembl:ENSMUSP00000049852	Process	20170722	Ensembl
+UniProtKB	Q9ULV1	-	FZD4	9606	-	GO:0061304	retinal blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q61088|ensembl:ENSMUSP00000049852	Process	20170722	Ensembl
+UniProtKB	Q9ULZ1	-	APLN	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:Q9R0R3|ensembl:ENSRNOP00000005331	Process	20170722	Ensembl
+UniProtKB	Q9ULZ1	-	APLN	9606	-	GO:0045906	negative regulation of vasoconstriction	GO_REF:0000107	IEA	UniProtKB:Q9R0R3|ensembl:ENSRNOP00000005331	Process	20170722	Ensembl
+UniProtKB	Q9ULZ1	-	APLN	9606	-	GO:0097755	positive regulation of blood vessel diameter	GO_REF:0000107	IEA	UniProtKB:Q9R0R3|ensembl:ENSRNOP00000005331	Process	20170722	Ensembl
+UniProtKB	Q9UM47	-	NOTCH3	9606	-	GO:0048844	artery morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q61982|ensembl:ENSMUSP00000085016	Process	20170722	Ensembl
+UniProtKB	Q9UM47	-	NOTCH3	9606	-	GO:0072104	glomerular capillary formation	GO_REF:0000107	IEA	UniProtKB:Q61982|ensembl:ENSMUSP00000085016	Process	20170722	Ensembl
+UniProtKB	Q9UMR3	-	TBX20	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9ES03|ensembl:ENSMUSP00000052591	Process	20170722	Ensembl
+UniProtKB	Q9UMR3	-	TBX20	9606	-	GO:0060577	pulmonary vein morphogenesis	PMID:18834961	IMP	-	Process	20110704	BHF-UCL
+UniProtKB	Q9UMX1	-	SUFU	9606	-	GO:0035904	aorta development	GO_REF:0000107	IEA	UniProtKB:Q9Z0P7|ensembl:ENSMUSP00000107498	Process	20170722	Ensembl
+UniProtKB	Q9UMX1	-	SUFU	9606	-	GO:0060976	coronary vasculature development	GO_REF:0000107	IEA	UniProtKB:Q9Z0P7|ensembl:ENSMUSP00000107498	Process	20170722	Ensembl
+UniProtKB	Q9UNI1	-	CELA1	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q91X79|ensembl:ENSMUSP00000023775	Process	20170722	Ensembl
+UniProtKB	Q9UPZ6	-	THSD7A	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9UQL6	-	HDAC5	9606	-	GO:0090051	negative regulation of cell migration involved in sprouting angiogenesis	PMID:19351956	IMP	-	Process	20090907	BHF-UCL
+UniProtKB	Q9Y251	-	HPSE	9606	-	GO:0060055	angiogenesis involved in wound healing	GO_REF:0000033	IBA	PANTHER:PTN000372531	Process	20160428	GO_Central
+UniProtKB	Q9Y251	-	HPSE	9606	-	GO:0060055	angiogenesis involved in wound healing	GO_REF:0000107	IEA	UniProtKB:Q6YGZ1|ensembl:ENSMUSP00000044072	Process	20170722	Ensembl
+UniProtKB	Q9Y251	-	HPSE	9606	-	GO:0061042	vascular wound healing	GO_REF:0000107	IEA	UniProtKB:Q6YGZ1|ensembl:ENSMUSP00000044072	Process	20170722	Ensembl
+UniProtKB	Q9Y257	-	KCNK6	9606	-	GO:0003073	regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:Q3TBV4|ensembl:ENSMUSP00000082975	Process	20170722	Ensembl
+UniProtKB	Q9Y257	-	KCNK6	9606	-	GO:0003085	negative regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:Q3TBV4|ensembl:ENSMUSP00000082975	Process	20170722	Ensembl
+UniProtKB	Q9Y264	-	ANGPT4	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR028845	Process	20170722	InterPro
+UniProtKB	Q9Y264	-	ANGPT4	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9Y264	-	ANGPT4	9606	-	GO:0016525	negative regulation of angiogenesis	PMID:16790085	IDA	-	Process	20100208	UniProt
+UniProtKB	Q9Y264	-	ANGPT4	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:15284220	IDA	-	Process	20100208	UniProt
+UniProtKB	Q9Y2I1	-	NISCH	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:Q4G017|ensembl:ENSRNOP00000032758	Process	20170722	Ensembl
+UniProtKB	Q9Y2N7	-	HIF3A	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9Y2U8	-	LEMD3	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR034997	Process	20170722	InterPro
+UniProtKB	Q9Y3M8	-	STARD13	9606	-	GO:0090051	negative regulation of cell migration involved in sprouting angiogenesis	PMID:20208559	IGI	UniProtKB:P61586	Process	20151028	MGI
+UniProtKB	Q9Y3M8	-	STARD13	9606	-	GO:0090051	negative regulation of cell migration involved in sprouting angiogenesis	PMID:20208559	IMP	-	Process	20151028	MGI
+UniProtKB	Q9Y466	-	NR2E1	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q64104|ensembl:ENSMUSP00000019938	Process	20170722	Ensembl
+UniProtKB	Q9Y466	-	NR2E1	9606	-	GO:0090049	regulation of cell migration involved in sprouting angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q64104|ensembl:ENSMUSP00000019938	Process	20170722	Ensembl
+UniProtKB	Q9Y4D7	-	PLXND1	9606	-	GO:0001525	angiogenesis	GO_REF:0000024	ISS	UniProtKB:Q3UH93	Process	20120117	UniProt
+UniProtKB	Q9Y4D7	-	PLXND1	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9Y4D7	-	PLXND1	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q3UH93|ensembl:ENSMUSP00000015511	Process	20170722	Ensembl
+UniProtKB	Q9Y4D7	-	PLXND1	9606	-	GO:0001569	branching involved in blood vessel morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q3UH93|ensembl:ENSMUSP00000015511	Process	20170722	Ensembl
+UniProtKB	Q9Y4D7	-	PLXND1	9606	-	GO:0035904	aorta development	GO_REF:0000107	IEA	UniProtKB:Q3UH93|ensembl:ENSMUSP00000015511	Process	20170722	Ensembl
+UniProtKB	Q9Y4D7	-	PLXND1	9606	-	GO:0060976	coronary vasculature development	GO_REF:0000107	IEA	UniProtKB:Q3UH93|ensembl:ENSMUSP00000015511	Process	20170722	Ensembl
+UniProtKB	Q9Y4G8	-	RAPGEF2	9606	-	GO:0001568	blood vessel development	GO_REF:0000024	ISS	UniProtKB:Q8CHG7	Process	20130719	UniProt
+UniProtKB	Q9Y4G8	-	RAPGEF2	9606	-	GO:2001214	positive regulation of vasculogenesis	GO_REF:0000024	ISS	UniProtKB:Q8CHG7	Process	20130719	UniProt
+UniProtKB	Q9Y4K0	-	LOXL2	9606	-	GO:0002040	sprouting angiogenesis	PMID:21835952	IMP	-	Process	20120503	UniProt
+UniProtKB	Q9Y574	-	ASB4	9606	-	GO:2001214	positive regulation of vasculogenesis	GO_REF:0000024	ISS	UniProtKB:Q9WV71	Process	20120313	UniProt
+UniProtKB	Q9Y574	-	ASB4	9606	-	GO:2001214	positive regulation of vasculogenesis	GO_REF:0000107	IEA	UniProtKB:Q9WV71|ensembl:ENSMUSP00000040331	Process	20170722	Ensembl
+UniProtKB	Q9Y5C1	-	ANGPTL3	9606	-	GO:0001525	angiogenesis	GO_REF:0000037	IEA	UniProtKB-KW:KW-0037	Process	20170722	UniProt
+UniProtKB	Q9Y5C1	-	ANGPTL3	9606	-	GO:0045766	positive regulation of angiogenesis	PMID:11877390	IDA	-	Process	20040309	UniProt
+UniProtKB	Q9Y5C1	-	ANGPTL3	9606	-	GO:0048844	artery morphogenesis	GO_REF:0000024	ISS	UniProtKB:Q9R182	Process	20071115	BHF-UCL
+UniProtKB	Q9Y5C1	-	ANGPTL3	9606	-	GO:0048844	artery morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q9R182|ensembl:ENSMUSP00000030280	Process	20170722	Ensembl
+UniProtKB	Q9Y5J3	-	HEY1	9606	-	GO:0001525	angiogenesis	PMID:11866539	IEP	-	Process	20110330	UniProt
+UniProtKB	Q9Y5J3	-	HEY1	9606	-	GO:0035912	dorsal aorta morphogenesis	GO_REF:0000024	ISS	UniProtKB:Q9WV93	Process	20120730	BHF-UCL
+UniProtKB	Q9Y5J3	-	HEY1	9606	-	GO:0060716	labyrinthine layer blood vessel development	GO_REF:0000024	ISS	UniProtKB:Q9WV93	Process	20120730	BHF-UCL
+UniProtKB	Q9Y5J3	-	HEY1	9606	-	GO:0060842	arterial endothelial cell differentiation	GO_REF:0000024	ISS	UniProtKB:Q9WV93	Process	20120730	BHF-UCL
+UniProtKB	Q9Y5Q5	-	CORIN	9606	-	GO:0003050	regulation of systemic arterial blood pressure by atrial natriuretic peptide	GO_REF:0000024	ISS	UniProtKB:Q9Z319	Process	20100122	UniProt
+UniProtKB	Q9Y5Q5	-	CORIN	9606	-	GO:0003050	regulation of systemic arterial blood pressure by atrial natriuretic peptide	GO_REF:0000107	IEA	UniProtKB:Q9Z319|ensembl:ENSMUSP00000005352	Process	20170722	Ensembl
+UniProtKB	Q9Y5Q5	-	CORIN	9606	-	GO:0003050	regulation of systemic arterial blood pressure by atrial natriuretic peptide	PMID:22437503	IMP	-	Process	20120430	UniProt
+UniProtKB	Q9Y5Q5	-	CORIN	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000024	ISS	UniProtKB:Q9Z319	Process	20120430	UniProt
+UniProtKB	Q9Y5Q5	-	CORIN	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:Q9Z319|ensembl:ENSMUSP00000005352	Process	20170722	Ensembl
+UniProtKB	Q9Y5S8	-	NOX1	9606	-	GO:0001525	angiogenesis	PMID:11805326	IMP	-	Process	20080618	BHF-UCL
+UniProtKB	Q9Y5S8	-	NOX1	9606	-	GO:0003081	regulation of systemic arterial blood pressure by renin-angiotensin	GO_REF:0000107	IEA	UniProtKB:Q8CIZ9|ensembl:ENSMUSP00000033610	Process	20170722	Ensembl
+UniProtKB	Q9Y5S8	-	NOX1	9606	-	GO:0008217	regulation of blood pressure	PMID:18347018	TAS	-	Process	20080618	BHF-UCL
+UniProtKB	Q9Y5Y0	-	FLVCR1	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:B2RXV4|ensembl:ENSMUSP00000082777	Process	20170722	Ensembl
+UniProtKB	Q9Y624	-	F11R	9606	-	GO:0045777	positive regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:Q9JHY1|ensembl:ENSRNOP00000006141	Process	20170722	Ensembl
+UniProtKB	Q9Y653	-	ADGRG1	9606	-	GO:0001525	angiogenesis	PMID:21724588	IDA	-	Process	20130610	UniProt
+UniProtKB	Q9Y691	-	KCNMB2	9606	-	GO:0019229	regulation of vasoconstriction	PMID:10692449	TAS	-	Process	20031216	UniProt
+UniProtKB	Q9Y696	-	CLIC4	9606	-	GO:0001525	angiogenesis	GO_REF:0000033	IBA	PANTHER:PTN000136474	Process	20150710	GO_Central
+UniProtKB	Q9Y696	-	CLIC4	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q9QYB1|ensembl:ENSMUSP00000041453	Process	20170722	Ensembl
+UniProtKB	Q9Y696	-	CLIC4	9606	-	GO:0061299	retina vasculature morphogenesis in camera-type eye	GO_REF:0000107	IEA	UniProtKB:Q9QYB1|ensembl:ENSMUSP00000041453	Process	20170722	Ensembl
+UniProtKB	Q9Y6J6	-	KCNE2	9606	-	GO:0086002	cardiac muscle cell action potential involved in contraction	PMID:10219239	IMP	-	Process	20130708	BHF-UCL
+UniProtKB	Q9Y6J6	-	KCNE2	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	PMID:10219239	IMP	-	Process	20130708	BHF-UCL
+UniProtKB	Q9Y6J6	-	KCNE2	9606	-	GO:0098915	membrane repolarization during ventricular cardiac muscle cell action potential	PMID:10219239	IMP	-	Process	20160324	BHF-UCL
+UniProtKB	Q9Y6J6	-	KCNE2	9606	-	GO:1902282	voltage-gated potassium channel activity involved in ventricular cardiac muscle cell action potential repolarization	PMID:10219239	IMP	-	Function	20130708	BHF-UCL
+UniProtKB	Q9Y6N7	-	ROBO1	9606	-	GO:0002042	cell migration involved in sprouting angiogenesis	PMID:19351956	IMP	UniProtKB:Q9UQL6	Process	20090805	BHF-UCL
+UniProtKB	Q9Y6W5	-	WASF2	9606	-	GO:0001525	angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q8BH43|ensembl:ENSMUSP00000081263	Process	20170722	Ensembl
+UniProtKB	S5TLS4	-	CNR1	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P20272|ensembl:ENSRNOP00000010850	Process	20170722	Ensembl
+UniProtKB	S5TLS4	-	CNR1	9606	-	GO:0045777	positive regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P20272|ensembl:ENSRNOP00000010850	Process	20170722	Ensembl
+UniProtKB	V9GYL7	-	NRP1	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR027146	Process	20170722	InterPro
+UniProtKB	V9HWA9	-	HEL-S-62p	9606	-	GO:0045766	positive regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:P01027|ensembl:ENSMUSP00000024988	Process	20170722	Ensembl
+UniProtKB	V9HWC9	-	HEL-S-44	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P08228|ensembl:ENSMUSP00000023707	Process	20170722	Ensembl
+UniProtKB	V9HWC9	-	HEL-S-44	9606	-	GO:0060047	heart contraction	GO_REF:0000107	IEA	UniProtKB:P08228|ensembl:ENSMUSP00000023707	Process	20170722	Ensembl
+UniProtKB	V9HWC9	-	HEL-S-44	9606	-	GO:0060087	relaxation of vascular smooth muscle	GO_REF:0000107	IEA	UniProtKB:P08228|ensembl:ENSMUSP00000023707	Process	20170722	Ensembl
+UniProtKB	W6CJ52	-	FOXC1	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q61572|ensembl:ENSMUSP00000052196	Process	20170722	Ensembl
+UniProtKB	W6CJ52	-	FOXC1	9606	-	GO:0001945	lymph vessel development	GO_REF:0000107	IEA	UniProtKB:Q61572|ensembl:ENSMUSP00000052196	Process	20170722	Ensembl
+UniProtKB	W6CJ52	-	FOXC1	9606	-	GO:0016525	negative regulation of angiogenesis	GO_REF:0000107	IEA	UniProtKB:Q61572|ensembl:ENSMUSP00000052196	Process	20170722	Ensembl
+UniProtKB	W6CJ52	-	FOXC1	9606	-	GO:0048844	artery morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q61572|ensembl:ENSMUSP00000052196	Process	20170722	Ensembl
+UniProtKB	W6CJ52	-	FOXC1	9606	-	GO:0050880	regulation of blood vessel size	GO_REF:0000107	IEA	UniProtKB:Q61572|ensembl:ENSMUSP00000052196	Process	20170722	Ensembl
+UniProtKB	X5D2B0	-	AVPR1A	9606	-	GO:0001992	regulation of systemic arterial blood pressure by vasopressin	GO_REF:0000107	IEA	UniProtKB:Q62463|ensembl:ENSMUSP00000020323	Process	20170722	Ensembl
+UniProtKB	X5D2B0	-	AVPR1A	9606	-	GO:0003084	positive regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:P30560|ensembl:ENSRNOP00000005829	Process	20170722	Ensembl
+UniProtKB	X5D2B0	-	AVPR1A	9606	-	GO:0045777	positive regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P30560|ensembl:ENSRNOP00000005829	Process	20170722	Ensembl
+UniProtKB	X5D2B0	-	AVPR1A	9606	-	GO:0045907	positive regulation of vasoconstriction	GO_REF:0000107	IEA	UniProtKB:P30560|ensembl:ENSRNOP00000005829	Process	20170722	Ensembl
+UniProtKB	X5D2G4	-	DRD3	9606	-	GO:0002016	regulation of blood volume by renin-angiotensin	GO_REF:0000107	IEA	UniProtKB:P30728|ensembl:ENSMUSP00000023390	Process	20170722	Ensembl
+UniProtKB	X5D2G4	-	DRD3	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P30728|ensembl:ENSMUSP00000023390	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0001568	blood vessel development	GO_REF:0000107	IEA	UniProtKB:Q01231|ensembl:ENSMUSP00000088264	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0003071	renal system process involved in regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:Q01231|ensembl:ENSMUSP00000088264	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0003073	regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:Q01231|ensembl:ENSMUSP00000088264	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0003105	negative regulation of glomerular filtration	GO_REF:0000107	IEA	UniProtKB:P28234|ensembl:ENSRNOP00000023488	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P28234|ensembl:ENSRNOP00000023488	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0045907	positive regulation of vasoconstriction	GO_REF:0000107	IEA	UniProtKB:P28234|ensembl:ENSRNOP00000023488	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0048844	artery morphogenesis	GO_REF:0000107	IEA	UniProtKB:Q01231|ensembl:ENSMUSP00000088264	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0086005	ventricular cardiac muscle cell action potential	GO_REF:0000107	IEA	UniProtKB:Q01231|ensembl:ENSMUSP00000088264	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0097746	regulation of blood vessel diameter	GO_REF:0000107	IEA	UniProtKB:Q01231|ensembl:ENSMUSP00000088264	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:0097755	positive regulation of blood vessel diameter	GO_REF:0000107	IEA	UniProtKB:P28234|ensembl:ENSRNOP00000023488	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:1900133	regulation of renin secretion into blood stream	GO_REF:0000107	IEA	UniProtKB:Q01231|ensembl:ENSMUSP00000088264	Process	20170722	Ensembl
+UniProtKB	X5D2H9	-	GJA5	9606	-	GO:1990029	vasomotion	GO_REF:0000107	IEA	UniProtKB:P28234|ensembl:ENSRNOP00000023488	Process	20170722	Ensembl
+UniProtKB	X5D2Q8	-	NRP2	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR014648|InterPro:IPR027143	Process	20170722	InterPro
+UniProtKB	X5D7I5	-	HTR1B	9606	-	GO:0042310	vasoconstriction	GO_REF:0000002	IEA	InterPro:IPR002147	Process	20170722	InterPro
+UniProtKB	X5D7M1	-	NRP2	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR014648|InterPro:IPR027143	Process	20170722	InterPro
+UniProtKB	X5D7M6	-	OXT	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P01179|ensembl:ENSRNOP00000028829	Process	20170722	Ensembl
+UniProtKB	X5D7M6	-	OXT	9606	-	GO:0045777	positive regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P01179|ensembl:ENSRNOP00000028829	Process	20170722	Ensembl
+UniProtKB	X5D8S1	-	ABAT	9606	-	GO:0045776	negative regulation of blood pressure	GO_REF:0000107	IEA	UniProtKB:P50554|ensembl:ENSRNOP00000003633	Process	20170722	Ensembl
+UniProtKB	X5DNB4	-	ADORA2A	9606	-	GO:0042311	vasodilation	GO_REF:0000107	IEA	UniProtKB:P30543|ensembl:ENSRNOP00000001759	Process	20170722	Ensembl
+UniProtKB	X5DNB4	-	ADORA2A	9606	-	GO:0043116	negative regulation of vascular permeability	GO_REF:0000107	IEA	UniProtKB:P30543|ensembl:ENSRNOP00000001759	Process	20170722	Ensembl
+UniProtKB	X5DQM5	-	ADRB2	9606	-	GO:0001993	regulation of systemic arterial blood pressure by norepinephrine-epinephrine	GO_REF:0000107	IEA	UniProtKB:P18762|ensembl:ENSMUSP00000062256	Process	20170722	Ensembl
+UniProtKB	X5DQM5	-	ADRB2	9606	-	GO:0002025	norepinephrine-epinephrine-mediated vasodilation involved in regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:P18762|ensembl:ENSMUSP00000062256	Process	20170722	Ensembl
+UniProtKB	X5DQM5	-	ADRB2	9606	-	GO:0097746	regulation of blood vessel diameter	GO_REF:0000002	IEA	InterPro:IPR000332	Process	20170722	InterPro
+UniProtKB	X5DQP6	-	AVP	9606	-	GO:0003084	positive regulation of systemic arterial blood pressure	GO_REF:0000107	IEA	UniProtKB:P01186|ensembl:ENSRNOP00000028833	Process	20170722	Ensembl
+UniProtKB	X5DQP6	-	AVP	9606	-	GO:0045907	positive regulation of vasoconstriction	GO_REF:0000107	IEA	UniProtKB:P01186|ensembl:ENSRNOP00000028833	Process	20170722	Ensembl
+UniProtKB	X6R6D0	-	SHC1	9606	-	GO:0001525	angiogenesis	GO_REF:0000002	IEA	InterPro:IPR029586	Process	20170722	InterPro
+UniProtKB	X6RJD6	-	PTGS1	9606	-	GO:0008217	regulation of blood pressure	GO_REF:0000002	IEA	InterPro:IPR029580	Process	20170722	InterPro

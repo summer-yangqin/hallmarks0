@@ -1,4 +1,10 @@
-got.data: TCGA.RSEM GTEX.RSEM NETWORK
+got.data: TCGA.Z GTEX.Z NETWORK
+
+GTEX.Z : GTEX.RSEM
+	../bin/rescale.R $< $@
+
+TCGA.Z : TCGA.RSEM
+	../bin/rescale.R $< $@
 
 TCGA.RSEM: get
 	./get "https://toil.xenahubs.net/download/tcga_RSEM_Hugo_norm_count.gz" TCGA.RSEM
