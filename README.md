@@ -18,23 +18,13 @@ RESULTS:
 The OMF score allows us to determine which features of human cancer (as defined by the Hallmarks of Cancer) are recapitulated by the mouse model. To demonstrate the score, we reanalyzed data from a recent paper by Chuang and colleagues3 who used a GEMM of metastatic lung adenocarcinoma that has conditional alleles of KrasG12D and Trp53 (inactivating). Samples were also taken from mice at progressive
 stages of malignancy (normal tissue, hyperplasia, primary tumors, metastases) and analyzed by RNASEQ.
 
-CONCLUSIONS:
-Animal models are central to our basic and translational research mission to treat and cure cancer, but we should not expect these models to recapitulate all aspects of human cancer. With the first comprehensive catalog of gene expression in healthy tissue and cancer tissues from GTEX and TCGA, we now have a foundation to create metrics such as the Oncology Model Fidelity Score that will enable us to better understand the benefits and limitations of individual preclinical models. Ultimately, the OMF Score will help to advance patient care through efficient identification and validation of animal models for a variety of applications, from pre-clinical testing of novel therapeutics to the use of patient-specific animal models.
-
-
-SOURCE CODE: 
+Building 
 
 The general flow is: 
-first assemble the lists of genes in genelists, 
-then create the signatures from  the gene lists and 
-then create the scores from the signatues
-finally use the R shiny web app framework to display  the signatures
 
+1. download various assets into ReferenceData
+2. assemble the lists of genes in GeneList directorys, 
+3. then build the Signatures  directoryfrom  the gene lists and 
+4. then create the Scores  directoryfrom the signatues
+5. finally use the R Shiny directory web app to display  the signatures
 
-genelists folder contains the various ways we are experimenting to generate gene list
-
-Signatures creates the signatures
-
-Scores is where scores are made from scores
-
-shiny web app
