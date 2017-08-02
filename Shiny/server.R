@@ -20,8 +20,8 @@ function(input, output, session) {
   })
 
   onRestore(function(state) {
-     browser()
      cat(state$values$savedTime)
+     state
   })
   
 
@@ -96,7 +96,6 @@ function(input, output, session) {
   output$hot <- renderRHandsontable({
     if (!is.null(DB))
       db = DB()
-      browser()
       rhandsontable(db, colnames(db), rownames(db),
                     useTypes = TRUE, stretchH = "all", filter = TRUE, selectCallback=TRUE) %>%
 
