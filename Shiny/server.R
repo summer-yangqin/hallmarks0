@@ -19,12 +19,6 @@ function(input, output, session) {
     state
   })
 
-  onRestore(function(state) {
-     cat(state$values$savedTime)
-     state
-  })
-  
-
   observeEvent( input$cancer, {
       if (input$cancer != "All") {
           # cancer <- paste0("%", input$cancer, "%")
@@ -92,15 +86,25 @@ function(input, output, session) {
     }
     DF
   })
+  cache_show = NULL
+
+  onRestore(function(state) {
+    cache_show <<- state$values$show
+  })
 
   output$hot <- renderRHandsontable({
     if (!is.null(DB))
       db = DB()
-      rhandsontable(db, colnames(db), rownames(db),
-                    useTypes = TRUE, stretchH = "all", filter = TRUE, selectCallback=TRUE) %>%
-
-          hot_table( fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE)
+      db[ db$Biosample.ID %in% cache_show,"show"] = TRUE
+      rhandsontable(db,rowHeaders = NULL,
+                    useTypes = TRUE, stretchH = "all", filter = TRUE, selectCallback=TRUE,
+                    readOnly = TRUE, render="html",
+                    #, rowHeaderWidth = 100
+                    ) %>%
+          hot_table( fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
+          hot_col("show", readOnly = FALSE)
   })
+
 
   output$selected=renderPrint({
     cat('Selected Row:',input$hot_select$select$r)
