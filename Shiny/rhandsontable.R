@@ -220,8 +220,9 @@ hot_table = function(hot, contextMenu = TRUE, stretchH = "none",
   else
     hot$x$contextMenu = FALSE
 
-  if (!is.null(list(...)))
+  if (!is.null(list(...))) {
     hot$x = c(hot$x, list(...))
+  }
 
   hot
 }

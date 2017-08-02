@@ -299,6 +299,12 @@ var RadarChart = {
 
         polygon
         .each(function(d, i) {
+            color = cfg.color(i);
+            $(".sample-"+d.className).css("background-color", color)
+        })
+
+        polygon
+        .each(function(d, i) {
           var classed = {'d3-exit': 0}; // if exiting element is being reused
           classed['radar-chart-serie' + i] = 1;
           if(d.className) {

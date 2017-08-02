@@ -1,4 +1,5 @@
 library(dplyr)
+library(pracma)
 
 hallmark_columns = c(
     "Evading_growth_suppressors",
@@ -96,9 +97,26 @@ function(input, output, session) {
                     useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
                     readOnly = TRUE, renderer="html"
                     , rowHeaderWidth = 100
-                    , height = 400
+                    , height = 400,
+htmlClassIds = strcat("all-sample-info sample-", db$BioSample.ID)
+
                     ) %>%
           hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
+          hot_cols(renderer = "
+            function(instance, td, row, col, prop, value, cellProperties) {
+                if (value == true || value == false) 
+                    Handsontable.CheckboxRenderer.apply(this, arguments);
+                else
+                    Handsontable.HtmlRenderer.apply(this, arguments);
+
+
+                if (instance.params) {
+                    var ids = instance.params.htmlClassIds;
+                    td.classList = ids[row];
+                }
+                // if (instance.params && hcols.includes(col)) td.style.background = 'red';
+                // if (instance.params && hrows.includes(row)) td.style.background = 'yellow';
+            }") %>%
           hot_col("show", readOnly = FALSE)
   })
 
