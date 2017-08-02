@@ -24,11 +24,12 @@ hot_show = function(hot) {
     ids[show];
 }
 
+
 DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 
 function(input, output, session) {
-  setBookmarkExclude(c("hot"))
   setBookmarkExclude(c("hot", "hot_select" ))
+  UserState <- reactiveValues();
 
   onBookmark(function(state) {
     state$values$savedTime <- Sys.time()
@@ -68,9 +69,12 @@ function(input, output, session) {
         if (filename != "N/A") {
             sampleData <- read.table(paste0("datasets/", filename), header=TRUE, row.names=1, sep="\t");
             colnames(sampleData) = lapply(colnames(sampleData), simpleCap);
-            df <- rbind(df, sampleData[input$sample, ])
+            # df <- rbind(df, sampleData[input$sample, ])
+            df <- rbind(df, sampleData[UserState$SamplesShown, ])
         }
       }
+
+
       
     data.frame(
       colnames = colnames(df),
@@ -114,27 +118,32 @@ function(input, output, session) {
       db[ db$Biosample.ID %in% cache_show,"show"] = TRUE
       rhandsontable(db,rowHeaders = NULL,
                     useTypes = TRUE, stretchH = "all", filter = TRUE, selectCallback=TRUE,
-                    readOnly = TRUE, renderer="html",
+                    readOnly = TRUE, renderer="html"
                     #, rowHeaderWidth = 100
                     ) %>%
           hot_table( fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
           hot_col("show", readOnly = FALSE)
   })
 
+  observeEvent( input$hot$changes, {
+    row = input$hot$changes$changes[[1]][[1]]
+    # cat(row, col, oldVal, newVal)
+    if (!is.null(row) && row > 0) {
+        col =  input$hot$changes$changes[[1]][[2]]    
+        newVal = input$hot$changes$changes[[1]][[4]]
 
-  output$selected=renderPrint({
-    cat('Selected Row:',input$hot_select$select$r)
-    cat('\nSelected Column:',input$hot_select$select$c)
-    cat('\nSelected Cell Value:',
-        input$hot_select$data[[
-          input$hot_select$select$r]][[input$hot_select$select$c]])
-    cat('\nSelected Range: R',input$hot_select$select$r,
-        'C',input$hot_select$select$c,':R',input$hot_select$select$r2,
-        'C',input$hot_select$select$c2,sep="")
-    cat('\nChanged Cell Row Column:',input$hot$changes$changes[[1]][[1]],
-        input$hot$changes$changes[[1]][[2]])    
-    cat('\nChanged Cell Old Value:',input$hot$changes$changes[[1]][[3]])
-    cat('\nChanged Cell New Value:',input$hot$changes$changes[[1]][[4]])
+        db = DB() 
+        shown = UserState$SamplesShown
+        sample = db[row, "Biosample.ID"]
+
+        if (newVal && !(sample %in% shown)) {
+            shown = c(sample, shown)
+            UserState$SamplesShown = shown
+        } else {
+            shown = shown[shown != sample]
+            UserState$SamplesShown = shown
+        }
+    }
   })
 }
 
