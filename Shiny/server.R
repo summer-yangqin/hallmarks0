@@ -1,22 +1,38 @@
+library(dplyr)
+
 read.table.hot = function(name)  {
     table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
-    rownames(table) = table$Biosample.ID
-    cbind(show=rep(FALSE, dim(table)[1]), table)
+    # rownames(table) = table$Biosample.ID
+
+    table <- table %>%
+      select("Biosample.ID", everything())
+
+    Biosample.ID = table$Biosample.ID
+
+    show = rep(FALSE, dim(table)[1])
+    cbind(show=show, table)
 }
 
 # Cross-session reactive file reader. all sessions DB and this reader (so cool!)
 # This may need to be sped up
 DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 
+hot_show = function(hot) {
+    r = hot_to_r(hot);
+    show  = r$show;
+    ids  = r$Biosample.ID;
+    ids[show];
+}
+
+DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 
 function(input, output, session) {
-    setBookmarkExclude(c("hot"))
+  setBookmarkExclude(c("hot"))
+  setBookmarkExclude(c("hot", "hot_select" ))
 
   onBookmark(function(state) {
     state$values$savedTime <- Sys.time()
-    # state is a mutable reference object, and we can add arbitrary values
-    # to it.
-    state
+    state$values$show = hot_show(state$input$hot)
   })
 
   observeEvent( input$cancer, {
@@ -98,7 +114,7 @@ function(input, output, session) {
       db[ db$Biosample.ID %in% cache_show,"show"] = TRUE
       rhandsontable(db,rowHeaders = NULL,
                     useTypes = TRUE, stretchH = "all", filter = TRUE, selectCallback=TRUE,
-                    readOnly = TRUE, render="html",
+                    readOnly = TRUE, renderer="html",
                     #, rowHeaderWidth = 100
                     ) %>%
           hot_table( fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
