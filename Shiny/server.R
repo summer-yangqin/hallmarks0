@@ -22,7 +22,10 @@ read.table.hot = function(name)  {
 
 # Cross-session reactive file reader. all sessions DB and this reader (so cool!)
 # This may need to be sped up
-DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
+
+DBdata = read.table.hot("DB.txt");
+# DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
+DB = function() DBdata
 
 hot_show = function(hot) {
     r = hot_to_r(hot);
@@ -79,26 +82,6 @@ function(input, output, session) {
 
   cache_tbl = NULL
 
-  onRestore(function(state) {
-    tmp = state$input$hot
-    tmp$data = jsonlite::fromJSON(
-      jsonlite::toJSON(tmp$data), simplifyVector = FALSE)
-    cache_tbl <<- tmp
-  })
-
-  data = reactive({
-    if (!is.null(input$hot)) {
-      DF = hot_to_r(input$hot)
-    } else if (!is.null(cache_tbl)) {
-      DF = hot_to_r(cache_tbl)
-      cache_tbl <<- NULL
-    } else {
-      DF = data.frame(val = 1:10, bool = TRUE, nm = LETTERS[1:10],
-                      dt = seq(from = Sys.Date(), by = "days", length.out = 10),
-                      stringsAsFactors = F)
-    }
-    DF
-  })
   cache_show = NULL
 
   onRestore(function(state) {
@@ -110,11 +93,12 @@ function(input, output, session) {
       db = DB()
       db[ db$Biosample.ID %in% cache_show,"show"] = TRUE
       rhandsontable(db,rowHeaders = NULL,
-                    useTypes = TRUE, stretchH = "all", filter = TRUE, selectCallback=TRUE,
+                    useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
                     readOnly = TRUE, renderer="html"
-                    #, rowHeaderWidth = 100
+                    , rowHeaderWidth = 100
+                    , height = 400
                     ) %>%
-          hot_table( fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
+          hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
           hot_col("show", readOnly = FALSE)
   })
 
@@ -132,11 +116,9 @@ function(input, output, session) {
                 newVal = input$hot$changes$changes[[1]][[4]]
                 if (newVal && !(sample %in% shown)) {
                     shown = c(sample, shown)
-                    cat(shown);
                     UserState$SamplesShown = shown
                 } else {
                     shown = shown[shown != sample]
-                    cat(shown);
                     UserState$SamplesShown = shown
                 }
                },  

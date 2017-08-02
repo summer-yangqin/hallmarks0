@@ -6,7 +6,7 @@ function(request) {
       fluidRow(
         column(width=9, 
             tags$div(class="legend", tags$p("Legend:")),
-            rHandsontableOutput("hot", height = 350),
+            rHandsontableOutput("hot"),
             verbatimTextOutput('selected'),
             radarChartOutput("radarchart")),
         column(width=3,
