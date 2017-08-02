@@ -1,14 +1,21 @@
 library(dplyr)
 
+hallmark_columns = c(
+    "Evading_growth_suppressors",
+    "Evading_immune_destruction",
+    "Genome_instability",
+    "Replicative_immortality",
+    "Reprogramming_energy_metabolism",
+    "Resisting_cell_death",
+    "Sustained_angiogenesis",
+    "Sustaining_proliferative_signaling",
+    "Tissue_invasion_and_metastasis",
+    "Tumor.promoting_inflammation")
+
+
 read.table.hot = function(name)  {
     table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
-    # rownames(table) = table$Biosample.ID
-
-    table <- table %>%
-      select("Biosample.ID", everything())
-
-    Biosample.ID = table$Biosample.ID
-
+    row.names(table) = table[,1]
     show = rep(FALSE, dim(table)[1])
     cbind(show=show, table)
 }
@@ -20,7 +27,7 @@ DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 hot_show = function(hot) {
     r = hot_to_r(hot);
     show  = r$show;
-    ids  = r$Biosample.ID;
+    ids  = r[1,]
     ids[show];
 }
 
@@ -56,29 +63,15 @@ function(input, output, session) {
   })
   
   output$radarchart <- renderRadarChart({
-    # Return a data frame. Each column will be a series in the line chart.
-    df = TCGA
-
-      if (!is.null(input$cancer) && input$cancer != "All") {
-        df <- df[input$cancer,]
-      }
-
-      if (!is.null(input$sample) && input$sample != "N/A") {
-        m <- Metadata[grep(input$study, Metadata$Study),];
-        filename = m[1,"File"]
-        if (filename != "N/A") {
-            sampleData <- read.table(paste0("datasets/", filename), header=TRUE, row.names=1, sep="\t");
-            colnames(sampleData) = lapply(colnames(sampleData), simpleCap);
-            # df <- rbind(df, sampleData[input$sample, ])
-            df <- rbind(df, sampleData[UserState$SamplesShown, ])
-        }
-      }
-
-
+    db = DB()
+    db <- db[UserState$SamplesShown, hallmark_columns]
+    if (dim(db)[1] == 0)
+       db = TCGA
+    # df <- rbind(dd, db[UserState$SamplesShown, ])
       
     data.frame(
-      colnames = colnames(df),
-      df = t(df),
+      colnames = colnames(db),
+      df = t(db),
       zodiac = input$zodiac
     )
   })
@@ -125,25 +118,29 @@ function(input, output, session) {
           hot_col("show", readOnly = FALSE)
   })
 
-  observeEvent( input$hot$changes, {
-    row = input$hot$changes$changes[[1]][[1]]
-    # cat(row, col, oldVal, newVal)
-    if (!is.null(row) && row > 0) {
-        col =  input$hot$changes$changes[[1]][[2]]    
-        newVal = input$hot$changes$changes[[1]][[4]]
+  
+   observeEvent( input$hot$changes,  
+       {
+          tryCatch( 
+              {
+                row = input$hot$changes$changes[[1]][[1]]
+                db = DB() 
+                shown = UserState$SamplesShown
+                row = row + 1 # Javascript based in zero, R is one based.
 
-        db = DB() 
-        shown = UserState$SamplesShown
-        sample = db[row, "Biosample.ID"]
-
-        if (newVal && !(sample %in% shown)) {
-            shown = c(sample, shown)
-            UserState$SamplesShown = shown
-        } else {
-            shown = shown[shown != sample]
-            UserState$SamplesShown = shown
-        }
-    }
-  })
-}
+                sample = db[row, 2] # second column is the SampleID
+                newVal = input$hot$changes$changes[[1]][[4]]
+                if (newVal && !(sample %in% shown)) {
+                    shown = c(sample, shown)
+                    cat(shown);
+                    UserState$SamplesShown = shown
+                } else {
+                    shown = shown[shown != sample]
+                    cat(shown);
+                    UserState$SamplesShown = shown
+                }
+               },  
+               error=function(cond) NULL ) # end of tryCatch
+       }) # end of observeEvent
+} # end of server.R singletonfunction
 
