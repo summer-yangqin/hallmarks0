@@ -66,32 +66,23 @@ function(input, output, session) {
   setBookmarkExclude(c("hot", "hot_select" ))
   UserState <- reactiveValues();
 
-  updateSelectizeInput(session, 'filter', choices = extractTerms(isolate(DB())), server = TRUE)
+  idb = isolate(DB());
+  AllTerms = extractTerms(idb)
+
+  updateSelectizeInput(session, 'filter', choices = AllTerms)
+
+
 
   onBookmark(function(state) {
     state$values$savedTime <- Sys.time()
     state$values$show = hot_show(state$input$hot)
   })
 
-  observeEvent( input$cancer, {
-      if (input$cancer != "All") {
-          # cancer <- paste0("%", input$cancer, "%")
-          m <- Metadata[grep(input$cancer, Metadata$Cancer),];
-          updateSelectInput(session, "study", choices = as.list(m$Study));
-      }
+  output$verbatim <- renderPrint({
+    UserState$SamplesShown
+  })
 
-  })
-  observeEvent( input$study, {
-    if (input$study != "All") {
-      m <- Metadata[grep(input$study, Metadata$Study),];
-      filename = m[1,"File"]
-      if (filename != "N/A") {
-          sampleData <- read.table(paste0("datasets/", filename), header=TRUE, row.names=1, sep="\t");
-          updateSelectInput(session, "sample", choices = row.names(sampleData));
-      }
-    }
-  })
-  
+
   output$radarchart <- renderRadarChart({
     db = DB()
     db <- db[UserState$SamplesShown, hallmark_columns]
@@ -113,32 +104,38 @@ function(input, output, session) {
   })
 
   output$hot <- renderRHandsontable({
-    if (!is.null(DB))
-      db = DB()
+     db = DB()
+     terms = input$filter
 
-      if (input$showOnlySelectedSamples) {
-        db = db[ UserState$SamplesShown,]
-        # db$show = rep(TRUE, dim(db)[1])
-      } else {
-        db[  UserState$SamplesShown,"show"] = TRUE
-      }
+     grepF <- function(row) {
+         all(unlist(lapply(terms, function(term) length(grep(term, row)) > 0)))
+     }
+     boolVec = apply(db, 1, grepF)
+     boolVec[UserState$SamplesShown] <- TRUE;
 
-      rhandsontable(db,rowHeaders = NULL,
+     db <- db[boolVec,]
+     UserState$Samples <- row.names(db)
+
+     if (input$showOnlySelectedSamples) {
+       db = db[ UserState$SamplesShown,]
+     } 
+     db[  UserState$SamplesShown,"show"] = TRUE
+
+     rhandsontable(db,rowHeaders = NULL,
                     useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
                     readOnly = TRUE, renderer="html"
                     , rowHeaderWidth = 100
                     , height = 400,
-# params passed below
-BioSampleID = db$BioSample.ID
 
+                    BioSampleID = db$BioSample.ID
                     ) %>%
           hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
           hot_cols(renderer = "
             function(instance, td, row, col, prop, value, cellProperties) {
                 if (value == true || value == false) 
-                    Handsontable.CheckboxRenderer.apply(this, arguments);
+                    Handsontable.CheckboxRenderer.apply(this, arguments)
                 else
-                    Handsontable.HtmlRenderer.apply(this, arguments);
+                    Handsontable.HtmlRenderer.apply(this, arguments)
 
 
                 if (instance.params) {
@@ -159,11 +156,12 @@ BioSampleID = db$BioSample.ID
           tryCatch( 
               {
                 row = input$hot$changes$changes[[1]][[1]]
-                db = DB() 
                 shown = UserState$SamplesShown
                 row = row + 1 # Javascript based in zero, R is one based.
+                # n = input$hot$params$rRowHeaders;
+                n = UserState$Samples
 
-                sample = db[row, 2] # second column is the SampleID
+                sample = n[row]
                 newVal = input$hot$changes$changes[[1]][[4]]
                 if (newVal && !(sample %in% shown)) {
                     shown = c(sample, shown)
@@ -171,6 +169,7 @@ BioSampleID = db$BioSample.ID
                 } else {
                     shown = shown[shown != sample]
                     UserState$SamplesShown = shown
+
                 }
                },  
                error=function(cond) NULL ) # end of tryCatch

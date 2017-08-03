@@ -6,6 +6,7 @@ function(request) {
       fluidRow(
         column(width=9, 
             selectInput('filter', 'Options', NULL, multiple=TRUE, selectize=TRUE),
+      verbatimTextOutput("verbatim"),
             checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE),
             rHandsontableOutput("hot"),
             radarChartOutput("radarchart"),
