@@ -75,11 +75,11 @@ function(input, output, session) {
 
   onBookmark(function(state) {
     state$values$savedTime <- Sys.time()
-    state$values$show = hot_show(state$input$hot)
+    state$values$show = UserState$SamplesShown
   })
 
   output$verbatim <- renderPrint({
-    UserState$SamplesShown
+    paste(length(UserState$SamplesShown), "selected")
   })
 
 
@@ -100,55 +100,62 @@ function(input, output, session) {
 
 
   onRestore(function(state) {
-    UserState$SamplesShown <<- state$values$show
+    UserState$SamplesShown <<-  state$values$show
+    updateSelectizeInput(session, 'filter', choices = AllTerms, selected= state$input$filter)
   })
 
   output$hot <- renderRHandsontable({
-     db = DB()
+     df = DB()
      terms = input$filter
 
      grepF <- function(row) {
          all(unlist(lapply(terms, function(term) length(grep(term, row)) > 0)))
      }
-     boolVec = apply(db, 1, grepF)
+     boolVec = apply(df, 1, grepF)
      boolVec[UserState$SamplesShown] <- TRUE;
 
-     db <- db[boolVec,]
-     UserState$Samples <- row.names(db)
+     df <- df[boolVec,]   
 
      if (input$showOnlySelectedSamples) {
-       db = db[ UserState$SamplesShown,]
+       df = df[ UserState$SamplesShown,]
      } 
-     db[  UserState$SamplesShown,"show"] = TRUE
 
-     rhandsontable(db,rowHeaders = NULL,
-                    useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
-                    readOnly = TRUE, renderer="html"
-                    , rowHeaderWidth = 100
-                    , height = 400,
-
-                    BioSampleID = db$BioSample.ID
-                    ) %>%
-          hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
-          hot_cols(renderer = "
-            function(instance, td, row, col, prop, value, cellProperties) {
-                if (value == true || value == false) 
-                    Handsontable.CheckboxRenderer.apply(this, arguments)
-                else
-                    Handsontable.HtmlRenderer.apply(this, arguments)
+     if (dim(df)[1] > 0) {
 
 
-                if (instance.params) {
-                    var ids = instance.params.BioSampleID;
-                    td.classList = 'all-sample-info sample-' + ids[row];
-                    if (document.ROWCOLORSHACK && ids[row] in document.ROWCOLORSHACK)
-                        td.style.backgroundColor = document.ROWCOLORSHACK[ ids[row] ]
-                }
-                // if (instance.params && hcols.includes(col)) td.style.background = 'red';
-                // if (instance.params && hrows.includes(row)) td.style.background = 'yellow';
-            }") %>%
-          hot_col("show", readOnly = FALSE)
-  })
+         UserState$Samples <- row.names(df)
+         df[  UserState$SamplesShown,"show"] = TRUE
+
+         rhandsontable(df,rowHeaders = NULL,
+                        useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
+                        readOnly = TRUE, renderer="html"
+                        , rowHeaderWidth = 100
+                        , height = 400,
+
+                        BioSampleID = df$BioSample.ID
+                        ) %>%
+              hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
+              hot_cols(renderer = "
+                function(instance, td, row, col, prop, value, cellProperties) {
+                    if (value == true || value == false) 
+                        Handsontable.CheckboxRenderer.apply(this, arguments)
+                    else
+                        Handsontable.HtmlRenderer.apply(this, arguments)
+
+
+                    if (instance.params) {
+                        var ids = instance.params.BioSampleID;
+                        td.classList = 'all-sample-info sample-' + ids[row];
+                        if (document.ROWCOLORSHACK && ids[row] in document.ROWCOLORSHACK)
+                            td.style.backgroundColor = document.ROWCOLORSHACK[ ids[row] ]
+                    }
+                    // if (instance.params && hcols.includes(col)) td.style.background = 'red';
+                    // if (instance.params && hrows.includes(row)) td.style.background = 'yellow';
+                }") %>%
+              hot_col("show", readOnly = FALSE)
+      }  
+  }
+)
 
   
    observeEvent( input$hot$changes,  
