@@ -135,7 +135,10 @@ function(input, output, session) {
                         BioSampleID = df$BioSample.ID
                         ) %>%
               hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
-              hot_cols(renderer = "
+              hot_cols(
+                manualColumnMove=TRUE,
+                manualColumnResize=TRUE,
+                renderer = "
                 function(instance, td, row, col, prop, value, cellProperties) {
                     if (value == true || value == false) 
                         Handsontable.CheckboxRenderer.apply(this, arguments)
