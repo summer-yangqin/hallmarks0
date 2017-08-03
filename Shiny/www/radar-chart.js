@@ -297,10 +297,13 @@ var RadarChart = {
         .transition().duration(cfg.transitionDuration)
         .remove();
 
+        $(".all-sample-info").css("background-color", "")
+        document.ROWCOLORSHACK = {}
         polygon
         .each(function(d, i) {
             color = cfg.color(i);
             $(".sample-"+d.className).css("background-color", color)
+            document.ROWCOLORSHACK[d.className] = color;
         })
 
         polygon

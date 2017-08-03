@@ -98,7 +98,8 @@ function(input, output, session) {
                     readOnly = TRUE, renderer="html"
                     , rowHeaderWidth = 100
                     , height = 400,
-htmlClassIds = strcat("all-sample-info sample-", db$BioSample.ID)
+# params passed below
+htmlClassIds = db$BioSample.ID
 
                     ) %>%
           hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
@@ -112,7 +113,9 @@ htmlClassIds = strcat("all-sample-info sample-", db$BioSample.ID)
 
                 if (instance.params) {
                     var ids = instance.params.htmlClassIds;
-                    td.classList = ids[row];
+                    td.classList = 'all-sample-info sample-' + ids[row];
+                    if (document.ROWCOLORSHACK && ids[row] in document.ROWCOLORSHACK)
+                        td.style.backgroundColor = document.ROWCOLORSHACK[ ids[row] ]
                 }
                 // if (instance.params && hcols.includes(col)) td.style.background = 'red';
                 // if (instance.params && hrows.includes(row)) td.style.background = 'yellow';
