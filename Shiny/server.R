@@ -72,7 +72,7 @@ function(input, output, session) {
     if (dim(db)[1] == 0)
        db = TCGA
     # df <- rbind(dd, db[UserState$SamplesShown, ])
-      
+
     data.frame(
       colnames = colnames(db),
       df = t(db),
@@ -81,25 +81,29 @@ function(input, output, session) {
   })
 
 
-  cache_tbl = NULL
-
-  cache_show = NULL
 
   onRestore(function(state) {
-    cache_show <<- state$values$show
+    UserState$SamplesShown <<- state$values$show
   })
 
   output$hot <- renderRHandsontable({
     if (!is.null(DB))
       db = DB()
-      db[ db$Biosample.ID %in% cache_show,"show"] = TRUE
+
+      if (input$showOnlySelectedSamples) {
+        db = db[ UserState$SamplesShown,]
+        # db$show = rep(TRUE, dim(db)[1])
+      } else {
+        db[  UserState$SamplesShown,"show"] = TRUE
+      }
+
       rhandsontable(db,rowHeaders = NULL,
                     useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
                     readOnly = TRUE, renderer="html"
                     , rowHeaderWidth = 100
                     , height = 400,
 # params passed below
-htmlClassIds = db$BioSample.ID
+BioSampleID = db$BioSample.ID
 
                     ) %>%
           hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
@@ -112,7 +116,7 @@ htmlClassIds = db$BioSample.ID
 
 
                 if (instance.params) {
-                    var ids = instance.params.htmlClassIds;
+                    var ids = instance.params.BioSampleID;
                     td.classList = 'all-sample-info sample-' + ids[row];
                     if (document.ROWCOLORSHACK && ids[row] in document.ROWCOLORSHACK)
                         td.style.backgroundColor = document.ROWCOLORSHACK[ ids[row] ]

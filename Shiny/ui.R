@@ -6,6 +6,7 @@ function(request) {
       fluidRow(
         column(width=9, 
             tags$div(class="legend", tags$p("Legend:")),
+            checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE),
             rHandsontableOutput("hot"),
             verbatimTextOutput('selected'),
             radarChartOutput("radarchart")),
