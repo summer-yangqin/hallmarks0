@@ -5,11 +5,10 @@ function(request) {
       tags$h2("Oncology Model Fidelity Score"),
       fluidRow(
         column(width=9, 
-            tags$div(class="legend", tags$p("Legend:")),
             checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE),
             rHandsontableOutput("hot"),
-            verbatimTextOutput('selected'),
-            radarChartOutput("radarchart")),
+            radarChartOutput("radarchart"),
+            tags$div(class="legend", tags$p("Legend:"))),
         column(width=3,
 
           selectInput("cancer", 
