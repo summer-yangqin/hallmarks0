@@ -35,12 +35,38 @@ hot_show = function(hot) {
     ids[show];
 }
 
+trim <- function (x) gsub("^\\s+|\\s+$", "", x)
+
+extractTerms <- function(df) {
+    df$show <- NULL
+    d <- unlist(df);
+    d <- unname(d) # remove labels
+    d <- unique(d) # compress
+
+    numbers = suppressWarnings(  as.numeric(d[!is.na(as.numeric(d))]))
+    numbers = numbers[numbers > 100000]
+    numbers = unlist(lapply(numbers,as.character))
+
+    notnumbers = suppressWarnings(  d[is.na(as.numeric(d))])
+    notnumbers = unlist(list(lapply(notnumbers, trim)))
+
+    words <- unlist(lapply(notnumbers, function(s) strsplit(s, "(\\s+)|(?!')(?=[[:punct:]])", perl = TRUE)))
+    all <- c(notnumbers, words, numbers)
+
+    all <- unique(all)
+    all <- all[nchar(all) > 2]
+    sort(all)
+}  
+
 
 DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 
 function(input, output, session) {
+
   setBookmarkExclude(c("hot", "hot_select" ))
   UserState <- reactiveValues();
+
+  updateSelectizeInput(session, 'filter', choices = extractTerms(isolate(DB())), server = TRUE)
 
   onBookmark(function(state) {
     state$values$savedTime <- Sys.time()

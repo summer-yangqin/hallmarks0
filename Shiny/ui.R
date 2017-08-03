@@ -5,6 +5,7 @@ function(request) {
       tags$h2("Oncology Model Fidelity Score"),
       fluidRow(
         column(width=9, 
+            selectInput('filter', 'Options', NULL, multiple=TRUE, selectize=TRUE),
             checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE),
             rHandsontableOutput("hot"),
             radarChartOutput("radarchart"),
