@@ -6,30 +6,18 @@ function(request) {
       fluidRow(
         column(width=9, 
             selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE),
+
+          fluidRow(
+                div(style="display: inline-block;vertical-align:top; width: 150px;",
+                    checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE)),
+                div(style="display: inline-block;vertical-align:top; width: 150px;",
+                    checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL)),
+                div(style="display: inline-block;vertical-align:top; width: 150px;",
+                    bookmarkButton())),
+
             verbatimTextOutput("verbatim"),
-            checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE),
             rHandsontableOutput("hot"),
             radarChartOutput("radarchart"),
-            tags$div(class="legend", tags$p("Legend:"))),
-
-        column(width=3,
-          selectInput("cancer", 
-            label = "Cancer",
-            choices = Cancers,
-            selected = Cancers[1]),
-          
-          selectInput("sample", 
-                      label = "Sample",
-                      choices = Samples,
-                      multiple = TRUE,
-                      selected = Samples[1]),
-          
-          tags$i("You can select multiple samples"),
-
-          checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL),
-          bookmarkButton()
-        )
-      )
-    )
+            tags$div(class="legend", tags$p("Legend:")))))
 
 }
