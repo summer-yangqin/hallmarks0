@@ -25,6 +25,9 @@ read.table.hot = function(name)  {
 # This may need to be sped up
 
 DBdata = read.table.hot("DB.txt");
+# DBdata = bind_rows(DBdata, TCGA)
+
+
 # DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 DB = function() DBdata
 
@@ -126,13 +129,36 @@ function(input, output, session) {
          UserState$Samples <- row.names(df)
          df[  UserState$SamplesShown,"show"] = TRUE
 
+         m = dim(df)[1] # rows
+         n = dim(df)[2]  #columns
+
+         mergeCells = c();
+         for (i in 2:(n)) { # columns
+             j = 1
+             while (j < m) { # rows
+                 k = 1
+                 while ((j+k) < m && !is.na(df[j,i]) && !is.na(df[j+k,i]) && df[j,i] == df[j+k,i])  {
+                    k = k + 1
+                 }
+
+                 if (k > 1) {
+                      mergeCells = append(mergeCells, list(list(row= j-1, col= i-1, rowspan= k, colspan= 1)))
+                      j = j + k
+                 } else {
+                      j = j + 1
+                 }
+              }
+         }
+
          rhandsontable(df,rowHeaders = NULL,
                         useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
-                        readOnly = TRUE, renderer="html"
-                        , rowHeaderWidth = 100
-                        , height = 400,
-
-                        BioSampleID = df$BioSample.ID
+                        readOnly = TRUE, renderer="html" , rowHeaderWidth = 100 , height = 400,
+                        mergeCells = mergeCells, wordWrap=TRUE,
+                        BioSampleID = df$BioSample.ID,
+                        colWidths = c(30,80,60,60,200, 
+                                     120,80,80,80,80,
+                                     80,120,80,80,80,
+                                    80)
                         ) %>%
               hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
               hot_cols(
