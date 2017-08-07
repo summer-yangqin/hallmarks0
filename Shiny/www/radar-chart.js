@@ -470,6 +470,11 @@ var RadarChart = {
      var svg = d3.select('.legend')
          .append("svg")
 	  .attr("class", "legend-svg")
+
+    var df = HOT.getData();
+    var dt = {}
+    for (var i = 0; i < df.length; i++)
+        dt[df[i][10]] = df[i]
 		
 
      var legend = svg.append("g")
@@ -498,8 +503,13 @@ var RadarChart = {
 	  .attr("y", function(d, i){ return i * 20 + 9;})
 	  .attr("font-size", "11px")
 	  .attr("fill", "#737373")
-	  .text(function(d) { return d.className; })
-	  ;	
+	  .text(function(d) { 
+              if (d.className in dt)
+                  return dt[d.className].join(", ") 
+              else
+                  return d.className
+          })
+  ;	
   }
 
 
