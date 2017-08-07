@@ -155,7 +155,7 @@ function(input, output, session) {
                         readOnly = TRUE, renderer="html" , rowHeaderWidth = 100 , height = 400,
                         mergeCells = mergeCells, wordWrap=TRUE,
                         BioSampleID = df$BioSample.ID,
-                        colWidths = c(30,80,60,60,200, 
+                        colWidths = c(40,80,70,60,200, 
                                      120,80,80,80,80,
                                      80,120,80,80,80,
                                     80)

@@ -4,8 +4,8 @@ function(request) {
     fluidPage(
       tags$h2("Oncology Model Fidelity Score"),
       fluidRow(
-        column(width=9, 
-            selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE),
+        column(width=7, 
+            selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE)),
 
           fluidRow(
                 div(style="display: inline-block;vertical-align:top; width: 150px;",
@@ -15,9 +15,9 @@ function(request) {
                 div(style="display: inline-block;vertical-align:top; width: 150px;",
                     bookmarkButton())),
 
-            verbatimTextOutput("verbatim"),
+            # verbatimTextOutput("verbatim"),
             rHandsontableOutput("hot"),
             radarChartOutput("radarchart"),
-            tags$div(class="legend", tags$p("Legend:")))))
+            tags$div(class="legend", tags$p("Legend:"))))
 
 }
