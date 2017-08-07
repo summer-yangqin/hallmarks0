@@ -8,7 +8,7 @@ function(request) {
             selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE)),
 
           fluidRow(
-                div(style="display: inline-block;vertical-align:top; width: 150px;",
+                div(style="display: inline-block;vertical-align:top; width: 300px;",
                     checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE)),
                 div(style="display: inline-block;vertical-align:top; width: 150px;",
                     checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL)),

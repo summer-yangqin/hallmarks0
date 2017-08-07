@@ -16,7 +16,8 @@ hallmark_columns = c(
 
 read.table.hot = function(name)  {
     table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
-    row.names(table) = table[,1]
+    row.names(table) = table$BioSample.ID
+
     show = rep(FALSE, dim(table)[1])
     cbind(show=show, table)
 }
@@ -166,20 +167,7 @@ function(input, output, session) {
                 manualColumnResize=TRUE,
                 renderer = "
                 function(instance, td, row, col, prop, value, cellProperties) {
-                    if (value == true || value == false) 
-                        Handsontable.CheckboxRenderer.apply(this, arguments)
-                    else
-                        Handsontable.HtmlRenderer.apply(this, arguments)
-
-
-                    if (instance.params) {
-                        var ids = instance.params.BioSampleID;
-                        td.classList = 'all-sample-info sample-' + ids[row];
-                        if (document.ROWCOLORSHACK && ids[row] in document.ROWCOLORSHACK)
-                            td.style.backgroundColor = document.ROWCOLORSHACK[ ids[row] ]
-                    }
-                    // if (instance.params && hcols.includes(col)) td.style.background = 'red';
-                    // if (instance.params && hrows.includes(row)) td.style.background = 'yellow';
+                        return OMFScell.apply(this, arguments)
                 }") %>%
               hot_col("show", readOnly = FALSE)
       }  
