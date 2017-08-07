@@ -19,9 +19,13 @@ function(request) {
 
       fluidRow(
             rHandsontableOutput("hot"),
-            column(width=8,
+            column(width=6,
                 radarChartOutput("radarchart")),
-            column(width=4,
-                tags$div(class="legend", tags$p("Legend:")))))
+            column(width=6,
+                tags$div(class="legend-div",
+                    tags$p("Legend"),
+                    tags$ul(class="legend-ul"))
+                # tags$div(class="legend", tags$p("Legend:"))
+            )))
 
 }

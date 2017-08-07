@@ -463,53 +463,34 @@ var RadarChart = {
     RadarChart.legend(chart, cfg, d)
   },
 
-  legend: function(chart, cfg, d) {
-     var LegendOptions = ['Smartphone','Tablet'];
-     d3.select('.legend-svg').remove();
 
-     var svg = d3.select('.legend')
-         .append("svg")
-	  .attr("class", "legend-svg")
+  legend: function(chart, cfg, data) {
+    var labelCols = [ "BioSample.ID", "Type", "Subtype", "Species", "Cohort", "Biosample.Name", "Biosample.Description", "Strain"]
+     $(".legend-ul").empty()
 
-    var df = HOT.getData();
-    var dt = {}
-    for (var i = 0; i < df.length; i++)
-        dt[df[i][10]] = df[i]
+    var cols = HOT.getColHeader();
+    var hotColMap = {}
+    for (var i = 0; i < cols.length; i++)
+        hotColMap[cols[i]] = i
+    var BioSample_ID = hotColMap["BioSample.ID"]
 		
 
-     var legend = svg.append("g")
-	.attr("class", "legend-g")
-	.attr("height", 100)
-	.attr("width", 200)
-	.attr('transform', 'translate(90,20)') 
-	;
-	//Create colour squares
-	legend.selectAll('rect')
-	  .data(d)
-	  .enter()
-	  .append("rect")
-	  .attr("x", 25)
-	  .attr("y", function(d, i){ return i * 20;})
-	  .attr("width", 10)
-	  .attr("height", 10)
-	  .style("fill", function(d, i){ return cfg.color(i);})
-	  ;
-	//Create text next to squares
-	legend.selectAll('text')
-	  .data(d)
-	  .enter()
-	  .append("text")
-	  .attr("x", 40 )
-	  .attr("y", function(d, i){ return i * 20 + 9;})
-	  .attr("font-size", "11px")
-	  .attr("fill", "#737373")
-	  .text(function(d) { 
-              if (d.className in dt)
-                  return dt[d.className].join(", ") 
-              else
-                  return d.className
-          })
-  ;	
+    var hotData = HOT.getData();
+    var hotDataMap = {}
+    for (var i = 0; i < hotData.length; i++)
+        hotDataMap[hotData[i][BioSample_ID]] = hotData[i]
+
+    debugger
+    for (var i = 0; i < data.length; i++) {
+         var label = data[i].className;
+	 var color = cfg.color(i);
+         if (label in hotDataMap) {
+             var hotRow = hotDataMap[label];
+             label = labelCols.map(function(col) { return hotRow[hotColMap[col]] }).join(", ") 
+         }
+         var txt = '<li> <div class="legend-input-color"> <textarea class="legend-label" rows="2" cols="100">' +  label + '</textarea> <div class="legend-color-box" style="background-color: '+ color + ';"></div> </div> </li>';
+         $(".legend-ul").append(txt);
+     }
   }
 
 
@@ -658,3 +639,4 @@ for (var i = 1; i < m; i++) { // foreach row
 }
 return radar;
 }
+

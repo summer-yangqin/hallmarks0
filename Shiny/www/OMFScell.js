@@ -1,7 +1,7 @@
 HOT=null;
 
 function asv() {
-    debugger;
+    // debugger;
 }
 
 
@@ -50,7 +50,11 @@ urlMap = {
     "PubMed": "https://www.ncbi.nlm.nih.gov/pubmed/",
     "ImmPort.Study.ID": "http://www.immport.org/immport-open/public/study/study/displayStudyDetail/",
     "Strain": "http://www.findmice.org/summary?query=",
-    "Type": "https://portal.gdc.cancer.gov/projects/"
+    "Type": "https://portal.gdc.cancer.gov/projects/",
+    "Experiment.ID": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=",
+    "BioSample.ID": "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?run=",
+    "Repository.Accession": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=",
+    "PI": "https://www.google.com/search?q="
 }
 
 /*

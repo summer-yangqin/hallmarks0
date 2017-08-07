@@ -19,6 +19,8 @@ radarChartOutput <- function(inputId, width="100%", height="400px") {
       tags$script(src="d3/d3.v3.min.js"),
       tags$script(src="radar-chart-binding.js"),
       tags$script(src="OMFScell.js"),
+      tags$script(src="handsontable.full.js"),
+      tags$link(rel="stylesheet", type="text/css", href="handsontable.full.css"),
       tags$link(rel="stylesheet", type="text/css", href="radar-chart.css"),
       tags$link(rel="stylesheet", type="text/css", href="OMFS.css"),
       tags$script(src="radar-chart.js")
