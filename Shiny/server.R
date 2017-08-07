@@ -83,7 +83,10 @@ function(input, output, session) {
   })
 
   output$verbatim <- renderPrint({
-    paste(length(UserState$SamplesShown), "selected")
+    paste(
+        length(UserState$Samples), "matching", 
+        length(UserState$SamplesShown), "selected"
+    )
   })
 
 

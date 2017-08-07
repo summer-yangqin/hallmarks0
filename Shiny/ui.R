@@ -3,19 +3,21 @@ function(request) {
 
     fluidPage(
       tags$h2("Oncology Model Fidelity Score"),
-      fluidRow(
-        column(width=7, 
-            selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE)),
-
+        column(width=12, 
           fluidRow(
-                div(style="display: inline-block;vertical-align:top; width: 300px;",
+            selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE),
+
+            column(width=1, 
                     checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE)),
-                div(style="display: inline-block;vertical-align:top; width: 150px;",
+            column(width=1, 
+                    checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE)),
+            column(width=1, 
+                    verbatimTextOutput("verbatim")),
+            column(width=1, 
                     checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL)),
-                div(style="display: inline-block;vertical-align:top; width: 150px;",
                     bookmarkButton())),
 
-            # verbatimTextOutput("verbatim"),
+      fluidRow(
             rHandsontableOutput("hot"),
             radarChartOutput("radarchart"),
             tags$div(class="legend", tags$p("Legend:"))))
