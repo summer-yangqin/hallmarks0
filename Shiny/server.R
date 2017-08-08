@@ -14,6 +14,34 @@ hallmark_columns = c(
     "Tumor.promoting_inflammation")
 
 
+displayed_columns  = c(
+    "show",
+
+    "Type",
+    "Subtype",
+    "Species",
+    #"Study.Title",
+    #"PI",
+    #"ImmPort.Study.ID",
+    #"PubMed",
+    "Experiment.ID",
+    "Cohort",
+    "BioSample.ID",
+    #"Repository.Accession",
+    "Biosample.Name",
+    #"Biosample.Description",
+    "Strain",
+    "Evading_growth_suppressors",
+    "Evading_immune_destruction",
+    "Genome_instability",
+    "Replicative_immortality",
+    "Reprogramming_energy_metabolism",
+    "Resisting_cell_death",
+    "Sustained_angiogenesis",
+    "Sustaining_proliferative_signaling",
+    "Tissue_invasion_and_metastasis",
+    "Tumor.promoting_inflammation")
+
 
 
 
@@ -138,16 +166,14 @@ function(input, output, session) {
 #                 }
 #              }
 #         }
-         v <- rep(TRUE, n)
-         v[2:10] <- FALSE
-         ddf <- df[,v]
+         ddf <- df[,displayed_columns]
 
          rhandsontable(ddf,rowHeaders = NULL,
                         useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
                         readOnly = TRUE, renderer="html" , rowHeaderWidth = 100 , height = 400,
 #                       mergeCells = mergeCells, 
                         wordWrap=TRUE,
-                        BioSampleID = df$BioSample.ID
+                        BioSampleID = ddf$BioSample.ID
 #                        colWidths = c(40,80,70,60,200, 120,80,80,80,80, 80,120,80,80,80, 80)
                         ) %>%
               hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%

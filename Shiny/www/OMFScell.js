@@ -74,8 +74,10 @@ function urlWrap(colName, id) {
         id = a[a.length - 1];
     }
 
+    /*
     if (colName == "Type" && id in TypeMap)
         id = TypeMap[id];
+    */
 
     if (colName in urlMap) 
         return "<a href='" + urlMap[colName] + id + "'  target='OMFS-aux' >" + id + "</a>"
