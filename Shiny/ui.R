@@ -5,14 +5,12 @@ function(request) {
       tags$h2("Oncology Model Fidelity Score"),
         column(width=12, 
           fluidRow(
+            selectInput('cancer', 'Browser cancer ', Cancers, multiple=TRUE, selectize=FALSE),
+
             selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE),
 
             column(width=1, 
                     checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE)),
-            column(width=1, 
-                    checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE)),
-            column(width=1, 
-                    verbatimTextOutput("verbatim")),
             column(width=1, 
                     checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL)),
                     bookmarkButton())),

@@ -116,6 +116,14 @@ function(input, output, session) {
      terms = input$filter
 
      grepF <- function(row) {
+         cancer =  input$cancer;
+         if (!is.null(cancer)) {
+             if (!("All" %in% cancer)) {
+                 if (!(row["Type"]  %in% cancer)) {
+                    return(FALSE)
+                 }
+             }
+         }
          all(unlist(lapply(terms, function(term) length(grep(term, row)) > 0)))
      }
      boolVec = apply(df, 1, grepF)
