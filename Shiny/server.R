@@ -14,30 +14,8 @@ hallmark_columns = c(
     "Tumor.promoting_inflammation")
 
 
-read.table.hot = function(name)  {
-    table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
-    row.names(table) = table$BioSample.ID
-
-    show = rep(FALSE, dim(table)[1])
-    cbind(show=show, table)
-}
-
-# Cross-session reactive file reader. all sessions DB and this reader (so cool!)
-# This may need to be sped up
-
-DBdata = read.table.hot("DB.txt");
-# DBdata = bind_rows(DBdata, TCGA)
 
 
-# DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
-DB = function() DBdata
-
-hot_show = function(hot) {
-    r = hot_to_r(hot);
-    show  = r$show;
-    ids  = r[1,]
-    ids[show];
-}
 
 trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 
@@ -63,7 +41,6 @@ extractTerms <- function(df) {
 }  
 
 
-DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 
 function(input, output, session) {
 
@@ -161,17 +138,17 @@ function(input, output, session) {
 #                 }
 #              }
 #         }
+         v <- rep(TRUE, n)
+         v[2:10] <- FALSE
+         ddf <- df[,v]
 
-         rhandsontable(df,rowHeaders = NULL,
+         rhandsontable(ddf,rowHeaders = NULL,
                         useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
                         readOnly = TRUE, renderer="html" , rowHeaderWidth = 100 , height = 400,
 #                       mergeCells = mergeCells, 
                         wordWrap=TRUE,
-                        BioSampleID = df$BioSample.ID,
-                        colWidths = c(40,80,70,60,200, 
-                                     120,80,80,80,80,
-                                     80,120,80,80,80,
-                                    80)
+                        BioSampleID = df$BioSample.ID
+#                        colWidths = c(40,80,70,60,200, 120,80,80,80,80, 80,120,80,80,80, 80)
                         ) %>%
               hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
               hot_cols(

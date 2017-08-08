@@ -71,16 +71,24 @@ for (sig in Signatures$signatures) {
     TCGA[simpleCap(sig$cancer), simpleCap(sig$hallmark)] = m
 }
 
+DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
+read.table.hot = function(name)  {
+    table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
+    row.names(table) = table$BioSample.ID
 
+    show = rep(FALSE, dim(table)[1])
+    cbind(show=show, table)
+}
 
-Metadata = read.table("datasets/metadata.txt", sep="\t", header=TRUE, as.is=TRUE, row.names=1)
+db = isolate(DB())
+Cancers = c("All", unique(sort(db$Type)))
 
-Cancers = c("All", unique(sort(Metadata$Cancer)))
-Studies = c("All", as.list(Metadata$Study_Title))
+SelectStudies = function(db) {
+   fields = c("ImmPort.Study.ID", "PI",  "Study.Title")
+   c("All", unique(sort(apply(unique(db[,fields]), 1, function(x) paste(x, collapse=" ")))))
+}
 
-SampleData = NULL
-
-Samples = c("N/A")
+Studies = SelectStudies(db)
 
 enableBookmarking(store = "url")
 
