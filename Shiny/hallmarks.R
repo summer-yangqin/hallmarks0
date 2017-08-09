@@ -68,6 +68,7 @@ TCGA = data.frame();
 for (sig in Signatures$signatures) {
     m = round(mean( sig$reference$score[sig$reference$labels == 1] ))
     c = simpleCap(sig$cancer)
+    cc = gsub(" ", "_", c)
 
     TCGA[c, sig$hallmark] = m
     # TCGA[c, "show"] <- TRUE
@@ -81,7 +82,7 @@ for (sig in Signatures$signatures) {
     TCGA[c, "PubMed"] <- ""
     TCGA[c, "Experiment.ID"] <- ""
     TCGA[c, "Cohort"] <- ""
-    TCGA[c, "BioSample.ID"] <- ""
+    TCGA[c, "BioSample.ID"] <- c
     TCGA[c, "Repository.Accession"] <- ""
     TCGA[c, "Biosample.Name"] <- ""
     TCGA[c, "Biosample.Description"] <- ""

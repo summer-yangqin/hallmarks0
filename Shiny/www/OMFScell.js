@@ -105,10 +105,12 @@ OMFScell = function(instance, td, row, col, prop, value, cellProperties) {
     }
 
 
-    if (instance.params && (col == 0 || col >= 10)) {
+    /* slows it down
+    if (instance.params && col < 2 ) {
         var ids = instance.params.BioSampleID;
         td.classList = 'all-sample-info sample-' + ids[row];
         if (document.ROWCOLORSHACK && ids[row] in document.ROWCOLORSHACK)
             td.style.backgroundColor = document.ROWCOLORSHACK[ ids[row] ]
     }
+    */
 }

@@ -297,6 +297,8 @@ var RadarChart = {
         .transition().duration(cfg.transitionDuration)
         .remove();
 
+        /*
+           slows it down too much
         $(".all-sample-info").css("background-color", "")
         document.ROWCOLORSHACK = {}
         polygon
@@ -305,6 +307,7 @@ var RadarChart = {
             $(".sample-"+d.className).css("background-color", color)
             document.ROWCOLORSHACK[d.className] = color;
         })
+        */
 
         polygon
         .each(function(d, i) {
