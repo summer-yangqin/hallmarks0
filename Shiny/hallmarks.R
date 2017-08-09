@@ -67,26 +67,53 @@ Signatures <- RJSONIO::fromJSON("signatures")
 TCGA = data.frame();
 for (sig in Signatures$signatures) {
     m = round(mean( sig$reference$score[sig$reference$labels == 1] ))
-    TCGA[simpleCap(sig$tissue), simpleCap(sig$hallmark)] = m
-    TCGA[simpleCap(sig$cancer), simpleCap(sig$hallmark)] = m
+    c = simpleCap(sig$cancer)
+
+    TCGA[c, sig$hallmark] = m
+    # TCGA[c, "show"] <- TRUE
+    TCGA[c, "Type"] = simpleCap(sig$cancer)
+    TCGA[c, "Subtype"] = simpleCap(sig$tissue)
+    TCGA[c, "Species"] = "Homo Sapien"
+    TCGA[c, "Study.Title"] <- "Mean average of samples"
+
+    TCGA[c, "PI"] <- "TCGA"
+    TCGA[c, "ImmPort.Study.ID"] <- ""
+    TCGA[c, "PubMed"] <- ""
+    TCGA[c, "Experiment.ID"] <- ""
+    TCGA[c, "Cohort"] <- ""
+    TCGA[c, "BioSample.ID"] <- ""
+    TCGA[c, "Repository.Accession"] <- ""
+    TCGA[c, "Biosample.Name"] <- ""
+    TCGA[c, "Biosample.Description"] <- ""
+    TCGA[c, "Strain"] <- ""
 }
+colnames(TCGA) <- unlist(lapply(colnames(TCGA), function(x) gsub("Tumor.", "Tumor.", gsub(" ", "_", x))))
+
 
 DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
 read.table.hot = function(name)  {
     table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
     row.names(table) = table$BioSample.ID
 
-    show = rep(FALSE, dim(table)[1])
-    cbind(show=show, table)
+# write(sort(colnames(table)), file="db")
+# write(sort(colnames(TCGA)), file="tcga")
+    colOrder = colnames(table)
+    table = rbind(TCGA, table)
+    table = table[, colOrder];
+    cbind(show=rep(FALSE, dim(table)[1]), table)
 }
 
 db = isolate(DB())
+
+
+
 Cancers = c("All", unique(sort(db$Type)))
 
 SelectStudies = function(db) {
    fields = c("ImmPort.Study.ID", "PI",  "Study.Title")
    c("All", unique(sort(apply(unique(db[,fields]), 1, function(x) paste(x, collapse=" ")))))
 }
+
 
 Studies = SelectStudies(db)
 
