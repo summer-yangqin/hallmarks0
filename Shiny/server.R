@@ -120,7 +120,16 @@ function(input, output, session) {
      df = DB()
      terms = input$filter
 
-     grepF <- function(row) {
+     studyID <- sub(" .*", "", input$study) 
+
+
+     boolVec = apply(df, 1, 
+      function(row) {
+
+        if (studyID != "All" && studyID != row["ImmPort.Study.ID"]) {  # short circuit if we are filtering on input$study
+            return(FALSE)
+        }
+
          cancer =  input$cancer;
          if (!is.null(cancer)) {
              if (!("All" %in% cancer)) {
@@ -130,8 +139,9 @@ function(input, output, session) {
              }
          }
          all(unlist(lapply(terms, function(term) length(grep(term, row)) > 0)))
-     }
-     boolVec = apply(df, 1, grepF)
+     })
+
+
      boolVec[UserState$SamplesShown] <- TRUE;
 
      df <- df[boolVec,]   

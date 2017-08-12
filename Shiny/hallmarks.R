@@ -78,7 +78,7 @@ for (sig in Signatures$signatures) {
     TCGA[c, "Study.Title"] <- "Mean average of samples"
 
     TCGA[c, "PI"] <- "TCGA"
-    TCGA[c, "ImmPort.Study.ID"] <- ""
+    TCGA[c, "ImmPort.Study.ID"] <- "REF"
     TCGA[c, "PubMed"] <- ""
     TCGA[c, "Experiment.ID"] <- ""
     TCGA[c, "Cohort"] <- ""
