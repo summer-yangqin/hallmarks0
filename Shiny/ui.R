@@ -1,11 +1,11 @@
 library(shiny)
 
 libraryPanel <- function()  
-    div(style="display:inline-block",
-        selectInput('cancer', 'Cancers', Cancers),
-        selectInput('study',  'Studies', Studies),
-        selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE)
-    )
+        div(style="display:inline-block",
+            selectInput('cancer', 'Cancers', Cancers),
+            selectInput('study',  'Studies', Studies),
+            selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE)
+        )
 
 uploadPanel <- function() 
    wellPanel(
@@ -44,7 +44,7 @@ uploadPanel <- function()
 function(request) {
 
     fluidPage(
-      tags$style("input[type=checkbox] { transform: scale(1.8); }"),
+      tags$style("input[type=checkbox] { transform: scale(1.5); }"),
 
       fluidRow(
            column(width=5, tags$h2("Oncology Model Fidelity Score")),
