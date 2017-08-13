@@ -12,11 +12,15 @@ libraryPanel <- function()
 function(request) {
 
     fluidPage(
-      tags$h2("Oncology Model Fidelity Score"),
       fluidRow(
+           column(width=5, tags$h2("Oncology Model Fidelity Score")),
+           column(width=5, bookmarkButton())
+      ),
+      fluidRow( 
         column(width=3, 
-                    libraryPanel(),
-                    bookmarkButton()
+            tabsetPanel(
+                tabPanel("Library", libraryPanel())
+            )
         ),
         column(width=9, 
             checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE),
@@ -24,7 +28,7 @@ function(request) {
       ),
       fluidRow(
             column(width=7,
-                 checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL),
+                checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL),
                 radarChartOutput("radarchart")),
             column(width=5,
                 tags$div(class="legend-div",
