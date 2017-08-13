@@ -1,11 +1,11 @@
 library(shiny)
 
 libraryPanel <- function()  
+   wellPanel(
         div(style="display:inline-block",
             selectInput('cancer', 'Cancers', Cancers),
             selectInput('study',  'Studies', Studies),
-            selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE)
-        )
+            selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE)))
 
 uploadPanel <- function() 
    wellPanel(
@@ -17,8 +17,7 @@ uploadPanel <- function()
                   'text/plain',
                   '.csv',
                   '.tsv'
-                )
-      ),
+                )),
       tags$hr(),
       checkboxInput('header', 'Header', TRUE),
       radioButtons('sep', 'Separator',
