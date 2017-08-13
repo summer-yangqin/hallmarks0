@@ -1,6 +1,8 @@
 library(dplyr)
 library(pracma)
 
+printf <- function(...) cat(sprintf(...))
+
 hallmark_columns = c(
     "Evading_growth_suppressors",
     "Evading_immune_destruction",
@@ -41,6 +43,70 @@ displayed_columns  = c(
     "Sustaining_proliferative_signaling",
     "Tissue_invasion_and_metastasis",
     "Tumor.promoting_inflammation")
+
+
+
+maxS = 3.0
+minS = -3.0
+diffS = maxS - minS;
+
+rescale= function(a) {
+  b = scale(a, center = T, scale = T);
+  c = diffS/(max(b)-min(b))*(b-min(b))+minS
+  return(c);
+}
+
+
+computeSignatureScore = function(X, tissue) {
+    index <- Signatures$index[[tissue]];
+    signaturesForTissue <- Signatures$signatures[index];
+
+    possible = row.names(X)
+    X <- apply(X, 2, rescale)
+    row.names(X) <- possible
+    X <- data.frame(X)
+    scores = data.frame()
+    
+    n = length(signaturesForTissue)
+    for (i in 1:n) {
+        # Increment the progress bar, and update the detail text.
+        incProgress(1/n, detail = paste("Doing part", i, "of", n))
+
+        signature    <- signaturesForTissue[[i]];
+        hallmark <- signature$hallmark;
+        
+        should  <- names(signature$w)
+        genes    <- intersect(should, possible)
+
+        printf("should=%d possible=%d actual=%d\n", length(should),length(possible),length(genes));
+
+        score = data.frame();
+        posScale <- signature$posScale;
+        negScale <- signature$negScale;
+        w = signature$w[genes]
+    
+        XX <- t(X[genes,])
+        #cat(XX);
+      
+    
+    
+        raw = XX %*% w + signature$b;
+        heat= XX * w + signature$b;
+    
+        for (j in 1:length(raw)) {
+            value = raw[j];
+            if (value < 0) {
+                score[1,j] = round(500  - (negScale * raw[j]));
+            } else {
+                score[1,j] = round( (posScale * raw[j]) + 500);
+            }
+        }
+        colnames(score) = colnames(X);
+        row.names(score) = signature$hallmark;
+        scores = rbind(scores, score);
+    }
+    return (scores);
+}
 
 
 
@@ -199,6 +265,27 @@ function(input, output, session) {
   }
 )
 
+   observeEvent( input$file1,  {
+    # input$file1 will be NULL initially. After the user selects
+    # and uploads a file, it will be a data frame with 'name',
+    # 'size', 'type', and 'datapath' columns. The 'datapath'
+    # column will contain the local filenames where the data can
+    # be found.
+
+    inFile <- input$file1
+
+    if (is.null(inFile))
+      return(NULL)
+
+    userData = read.csv(inFile$datapath, header = input$header,
+             row.names=1,
+             sep = input$sep, quote = input$quote)
+
+
+    withProgress(message = 'Making plot', value = 0, {
+        computeSignatureScore(userData, input$tissue)
+    })
+  })
   
    observeEvent( input$hot$changes,  
        {

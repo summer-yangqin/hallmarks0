@@ -9,6 +9,7 @@ libraryPanel <- function()
 
 uploadPanel <- function() 
    wellPanel(
+      selectInput('tissue', 'Tissue', Tissues),
       fileInput('file1', 'Choose file to upload',
                 accept = c(
                   'text/csv',

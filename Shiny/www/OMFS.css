@@ -2,3 +2,10 @@
 }
 .table-cell {
 }
+
+
+.shiny-progress {
+  top: 0% !important;
+  left: 0% !important;
+}
+

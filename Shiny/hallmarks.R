@@ -64,6 +64,8 @@ simpleCap <- function(x) {
 
 # Signatures <- RJSONIO::fromJSON("../Signatures/signatures")
 Signatures <- RJSONIO::fromJSON("signatures")
+Tissues <- names(Signatures$index)
+
 TCGA = data.frame();
 for (sig in Signatures$signatures) {
     m = round(mean( sig$reference$score[sig$reference$labels == 1] ))
