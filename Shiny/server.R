@@ -281,8 +281,14 @@ function(input, output, session) {
              row.names=1,
              sep = input$sep, quote = input$quote)
 
+    rownames(UserData) <- lapply(rownames(userData), function(nm) {
+       if (nm %in% Mus_Homologues) 
+            nm = Mus_Homologues[nm]
+       nm
+    })
 
     withProgress(message = 'Making plot', value = 0, {
+
         computeSignatureScore(userData, input$tissue)
     })
   })

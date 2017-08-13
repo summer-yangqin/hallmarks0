@@ -120,5 +120,7 @@ SelectStudies = function(db) {
 
 Studies = SelectStudies(db)
 
+Mus_Homologues = read.table("Mus_Homologues.txt", header=T, row.names=1, sep="\t")
+
 enableBookmarking(store = "url")
 
