@@ -67,30 +67,36 @@ Signatures <- RJSONIO::fromJSON("signatures")
 Tissues <- names(Signatures$index)
 
 TCGA = data.frame();
+
+
+fix <- function(df, r, PI) {
+    # df[r, "show"] <- TRUE
+    df[r, "Type"] = simpleCap(sig$cancer)
+    df[r, "Subtype"] = simpleCap(sig$tissue)
+    df[r, "Species"] = "Homo Sapien"
+    df[r, "Study.Title"] <- "Mean average of samples"
+
+    df[r, "PI"] <- PI
+    df[r, "ImmPort.Study.ID"] <- "REF"
+    df[r, "PubMed"] <- "none"
+    df[r, "Experiment.ID"] <- "none"
+    df[r, "Cohort"] <- "none"
+    df[r, "BioSample.ID"] <- c
+    df[r, "Repository.Accession"] <- "none"
+    df[r, "Biosample.Name"] <- "none"
+    df[r, "Biosample.Description"] <- "none"
+    df[r, "Strain"] <- "none"
+    return(df)
+}
+
 for (sig in Signatures$signatures) {
     m = round(mean( sig$reference$score[sig$reference$labels == 1] ))
     c = simpleCap(sig$cancer)
-    cc = gsub(" ", "_", c)
-
     TCGA[c, sig$hallmark] = m
-    # TCGA[c, "show"] <- TRUE
-    TCGA[c, "Type"] = simpleCap(sig$cancer)
-    TCGA[c, "Subtype"] = simpleCap(sig$tissue)
-    TCGA[c, "Species"] = "Homo Sapien"
-    TCGA[c, "Study.Title"] <- "Mean average of samples"
-
-    TCGA[c, "PI"] <- "TCGA"
-    TCGA[c, "ImmPort.Study.ID"] <- "REF"
-    TCGA[c, "PubMed"] <- ""
-    TCGA[c, "Experiment.ID"] <- ""
-    TCGA[c, "Cohort"] <- ""
-    TCGA[c, "BioSample.ID"] <- c
-    TCGA[c, "Repository.Accession"] <- ""
-    TCGA[c, "Biosample.Name"] <- ""
-    TCGA[c, "Biosample.Description"] <- ""
-    TCGA[c, "Strain"] <- ""
+    TCGA = fix(TCGA, c, "TCGA")
 }
-colnames(TCGA) <- unlist(lapply(colnames(TCGA), function(x) gsub("Tumor.", "Tumor.", gsub(" ", "_", x))))
+
+# colnames(TCGA) <- unlist(lapply(colnames(TCGA), function(x) gsub("Tumor.", "Tumor.", gsub(" ", "_", x))))
 
 
 DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
@@ -98,8 +104,8 @@ read.table.hot = function(name)  {
     table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
     row.names(table) = table$BioSample.ID
 
-# write(sort(colnames(table)), file="db")
-# write(sort(colnames(TCGA)), file="tcga")
+write(sort(colnames(table)), file="db")
+write(sort(colnames(TCGA)), file="tcga")
     colOrder = colnames(table)
     table = rbind(TCGA, table)
     table = table[, colOrder];

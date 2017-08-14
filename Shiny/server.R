@@ -13,7 +13,7 @@ hallmark_columns = c(
     "Sustained_angiogenesis",
     "Sustaining_proliferative_signaling",
     "Tissue_invasion_and_metastasis",
-    "Tumor.promoting_inflammation")
+    "Tumor_promoting_inflammation")
 
 
 displayed_columns  = c(
@@ -42,7 +42,7 @@ displayed_columns  = c(
     "Sustained_angiogenesis",
     "Sustaining_proliferative_signaling",
     "Tissue_invasion_and_metastasis",
-    "Tumor.promoting_inflammation")
+    "Tumor_promoting_inflammation")
 
 
 
@@ -68,6 +68,8 @@ computeSignatureScore = function(X, tissue) {
     scores = data.frame()
     
     n = length(signaturesForTissue)
+    signature <- NULL
+ 
     for (i in 1:n) {
         # Increment the progress bar, and update the detail text.
         incProgress(1/n, detail = paste("Doing part", i, "of", n))
@@ -101,10 +103,35 @@ computeSignatureScore = function(X, tissue) {
                 score[1,j] = round( (posScale * raw[j]) + 500);
             }
         }
-        colnames(score) = colnames(X);
-        row.names(score) = signature$hallmark;
         scores = rbind(scores, score);
     }
+
+    colnames(scores) = colnames(X);
+    scores = t(scores)
+    colnames(scores) = unlist(lapply(signaturesForTissue,function(sig) sig$hallmark))
+    scores = scores[,1:10]
+
+    n = nrow(scores)
+    scores = cbind(scores, 
+        data.frame(
+            show = rep( FALSE, n),
+            Type = rep( simpleCap(signature$cancer), n),
+            Subtype = rep( simpleCap(signature$tissue), n),
+            Species = rep( "none", n),
+            Study.Title = rep( "none", n),
+            PI = rep( "User", n),
+            ImmPort.Study.ID = rep( "REF", n),
+            PubMed = rep( "none", n),
+            Experiment.ID = rep( "none", n),
+            Cohort = rep( "none", n),
+            BioSample.ID = rep( c, n),
+            Repository.Accession = rep( "none", n),
+            Biosample.Name = rep( "none", n),
+            Biosample.Description = rep( "none", n),
+            Strain = rep( "none", n)));
+
+print("scores")
+         print(colnames(scores))
     return (scores);
 }
 
@@ -140,6 +167,7 @@ function(input, output, session) {
 
   setBookmarkExclude(c("hot", "hot_select" ))
   UserState <- reactiveValues();
+  UserState$Upload = NULL
 
   idb = isolate(DB());
   AllTerms = extractTerms(idb)
@@ -164,7 +192,7 @@ function(input, output, session) {
   output$radarchart <- renderRadarChart({
     db = DB()
     db <- db[UserState$SamplesShown, hallmark_columns]
-    if (dim(db)[1] == 0)
+    if (nrow(db) == 0)
        db = TCGA
     # df <- rbind(dd, db[UserState$SamplesShown, ])
 
@@ -184,6 +212,15 @@ function(input, output, session) {
 
   output$hot <- renderRHandsontable({
      df = DB()
+     if (! is.null(UserState$Upload))  {
+         up = UserState$Upload
+print("up")
+         print(colnames(up))
+print("df")
+         print(colnames(df))
+         df = rbind(UserState$Upload, df)
+    }
+
      terms = input$filter
 
      studyID <- sub(" .*", "", input$study) 
@@ -216,14 +253,14 @@ function(input, output, session) {
        df = df[ UserState$SamplesShown,]
      } 
 
-     if (dim(df)[1] > 0) {
+     if (nrow(df) > 0) {
 
 
          UserState$Samples <- row.names(df)
          df[  UserState$SamplesShown,"show"] = TRUE
 
-         m = dim(df)[1] # rows
-         n = dim(df)[2]  #columns
+         m = nrow(df)
+         n = ncol(df)
 
 #         mergeCells = c();
 #         for (i in 2:(n)) { # columns
@@ -281,15 +318,12 @@ function(input, output, session) {
              row.names=1,
              sep = input$sep, quote = input$quote)
 
-    rownames(UserData) <- lapply(rownames(userData), function(nm) {
-       if (nm %in% Mus_Homologues) 
-            nm = Mus_Homologues[nm]
-       nm
-    })
+    # rownames(UserData) <- lapply(rownames(userData), function(nm) { if (nm %in% Mus_Homologues) nm = Mus_Homologues[nm] nm })
 
     withProgress(message = 'Making plot', value = 0, {
 
-        computeSignatureScore(userData, input$tissue)
+        ldf = computeSignatureScore(userData, input$tissue)
+        UserState$Upload = ldf
     })
   })
   
