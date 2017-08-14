@@ -106,14 +106,17 @@ computeSignatureScore = function(X, tissue) {
         scores = rbind(scores, score);
     }
 
-    colnames(scores) = colnames(X);
+
     scores = t(scores)
+    rownames(scores) = colnames(X);
     colnames(scores) = unlist(lapply(signaturesForTissue,function(sig) sig$hallmark))
     scores = scores[,1:10]
 
     n = nrow(scores)
     scores = cbind(scores, 
         data.frame(
+            BioSample.ID = colnames(X),
+
             show = rep( FALSE, n),
             Type = rep( simpleCap(signature$cancer), n),
             Subtype = rep( simpleCap(signature$tissue), n),
@@ -124,14 +127,11 @@ computeSignatureScore = function(X, tissue) {
             PubMed = rep( "none", n),
             Experiment.ID = rep( "none", n),
             Cohort = rep( "none", n),
-            BioSample.ID = rep( c, n),
             Repository.Accession = rep( "none", n),
             Biosample.Name = rep( "none", n),
             Biosample.Description = rep( "none", n),
             Strain = rep( "none", n)));
 
-print("scores")
-         print(colnames(scores))
     return (scores);
 }
 
@@ -191,6 +191,10 @@ function(input, output, session) {
 
   output$radarchart <- renderRadarChart({
     db = DB()
+    if (! is.null(UserState$Upload))  {
+         up = UserState$Upload
+         db = rbind(UserState$Upload, db)
+    }
     db <- db[UserState$SamplesShown, hallmark_columns]
     if (nrow(db) == 0)
        db = TCGA
@@ -214,12 +218,8 @@ function(input, output, session) {
      df = DB()
      if (! is.null(UserState$Upload))  {
          up = UserState$Upload
-print("up")
-         print(colnames(up))
-print("df")
-         print(colnames(df))
          df = rbind(UserState$Upload, df)
-    }
+     }
 
      terms = input$filter
 
@@ -329,6 +329,7 @@ print("df")
   
    observeEvent( input$hot$changes,  
        {
+          shown = c()
           tryCatch( 
               {
                 row = input$hot$changes$changes[[1]][[1]]
@@ -341,7 +342,6 @@ print("df")
                 newVal = input$hot$changes$changes[[1]][[4]]
                 if (newVal && !(sample %in% shown)) {
                     shown = c(sample, shown)
-                    UserState$SamplesShown = shown
                 } else {
                     shown = shown[shown != sample]
                     UserState$SamplesShown = shown
@@ -349,6 +349,7 @@ print("df")
                 }
                },  
                error=function(cond) NULL ) # end of tryCatch
+           UserState$SamplesShown = shown
        }) # end of observeEvent
 } # end of server.R singletonfunction
 
