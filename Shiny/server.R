@@ -72,7 +72,7 @@ computeSignatureScore = function(X, tissue) {
  
     for (i in 1:n) {
         # Increment the progress bar, and update the detail text.
-        incProgress(1/n, detail = paste("Doing part", i, "of", n))
+        # incProgress(1/n, detail = paste("Doing part", i, "of", n))
 
         signature    <- signaturesForTissue[[i]];
         hallmark <- signature$hallmark;
@@ -170,6 +170,8 @@ function(input, output, session) {
   UserState$Upload = NULL
 
   idb = isolate(DB());
+
+  UserState$db = idb
   AllTerms = extractTerms(idb)
 
   updateSelectizeInput(session, 'filter', choices = AllTerms)
@@ -190,15 +192,9 @@ function(input, output, session) {
 
 
   output$radarchart <- renderRadarChart({
-    db = DB()
-    if (! is.null(UserState$Upload))  {
-         up = UserState$Upload
-         db = rbind(UserState$Upload, db)
-    }
-    db <- db[UserState$SamplesShown, hallmark_columns]
-    if (nrow(db) == 0)
-       db = TCGA
-    # df <- rbind(dd, db[UserState$SamplesShown, ])
+    db <- UserState$db[UserState$SamplesShown, hallmark_columns]
+
+    # if (nrow(db) == 0) db = TCGA
 
     data.frame(
       colnames = colnames(db),
@@ -215,11 +211,7 @@ function(input, output, session) {
   })
 
   output$hot <- renderRHandsontable({
-     df = DB()
-     if (! is.null(UserState$Upload))  {
-         up = UserState$Upload
-         df = rbind(UserState$Upload, df)
-     }
+     df = UserState$db
 
      terms = input$filter
 
@@ -293,10 +285,7 @@ function(input, output, session) {
               hot_cols(
                 manualColumnMove=TRUE,
                 manualColumnResize=TRUE,
-                renderer = "
-                function(instance, td, row, col, prop, value, cellProperties) {
-                        return OMFScell.apply(this, arguments)
-                }") %>%
+                renderer = " function(instance, td, row, col, prop, value, cellProperties) { return OMFScell.apply(this, arguments) }") %>%
               hot_col("show", readOnly = FALSE)
       }  
   }
@@ -314,17 +303,9 @@ function(input, output, session) {
     if (is.null(inFile))
       return(NULL)
 
-    userData = read.csv(inFile$datapath, header = input$header,
-             row.names=1,
-             sep = input$sep, quote = input$quote)
-
-    # rownames(UserData) <- lapply(rownames(userData), function(nm) { if (nm %in% Mus_Homologues) nm = Mus_Homologues[nm] nm })
-
-    withProgress(message = 'Making plot', value = 0, {
-
-        ldf = computeSignatureScore(userData, input$tissue)
-        UserState$Upload = ldf
-    })
+    userData = read.csv(inFile$datapath, header = TRUE, row.names=1, sep = "\t")
+    ldf = computeSignatureScore(userData, input$tissue)
+    UserState$db = rbind(ldf, UserState$db)
   })
   
    observeEvent( input$hot$changes,  

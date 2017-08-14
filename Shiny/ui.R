@@ -12,27 +12,15 @@ uploadPanel <- function()
       selectInput('tissue', 'Tissue', Tissues),
       fileInput('file1', 'Choose file to upload',
                 accept = c(
-                  'text/csv',
-                  'text/comma-separated-values',
                   'text/tab-separated-values',
                   'text/plain',
                   '.csv',
                   '.tsv'
                 )),
       tags$hr(),
-      checkboxInput('header', 'Header', TRUE),
-      radioButtons('sep', 'Separator', c(Comma=',', Semicolon=';', Tab='\t'), '\t'),
-      radioButtons('quote', 'Quote',
-                   c(None='',
-                     'Double Quote'='"',
-                     'Single Quote'="'"),
-                   '"'),
-      tags$hr(),
-      p('If you want a sample .csv or .tsv file to upload,',
+      p('If you want a sampl file to upload,',
         'you can first download the sample',
-        a(href = 'mtcars.csv', 'mtcars.csv'), 'or',
-        a(href = 'pressure.tsv', 'pressure.tsv'),
-        'files, and then try uploading them.'
+         a(href = 'min.txt', 'min.txt')
       )
   )
 
@@ -48,10 +36,8 @@ function(request) {
       ),
       fluidRow( 
         column(width=3, 
-            tabsetPanel(
-                tabPanel("Library", libraryPanel()),
-                tabPanel("Upload", uploadPanel())
-            )
+                libraryPanel(),
+                uploadPanel()
         ),
         column(width=9, 
             checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE),
