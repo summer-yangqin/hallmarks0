@@ -104,8 +104,6 @@ read.table.hot = function(name)  {
     table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
     row.names(table) = table$BioSample.ID
 
-write(sort(colnames(table)), file="db")
-write(sort(colnames(TCGA)), file="tcga")
     colOrder = colnames(table)
     table = rbind(TCGA, table)
     table = table[, colOrder];
