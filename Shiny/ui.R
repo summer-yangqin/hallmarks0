@@ -1,27 +1,51 @@
-library(shiny)
+jsCode = '$(".CancerDiv").prependTo(".dt-buttons")'
+
 function(request) {
+     Visualize <- function()
+        div(style="width:100%",
+            div(class="center",
+                    tags$div(class="legend-div",
+                        tags$p("Legend"),
+                        tags$ul(class="legend-ul")),
+                    # checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL),
+                    radarChartOutput("radarchart"),
 
-    fluidPage(
-      tags$h2("Oncology Model Fidelity Score"),
-      fluidRow(
-        column(width=3, 
-            div(style="display:inline-block",
-                selectInput('cancer', 'Cancers', Cancers),
-                selectInput('study',  'Studies', Studies),
-                selectInput('filter', 'Filter Based on the following terms', NULL, multiple=TRUE, selectize=TRUE),
-                    checkboxInput("showOnlySelectedSamples", "Show only selected samples", FALSE)),
-                    checkboxInput("zodiac", "Hallmark Zodiac", value = TRUE, width = NULL),
-                    bookmarkButton()),
-          column(width=9, 
-            rHandsontableOutput("hot"))),
-      fluidRow(
-            column(width=7,
-                radarChartOutput("radarchart")),
-            column(width=5,
-                tags$div(class="legend-div",
-                    tags$p("Legend"),
-                    tags$ul(class="legend-ul"))
-                # tags$div(class="legend", tags$p("Legend:"))
-            )))
 
+                div(class="CancerDiv",
+                    selectInput('cancer', NULL, TST, selectize=TRUE)),
+
+                DT::dataTableOutput('DB')
+               ))
+
+    Upload <- function() 
+    div(
+       wellPanel(
+          fileInput('file1', 'Choose file to upload',
+                    accept = c(
+                      'text/tab-separated-values',
+                      'text/plain',
+                      '.csv',
+                      '.tsv'
+                    )),
+          tags$hr(),
+          p('Sample file:',
+             a(href = 'min.txt', 'min.txt')
+          ),
+          DT::dataTableOutput('Uploaded')
+      ),
+      wellPanel(
+          p("Select the correct tissue of origin or cancer pathology determined type"),
+          selectInput('tissue', 'Tissue', Tissues) ,
+          DT::dataTableOutput('Scored')
+      )
+   )
+
+
+
+    navbarPage(
+      title = "Oncology Model Fidelity Score",
+      tabPanel('Visualize', id='Visualize', Visualize()),
+      tabPanel('Upload',    id='Upload',    Upload())
+    )
 }
+

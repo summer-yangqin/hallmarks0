@@ -1,3 +1,30 @@
+.grow { width: 100%; }
+
+
+.legend-label { 
+      border-style: none; 
+      border-color: Transparent; 
+      overflow: auto;        
+      resize: none;
+}
+.legend-label:hover { 
+      border-style: solid; 
+      border-color: gray; 
+      overflow: auto;        
+      resize: both;
+}
+
+.center {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.shiny-input-container {
+    width: 800px;
+}
 
 .legend-div {
     padding-top: 40px;

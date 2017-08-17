@@ -1,6 +1,8 @@
 library(dplyr)
 library(pracma)
 
+printf <- function(...) cat(sprintf(...))
+
 hallmark_columns = c(
     "Evading_growth_suppressors",
     "Evading_immune_destruction",
@@ -11,12 +13,19 @@ hallmark_columns = c(
     "Sustained_angiogenesis",
     "Sustaining_proliferative_signaling",
     "Tissue_invasion_and_metastasis",
-    "Tumor.promoting_inflammation")
+    "Tumor_promoting_inflammation")
 
+legend_columns = c(
+     "BioSample.ID",
+     "Type",
+     "Subtype", 
+     "Species", 
+     "Strain",
+     "Cohort", 
+     "Biosample.Name", 
+     "Biosample.Description" )
 
 displayed_columns  = c(
-    "show",
-
     "Type",
     "Subtype",
     "Species",
@@ -40,188 +49,192 @@ displayed_columns  = c(
     "Sustained_angiogenesis",
     "Sustaining_proliferative_signaling",
     "Tissue_invasion_and_metastasis",
-    "Tumor.promoting_inflammation")
+    "Tumor_promoting_inflammation")
+
+
+
+maxS = 3.0
+minS = -3.0
+diffS = maxS - minS;
+
+rescale= function(a) {
+  b = scale(a, center = T, scale = T);
+  c = diffS/(max(b)-min(b))*(b-min(b))+minS
+  return(c);
+}
+
+
+computeSignatureScore = function(X, tissue) {
+    index <- Signatures$index[[tissue]];
+    signaturesForTissue <- Signatures$signatures[index];
+
+    possible = row.names(X)
+    X <- apply(X, 2, rescale)
+    row.names(X) <- possible
+    X <- data.frame(X)
+    scores = data.frame()
+    
+    n = length(signaturesForTissue)
+    signature <- NULL
+ 
+    for (i in 1:n) {
+        # Increment the progress bar, and update the detail text.
+        # incProgress(1/n, detail = paste("Doing part", i, "of", n))
+
+        signature    <- signaturesForTissue[[i]];
+        hallmark <- signature$hallmark;
+        
+        should  <- names(signature$w)
+        genes    <- intersect(should, possible)
+
+        printf("should=%d possible=%d actual=%d\n", length(should),length(possible),length(genes));
+
+        score = data.frame();
+        posScale <- signature$posScale;
+        negScale <- signature$negScale;
+        w = signature$w[genes]
+    
+        XX <- t(X[genes,])
+        #cat(XX);
+      
+    
+    
+        raw = XX %*% w + signature$b;
+        heat= XX * w + signature$b;
+    
+        for (j in 1:length(raw)) {
+            value = raw[j];
+            if (value < 0) {
+                score[1,j] = round(500  - (negScale * raw[j]));
+            } else {
+                score[1,j] = round( (posScale * raw[j]) + 500);
+            }
+        }
+        scores = rbind(scores, score);
+    }
+
+
+    scores = t(scores)
+    rownames(scores) = colnames(X);
+    colnames(scores) = unlist(lapply(signaturesForTissue,function(sig) sig$hallmark))
+    scores = scores[,1:10]
+
+    n = nrow(scores)
+    scores = cbind(scores, 
+        data.frame(
+            BioSample.ID = colnames(X),
+
+            Type = rep( simpleCap(signature$cancer), n),
+            Subtype = rep( simpleCap(signature$tissue), n),
+            Species = rep( "none", n),
+            Study.Title = rep( "none", n),
+            PI = rep( "User", n),
+            ImmPort.Study.ID = rep( "REF", n),
+            PubMed = rep( "none", n),
+            Experiment.ID = rep( "none", n),
+            Cohort = rep( "none", n),
+            Repository.Accession = rep( "none", n),
+            Biosample.Name = rep( "none", n),
+            Biosample.Description = rep( "none", n),
+            Strain = rep( "none", n)));
+
+    return (scores)
+}
 
 
 
 
-trim <- function (x) gsub("^\\s+|\\s+$", "", x)
-
-extractTerms <- function(df) {
-    df$show <- NULL
-    d <- unlist(df);
-    d <- unname(d) # remove labels
-    d <- unique(d) # compress
-
-    numbers = suppressWarnings(  as.numeric(d[!is.na(as.numeric(d))]))
-    numbers = numbers[numbers > 100000]
-    numbers = unlist(lapply(numbers,as.character))
-
-    notnumbers = suppressWarnings(  d[is.na(as.numeric(d))])
-    notnumbers = unlist(list(lapply(notnumbers, trim)))
-
-    words <- unlist(lapply(notnumbers, function(s) strsplit(s, "(\\s+)|(?!')(?=[[:punct:]])", perl = TRUE)))
-    all <- c(notnumbers, words, numbers)
-
-    all <- unique(all)
-    all <- all[nchar(all) > 2]
-    sort(all)
-}  
-
-
+spaceFix <- function (x) gsub("[._]", " ", x)
+TCGA = SamplesDB[SamplesDB$PI == "TCGA", ]
 
 function(input, output, session) {
-
-  setBookmarkExclude(c("hot", "hot_select" ))
   UserState <- reactiveValues();
 
-  idb = isolate(DB());
-  AllTerms = extractTerms(idb)
+  DB = reactive({
+    db = SamplesDB[SamplesDB$Study.Title == input$cancer, ]
+    # TCGA reference samples should be at the beginning
+    type = db[1,"Type"]
+    ref = TCGA[TCGA$Subtype == type,]
+    db = rbind(ref, db)
 
-  updateSelectizeInput(session, 'filter', choices = AllTerms)
+    if (! is.null(UserState$uploadedScored)) {
+        user = UserState$uploadedScored
 
-
-
-  onBookmark(function(state) {
-    state$values$savedTime <- Sys.time()
-    state$values$show = UserState$SamplesShown
+        # rbind adds a digit 1 onto the end of conflicting names, I like this better.
+        while (length(intersect(rownames(user), rownames(db))) > 0) {
+            nms = rownames(user)
+            conflict = intersect(nms, rownames(db))
+            whichConflict = match(conflict, nms)
+            nms[whichConflict] = lapply(nms[whichConflict], function(x) paste0(x, ".user"))
+            rownames(user) = nms
+        }
+        
+        db = rbind(user, db)
+    }
+    db
   })
 
-  output$verbatim <- renderPrint({
-    paste(
-        length(UserState$Samples), "matching", 
-        length(UserState$SamplesShown), "selected"
+  output$DB <- DT::renderDataTable( {
+
+    db = DB()
+    c = colnames(db)
+    c = lapply(c, spaceFix)
+    DT::datatable(db, colnames=c, extensions = 'Buttons', 
+            options = list( pageLength = 10, dom = 'Bfrtip', buttons = c('copy', 'csv', 'excel', 'pdf', 'print')),
+            selection = list(selected = c(1, 2))
     )
-  })
-
+  } )
 
   output$radarchart <- renderRadarChart({
     db = DB()
-    db <- db[UserState$SamplesShown, hallmark_columns]
-    if (dim(db)[1] == 0)
-       db = TCGA
-    # df <- rbind(dd, db[UserState$SamplesShown, ])
+    s = input$DB_rows_selected
 
-    data.frame(
-      colnames = colnames(db),
-      df = t(db),
-      zodiac = input$zodiac
+    browser()
+
+    hdb = db[s, hallmark_columns]
+    ldb = db[s, legend_columns]
+    if (nrow(ldb) > 0)
+        legend =  apply(ldb, 1, function(x) paste(x, collapse=" "))
+    else
+        legend = "none selected"
+
+    list(
+      nrow = nrow(hdb),
+      rownames = rownames(hdb),
+      colnames = colnames(hdb),
+      df = hdb,
+      zodiac = TRUE, # input$zodiac,
+      legend = legend
     )
   })
 
+  observeEvent( input$file1,  {
+    # input$file1 will be NULL initially. After the user selects
+    # and uploads a file, it will be a data frame with 'name',
+    # 'size', 'type', and 'datapath' columns. The 'datapath'
+    # column will contain the local filenames where the data can
+    # be found.
+
+    inFile <- input$file1
+    if (is.null(inFile))
+      return(NULL)
 
 
-  onRestore(function(state) {
-    UserState$SamplesShown <<-  state$values$show
-    updateSelectizeInput(session, 'filter', choices = AllTerms, selected= state$input$filter)
+    UserState$uploaded = read.csv(inFile$datapath, header = TRUE, row.names=1, sep = "\t")
+
+    output$Uploaded <- DT::renderDataTable( { DT::datatable(UserState$uploaded, options = list( pageLength = 5)) })
+            
+
+
   })
 
-  output$hot <- renderRHandsontable({
-     df = DB()
-     terms = input$filter
-
-     studyID <- sub(" .*", "", input$study) 
-
-
-     boolVec = apply(df, 1, 
-      function(row) {
-
-        if (studyID != "All" && studyID != row["ImmPort.Study.ID"]) {  # short circuit if we are filtering on input$study
-            return(FALSE)
+    output$Scored <- DT::renderDataTable( { 
+        if (! is.null(UserState$uploaded)) {
+            UserState$uploadedScored = computeSignatureScore(UserState$uploaded, input$tissue)
+            DT::datatable(UserState$uploadedScored)
         }
-
-         cancer =  input$cancer;
-         if (!is.null(cancer)) {
-             if (!("All" %in% cancer)) {
-                 if (!(row["Type"]  %in% cancer)) {
-                    return(FALSE)
-                 }
-             }
-         }
-         all(unlist(lapply(terms, function(term) length(grep(term, row)) > 0)))
-     })
+    })
 
 
-     boolVec[UserState$SamplesShown] <- TRUE;
-
-     df <- df[boolVec,]   
-
-     if (input$showOnlySelectedSamples) {
-       df = df[ UserState$SamplesShown,]
-     } 
-
-     if (dim(df)[1] > 0) {
-
-
-         UserState$Samples <- row.names(df)
-         df[  UserState$SamplesShown,"show"] = TRUE
-
-         m = dim(df)[1] # rows
-         n = dim(df)[2]  #columns
-
-#         mergeCells = c();
-#         for (i in 2:(n)) { # columns
-#             j = 1
-#             while (j < m) { # rows
-#                 k = 1
-#                 while ((j+k) < m && !is.na(df[j,i]) && !is.na(df[j+k,i]) && df[j,i] == df[j+k,i])  {
-#                    k = k + 1
-#                 }
-#
-#                 if (k > 1) {
-#                      mergeCells = append(mergeCells, list(list(row= j-1, col= i-1, rowspan= k, colspan= 1)))
-#                      j = j + k
-#                 } else {
-#                      j = j + 1
-#                 }
-#              }
-#         }
-         ddf <- df[,displayed_columns]
-
-         rhandsontable(ddf,rowHeaders = NULL,
-                        useTypes = TRUE, stretchH = "all",  filter = TRUE, selectCallback=TRUE,
-                        readOnly = TRUE, renderer="html" , rowHeaderWidth = 100 , height = 400,
-#                       mergeCells = mergeCells, 
-                        wordWrap=TRUE,
-                        BioSampleID = ddf$BioSample.ID
-#                        colWidths = c(40,80,70,60,200, 120,80,80,80,80, 80,120,80,80,80, 80)
-                        ) %>%
-              hot_table( height=350, fixedColumnsLeft=2, contextMenu=TRUE, manualColumnFreeze=TRUE) %>%
-              hot_cols(
-                manualColumnMove=TRUE,
-                manualColumnResize=TRUE,
-                renderer = "
-                function(instance, td, row, col, prop, value, cellProperties) {
-                        return OMFScell.apply(this, arguments)
-                }") %>%
-              hot_col("show", readOnly = FALSE)
-      }  
-  }
-)
-
-  
-   observeEvent( input$hot$changes,  
-       {
-          tryCatch( 
-              {
-                row = input$hot$changes$changes[[1]][[1]]
-                shown = UserState$SamplesShown
-                row = row + 1 # Javascript based in zero, R is one based.
-                # n = input$hot$params$rRowHeaders;
-                n = UserState$Samples
-
-                sample = n[row]
-                newVal = input$hot$changes$changes[[1]][[4]]
-                if (newVal && !(sample %in% shown)) {
-                    shown = c(sample, shown)
-                    UserState$SamplesShown = shown
-                } else {
-                    shown = shown[shown != sample]
-                    UserState$SamplesShown = shown
-
-                }
-               },  
-               error=function(cond) NULL ) # end of tryCatch
-       }) # end of observeEvent
 } # end of server.R singletonfunction
 

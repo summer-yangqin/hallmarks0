@@ -115,6 +115,9 @@ var RadarChart = {
         tt.append('rect').classed("tooltip", true);
         tt.append('text').classed("tooltip", true);
 
+        debugger
+        if (data.length == 0)
+            return
         // allow simple notation
         data = data.map(function(datum) {
           if(datum instanceof Array) {
@@ -127,6 +130,7 @@ var RadarChart = {
           return d3.max(d.axes, function(o){ return o.value; });
         }));
         maxValue -= cfg.minValue;
+
 
         var allAxis = data[0].axes.map(function(i, j){ return {name: i.axis, xOffset: (i.xOffset)?i.xOffset:0, yOffset: (i.yOffset)?i.yOffset:0}; });
         var total = allAxis.length;
@@ -430,7 +434,7 @@ var RadarChart = {
 
     return radar;
   },
-  draw: function(id, d, options) {
+  draw: function(id, d, options, nrow) {
     var chart = RadarChart.chart().config(options);
     var cfg = chart.config();
 
@@ -459,43 +463,25 @@ var RadarChart = {
         svg.attr("transform", "translate(165, 50)")
 
 
-    svg
-    .datum(d)
-    .call(chart)
+        svg
+        .datum(d)
+        .call(chart)
 
-    RadarChart.legend(chart, cfg, d)
   },
 
 
-  legend: function(chart, cfg, data) {
-    var labelCols = [ "BioSample.ID", "Type", "Subtype", "Species", "Cohort", "Biosample.Name", "Biosample.Description", "Strain"]
+  legend: function(cfg, legend) {
      $(".legend-ul").empty()
 
-    var cols = HOT.getColHeader();
-    var hotColMap = {}
-    for (var i = 0; i < cols.length; i++)
-        hotColMap[cols[i]] = i
-    var BioSample_ID = hotColMap["BioSample.ID"]
-		
-
-    var hotData = HOT.getData();
-    var hotDataMap = {}
-    for (var i = 0; i < hotData.length; i++)
-        hotDataMap[hotData[i][BioSample_ID]] = hotData[i]
-
-    debugger
-    for (var i = 0; i < data.length; i++) {
-         var label = data[i].className;
+    legend = Object.values(legend)
+    for (var i = 0; i < legend.length; i++) {
+         var label = legend[i];
+         label = label.replace(/ none/g, "")
 	 var color = cfg.color(i);
-         if (label in hotDataMap) {
-             var hotRow = hotDataMap[label];
-             label = labelCols.map(function(col) { return hotRow[hotColMap[col]] }).join(", ") 
-         }
-         var txt = '<li> <div class="legend-input-color"> <textarea class="legend-label" rows="2" cols="100">' +  label + '</textarea> <div class="legend-color-box" style="background-color: '+ color + ';"></div> </div> </li>';
+         var txt = '<li> <div class="legend-input-color"> <textarea class="legend-label" rows="2" cols="60">' +  label + '</textarea> <div class="legend-color-box" style="background-color: '+ color + ';"></div> </div> </li>';
          $(".legend-ul").append(txt);
      }
   }
-
 
 };
 
@@ -515,19 +501,26 @@ testdata = [
       ];
 
 function showRadar(R) {
-    var colnames = R.shift().values;
-    var zodiac = R.pop().values[0].y
 
-    colnames = colnames.map(function(item) { return item.y });
-    var data = R.map( function(item) {
-	     var colname = item.key;
-	     var values = item.values;
-	     var axes = colnames.map(function(colname, i) {
+    R = JSON.parse(R);
+    var nrow = R.nrow
+
+    var colnames = R.colnames
+    var rownames = R.rownames
+    
+    if (nrow == 1) rownames = [rownames];  // aRrrgh 
+
+    var zodiac = R.zodiac
+    var legend = R.legend
+    var df = R.df
+
+
+    var data = rownames.map( function(className, i) {
+	     var axes = colnames.map(function(colname, j) {
+                value = df[colname][i]
 		colname = colname.replace(/[_\.]/g, " ")
-		var value =  values[i].y
 		return { axis: [ colname], value: value }
 	     });
-             var className = item.key.replace(/^df\./, "")
 	     className = className.replace(/[_\.]/g, " ")
              return { className: className, axes: axes };
           });
@@ -558,25 +551,11 @@ function showRadar(R) {
   RadarChart.defaultConfig.w = w;
   RadarChart.defaultConfig.h = h;
   RadarChart.defaultConfig.levelTick =  true,
-  RadarChart.draw("#radarchart", data);
 
-  function animate(elem, time) {
-      if (!elem) return;
-      var to = elem.offsetTop;
-      var from = window.scrollY;
-      var start = new Date().getTime(),
-          timer = setInterval(function() {
-              var step = Math.min(1, (new Date().getTime() - start) / time);
-              window.scrollTo(0, (from + step * (to - from)) + 1);
-              if (step == 1) {
-                  clearInterval(timer);
-              };
-          }, 25);
-      window.scrollTo(0, (from + 1));
-  }
+  RadarChart.draw("#radarchart", data, nrow);
+  if (nrow > 0)
+      RadarChart.legend(RadarChart.defaultConfig, legend)
 
-  // var divVal = document.getElementById('hallmark-chart');
-  // animate(divVal, 600);
 }
 
 function transpose(a) {

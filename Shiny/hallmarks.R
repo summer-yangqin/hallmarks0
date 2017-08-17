@@ -1,4 +1,10 @@
 ############################################################################################
+df = read.csv("DB.txt", header=TRUE, sep="\t", stringsAsFactors=FALSE)
+y <- aggregate(Study.Title ~ Type, df, c)
+rownames(y) <- y$Type
+TST = apply(y, 1, function(x) as.list(unique(unlist(x$Study.Title))))
+ 
+
 
 library(shiny)
 library(shinyjqui)
@@ -30,12 +36,27 @@ radarChartOutput <- function(inputId, width="100%", height="400px") {
   )
 }
 
-# To be called from server.R
 renderRadarChart <- function(expr, env=parent.frame(), quoted=FALSE) {
   # This piece of boilerplate converts the expression `expr` into a
   # function called `func`. It's needed for the RStudio IDE's built-in
   # debugger to work properly on the expression.
+
   installExprFunction(expr, "func", env, quoted)
+  # func <- shiny::exprToFunction(expr, env, quoted)
+  
+  function() {
+    RJSONIO::toJSON(func())
+  }
+}
+
+
+renderRadarChart0 <- function(expr, env=parent.frame(), quoted=FALSE) {
+  # This piece of boilerplate converts the expression `expr` into a
+  # function called `func`. It's needed for the RStudio IDE's built-in
+  # debugger to work properly on the expression.
+
+  # installExprFunction(expr, "func", env, quoted)
+  func <- shiny::exprToFunction(expr, env, quoted)
   
   function() {
     dataframe <- func()
@@ -64,51 +85,58 @@ simpleCap <- function(x) {
 
 # Signatures <- RJSONIO::fromJSON("../Signatures/signatures")
 Signatures <- RJSONIO::fromJSON("signatures")
+Tissues <- names(Signatures$index)
+
 TCGA = data.frame();
+
+
+fix <- function(df, r, PI) {
+    df[r, "Type"] = simpleCap(sig$cancer)
+    df[r, "Subtype"] = simpleCap(sig$tissue)
+    df[r, "Species"] = "Homo Sapien"
+    df[r, "Study.Title"] <- "Mean average of samples"
+
+    df[r, "PI"] <- PI
+    df[r, "ImmPort.Study.ID"] <- "REF"
+    df[r, "PubMed"] <- "none"
+    df[r, "Experiment.ID"] <- "none"
+    df[r, "Cohort"] <- "none"
+    df[r, "BioSample.ID"] <- c
+    df[r, "Repository.Accession"] <- "none"
+    df[r, "Biosample.Name"] <- "none"
+    df[r, "Biosample.Description"] <- "none"
+    df[r, "Strain"] <- "none"
+    return(df)
+}
+
 for (sig in Signatures$signatures) {
     m = round(mean( sig$reference$score[sig$reference$labels == 1] ))
     c = simpleCap(sig$cancer)
-    cc = gsub(" ", "_", c)
-
     TCGA[c, sig$hallmark] = m
-    # TCGA[c, "show"] <- TRUE
-    TCGA[c, "Type"] = simpleCap(sig$cancer)
-    TCGA[c, "Subtype"] = simpleCap(sig$tissue)
-    TCGA[c, "Species"] = "Homo Sapien"
-    TCGA[c, "Study.Title"] <- "Mean average of samples"
-
-    TCGA[c, "PI"] <- "TCGA"
-    TCGA[c, "ImmPort.Study.ID"] <- "REF"
-    TCGA[c, "PubMed"] <- ""
-    TCGA[c, "Experiment.ID"] <- ""
-    TCGA[c, "Cohort"] <- ""
-    TCGA[c, "BioSample.ID"] <- c
-    TCGA[c, "Repository.Accession"] <- ""
-    TCGA[c, "Biosample.Name"] <- ""
-    TCGA[c, "Biosample.Description"] <- ""
-    TCGA[c, "Strain"] <- ""
+    TCGA = fix(TCGA, c, "TCGA")
 }
-colnames(TCGA) <- unlist(lapply(colnames(TCGA), function(x) gsub("Tumor.", "Tumor.", gsub(" ", "_", x))))
+
+# colnames(TCGA) <- unlist(lapply(colnames(TCGA), function(x) gsub("Tumor.", "Tumor.", gsub(" ", "_", x))))
 
 
-DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
+
 read.table.hot = function(name)  {
     table = read.table(name, header=TRUE, as.is=TRUE, fill=TRUE, sep="\t")
     row.names(table) = table$BioSample.ID
 
-# write(sort(colnames(table)), file="db")
-# write(sort(colnames(TCGA)), file="tcga")
     colOrder = colnames(table)
     table = rbind(TCGA, table)
     table = table[, colOrder];
-    cbind(show=rep(FALSE, dim(table)[1]), table)
 }
 
-db = isolate(DB())
+DB <- reactiveFileReader(1000, NULL, 'DB.txt', read.table.hot)
+
+SamplesDB = isolate(DB())
 
 
 
-Cancers = c("All", unique(sort(db$Type)))
+# Cancers = c("All", unique(sort(SamplesDB$Type)))
+Cancers = unique(sort(SamplesDB$Type))
 
 SelectStudies = function(db) {
    fields = c("ImmPort.Study.ID", "PI",  "Study.Title")
@@ -116,7 +144,9 @@ SelectStudies = function(db) {
 }
 
 
-Studies = SelectStudies(db)
+Studies = SelectStudies(SamplesDB)
+
+Mus_Homologues = read.table("Mus_Homologues.txt", header=T, row.names=1, sep="\t")
 
 enableBookmarking(store = "url")
 
